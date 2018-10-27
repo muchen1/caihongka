@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors"
+    >
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+    <RelativeLayout
+        android:id="@+id/add_layout"
+        android:layout_below="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_55"
+        android:background="@drawable/btn_select_item">
+        <View
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/app_gray"/>
+        <TextView
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/sp_14"
+            android:layout_centerVertical="true"
+            android:text="新增配送地址"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:layout_centerVertical="true"
+            android:src="@drawable/me_add"/>
+    </RelativeLayout>
+
+    <com.rainbowcard.client.widget.LoadingFrameLayout
+        android:id="@+id/v_container"
+        android:layout_marginTop="@dimen/dp_m_y_5"
+        android:layout_below="@+id/add_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_bg_6">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.rainbowcard.client.widget.swipemenulistview.SwipeMenuListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@color/bg_colors"
+                    android:dividerHeight="@dimen/dp_m_y_5"
+                    android:background="@color/bg_colors"
+                    android:footerDividersEnabled="false"
+                    />
+
+                <TextView
+                    android:id="@+id/nodata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="还没有兑换地址，请添加"
+                    android:textColor="@color/detail_fgm_unselect"
+                    android:textSize="@dimen/sp_18" />
+            </LinearLayout>
+        </FrameLayout>
+    </com.rainbowcard.client.widget.LoadingFrameLayout>
+</RelativeLayout>

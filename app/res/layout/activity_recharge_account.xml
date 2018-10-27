@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/l_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <com.rainbowcard.client.widget.LoadingFrameLayout
+        android:id="@+id/fl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_layout">
+
+        <RelativeLayout
+            android:id="@+id/l_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_m_y_10">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_m_y_10"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:text="@string/select_card"
+                android:textColor="@color/gray_text_context_3"
+                android:textSize="@dimen/sp_12" />
+            <TextView
+                android:id="@+id/hint_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:text="单用途商业预付卡企业备案编码：110101ACH0022"
+                android:gravity="bottom|center_horizontal"
+                android:textColor="@color/gray_text_context_3"
+                android:paddingBottom="@dimen/dp_m_y_7"
+                android:textSize="@dimen/sp_13" />
+
+            <RelativeLayout
+                android:id="@+id/select_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_m_y_45"
+                android:layout_below="@+id/hint_title"
+                android:background="@drawable/bg_layout_rainbow"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/select_text"
+                    style="@style/person_text_style"
+                    android:text="请选择充值卡片" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_m_y_5"
+                    android:src="@drawable/me_arrow" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/card_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_m_y_45"
+                android:layout_below="@+id/select_layout"
+                android:layout_marginTop="@dimen/dp_m_y_10"
+                android:background="@drawable/bg_layout_rainbow"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/person_text_style"
+                    android:text="卡号" />
+
+                <EditText
+                    android:id="@+id/et_card"
+                    style="@style/bookticket_et_base"
+                    android:background="@color/transparent"
+                    android:digits="1234567890"
+                    android:hint="请输入彩虹卡号"
+                    android:inputType="number" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_layout"
+                android:background="@drawable/bg_layout_rainbow"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_m_y_45"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/person_text_style"
+                        android:text="姓名" />
+
+                    <EditText
+                        android:id="@+id/et_name"
+                        style="@style/bookticket_et_base"
+                        android:background="@color/transparent"
+                        android:hint="请输入您的姓名" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray_bg_2" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_m_y_45"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/person_text_style"
+                        android:text="手机" />
+
+                    <EditText
+                        android:id="@+id/et_phone"
+                        style="@style/bookticket_et_base"
+                        android:background="@color/transparent"
+                        android:hint="请输入您的手机号"
+                        android:inputType="phone" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/recharge_title"
+                android:layout_below="@+id/info_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_m_y_10"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:text="选择充值金额"
+                android:textColor="@color/gray_text_context_3"
+                android:textSize="@dimen/sp_12" />
+            <LinearLayout
+                android:id="@+id/recharge_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recharge_title"
+                android:layout_marginTop="@dimen/dp_m_y_10"
+                android:background="@drawable/bg_layout_rainbow"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_m_y_30"
+                >
+
+                <com.rainbowcard.client.widget.MyGridView
+                    android:id="@+id/grid_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="@dimen/dp_m_y_47"
+                    android:numColumns="2"
+                    android:layout_marginLeft="@dimen/dp_m_y_14"
+                    android:layout_marginRight="@dimen/dp_m_y_14"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="@dimen/dp_m_y_20" />
+
+                <EditText
+                    android:id="@+id/price_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_m_y_50"
+                    android:layout_marginLeft="@dimen/dp_m_y_14"
+                    android:layout_marginRight="@dimen/dp_m_y_14"
+                    android:layout_marginTop="@dimen/dp_m_y_20"
+                    android:background="@drawable/bg_layout_focused"
+                    android:clickable="false"
+                    android:digits="1234567890"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/tab_unselected_text"
+                    android:hint="其它充值金额(最少50元)"
+                    android:textSize="@dimen/sp_14" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_below="@+id/recharge_layout"
+                android:id="@+id/next_step"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_m_y_45"
+                android:background="@drawable/query_select_item"
+                android:text="立即充值"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/app_white"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:layout_marginTop="@dimen/dp_m_y_80"
+                 />
+
+            <TextView
+                android:id="@+id/recharge_agreement"
+                android:layout_below="@+id/next_step"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_m_y_30"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dp_m_y_10"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/gray_text_context_3"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+    </com.rainbowcard.client.widget.LoadingFrameLayout>
+</RelativeLayout>

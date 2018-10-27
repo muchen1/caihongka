@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+
+    <TextView
+        style="@style/person_text_style"
+        android:layout_marginTop="@dimen/dp_m_y_15"
+        android:text="确认信息"
+        android:textSize="@dimen/sp_12" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp_m_y_5"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/shop_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentTop="true"
+                android:background="@color/gray_bg_2" />
+            <TextView
+                android:id="@+id/shop_text"
+                style="@style/person_text_style"
+                android:textSize="@dimen/sp_13"
+                android:text="商户" />
+
+            <TextView
+                android:id="@+id/shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:layout_toRightOf="@+id/shop_text"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:singleLine="true"
+                android:textColor="@color/gray_text_context_3"
+                android:textSize="@dimen/sp_14" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/service_layout"
+            android:layout_below="@+id/shop_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentTop="true"
+                android:background="@color/gray_bg_2" />
+
+            <TextView
+                style="@style/person_text_style"
+                android:textSize="@dimen/sp_13"
+                android:text="服务类型" />
+
+            <TextView
+                android:id="@+id/service_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/money_color"
+                android:textSize="@dimen/sp_14" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/gray_bg_2" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+
+            android:layout_below="@+id/service_layout"
+            android:layout_marginTop="@dimen/dp_m_y_7"
+            android:id="@+id/change_password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_bg_2" />
+
+            <TextView
+                style="@style/person_text_style"
+                android:textSize="@dimen/sp_13"
+                android:text="订单金额" />
+
+            <TextView
+                android:id="@+id/order_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/money_color"
+                android:textSize="@dimen/sp_14" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/change_password_layout"
+            android:id="@+id/discount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_bg_2" />
+
+            <TextView
+                android:id="@+id/discount_text"
+                style="@style/person_text_style"
+                android:textSize="@dimen/sp_13"
+                android:text="优惠券" />
+
+            <TextView
+                android:id="@+id/discount_count"
+                style="@style/person_text_style"
+                android:layout_marginLeft="@dimen/dp_m_y_25"
+                android:layout_toRightOf="@+id/discount_text"
+                android:text="2张可用"
+                android:textColor="@color/stroke"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/right_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="2dp"
+                android:src="@drawable/me_arrow" />
+
+            <TextView
+                android:id="@+id/discount_status"
+                style="@style/person_text_style"
+                android:layout_toLeftOf="@+id/right_icon"
+                android:textColor="@color/stroke" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/pay_money_layout"
+            android:layout_below="@+id/discount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_bg_2" />
+
+            <TextView
+                style="@style/person_text_style"
+                android:textSize="@dimen/sp_13"
+                android:text="需付款" />
+
+            <TextView
+                android:id="@+id/pay_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/money_color"
+                android:textSize="@dimen/sp_14" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/gray_bg_2" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_below="@+id/pay_money_layout"
+            android:id="@+id/pay_text"
+            style="@style/person_text_style"
+            android:layout_marginTop="@dimen/dp_m_y_15"
+            android:text="选择支付方式"
+            android:textSize="@dimen/sp_12" />
+
+        <RelativeLayout
+            android:layout_below="@+id/pay_text"
+            android:id="@+id/pay_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_m_y_50"
+            android:layout_marginTop="@dimen/dp_m_y_5"
+            android:background="@drawable/btn_select_item">
+
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_bg_2" />
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_m_y_40"
+                android:src="@drawable/pay_account"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:scaleType="fitCenter"
+                />
+            <TextView
+                android:layout_toRightOf="@+id/iv_icon"
+                android:id="@+id/pay_type"
+                style="@style/person_text_style"
+                android:text="账户余额" />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_toRightOf="@+id/iv_checked"
+                style="@style/person_text_style"
+                android:text="本平台" />
+
+            <ImageView
+                android:id="@+id/iv_checked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xuanzhong"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                />
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_checked"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="2dp"
+                android:src="@drawable/me_arrow" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/gray_bg_2" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/pay_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/query_select_item"
+            android:gravity="center"
+            style="@style/CommonFont.Medium.White"
+            android:text="确认"
+            android:textColor="@color/bottom_btn_text"
+            />
+        <ListView
+            android:id="@+id/lv_pay_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pay_layout"
+            android:layout_above="@+id/pay_button"
+            android:background="@drawable/bg_layout_rainbow"
+            android:divider="@drawable/divider_merchant_list"
+            >
+        </ListView>
+    </RelativeLayout>
+</LinearLayout>

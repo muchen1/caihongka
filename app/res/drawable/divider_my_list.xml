@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:left="@dimen/dp_m_y_12">
+    <shape>
+        <size android:height="1px" />
+        <solid
+            android:color="#eeeeee"/>
+    </shape>
+</item>
+
+</layer-list>

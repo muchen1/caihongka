@@ -1,0 +1,141 @@
+<resources>
+
+    <!-- for new ui BEGIN -->
+    <!-- dp -->
+    <dimen name="tool_bar_height">56dp</dimen>
+    <dimen name="text_normal_size">14dp</dimen>
+    <dimen name="view_interval_space_small">5dp</dimen>
+    <dimen name="statusbar_height">0dp</dimen>
+    <dimen name="statusbar_height_neg">0dp</dimen>
+
+    <dimen name="main_left">10px</dimen>
+    <dimen name="main_right">10px</dimen>
+    <dimen name="corners_base">3dp</dimen>
+    <dimen name="corners_btn">3dp</dimen>
+    <dimen name="corners_min">1dp</dimen>
+    <dimen name="corners_full">40dp</dimen>
+    <dimen name="info_window_10">10dp</dimen>
+    <dimen name="info_window_15">15dp</dimen>
+
+    <dimen name="dp_unit">1dp</dimen>
+    <!-- for new ui END -->
+
+    <dimen name="dp_m_x_25">25dp</dimen>
+    <dimen name="dp_m_x_20">20dp</dimen>
+    <dimen name="dp_m_x_15">15dp</dimen>
+    <dimen name="dp_m_y_1">1dp</dimen>
+    <dimen name="dp_m_y_2">2dp</dimen>
+    <dimen name="dp_m_y_3">3dp</dimen>
+    <dimen name="dp_m_y_5">5dp</dimen>
+    <dimen name="dp_m_y_6">6dp</dimen>
+    <dimen name="dp_m_y_7">7dp</dimen>
+    <dimen name="dp_m_y_8">8dp</dimen>
+    <dimen name="dp_m_y_10">10dp</dimen>
+    <dimen name="dp_m_y_12">12dp</dimen>
+    <dimen name="dp_m_y_14">14dp</dimen>
+    <dimen name="dp_m_y_15">15dp</dimen>
+    <dimen name="dp_m_y_17">17dp</dimen>
+    <dimen name="dp_m_y_18">18dp</dimen>
+    <dimen name="dp_m_y_19">19dp</dimen>
+    <dimen name="dp_m_y_20">20dp</dimen>
+    <dimen name="dp_m_y_21">21dp</dimen>
+    <dimen name="dp_m_y_22">22dp</dimen>
+    <dimen name="dp_m_y_24">24dp</dimen>
+    <dimen name="dp_m_y_25">25dp</dimen>
+    <dimen name="dp_m_y_30">30dp</dimen>
+    <dimen name="dp_m_y_32">32dp</dimen>
+    <dimen name="dp_m_y_35">35dp</dimen>
+    <dimen name="dp_m_y_40">40dp</dimen>
+    <dimen name="dp_m_y_42">42dp</dimen>
+    <dimen name="dp_m_y_45">45dp</dimen>
+    <dimen name="dp_m_y_47">47dp</dimen>
+    <dimen name="dp_m_y_50">50dp</dimen>
+    <dimen name="dp_m_y_55">55dp</dimen>
+    <dimen name="dp_m_y_49">49dp</dimen>
+    <dimen name="dp_m_y_60">60dp</dimen>
+    <dimen name="dp_m_y_62">62dp</dimen>
+    <dimen name="dp_m_y_65">65dp</dimen>
+    <dimen name="dp_m_y_70">70dp</dimen>
+    <dimen name="dp_m_y_80">80dp</dimen>
+    <dimen name="dp_m_y_88">88dp</dimen>
+    <dimen name="dp_m_y_90">90dp</dimen>
+    <dimen name="dp_m_y_98">98dp</dimen>
+    <dimen name="dp_m_y_100">100dp</dimen>
+    <dimen name="dp_m_y_105">105dp</dimen>
+    <dimen name="dp_m_y_110">110dp</dimen>
+    <dimen name="dp_m_y_115">115dp</dimen>
+    <dimen name="dp_m_y_120">120dp</dimen>
+    <dimen name="dp_m_y_135">135dp</dimen>
+    <dimen name="dp_m_y_140">140dp</dimen>
+    <dimen name="dp_m_y_144">144dp</dimen>
+    <dimen name="dp_m_y_150">150dp</dimen>
+    <dimen name="dp_m_y_160">160dp</dimen>
+    <dimen name="dp_m_y_170">170dp</dimen>
+    <dimen name="dp_m_y_210">210dp</dimen>
+    <dimen name="dp_m_y_200">200dp</dimen>
+    <dimen name="dp_m_y_240">240dp</dimen>
+    <dimen name="dp_m_y_250">250dp</dimen>
+    <dimen name="dp_m_y_278">278dp</dimen>
+    <dimen name="dp_m_y_280">280dp</dimen>
+    <dimen name="dp_m_y_320">320dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+
+    <!-- sp -->
+     <dimen name="sp_8">8sp</dimen>
+     <dimen name="sp_10">10sp</dimen>
+    <dimen name="sp_11">11sp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_13">13sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_15">15sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="sp_24">24sp</dimen>
+    <dimen name="sp_28">28sp</dimen>
+    <dimen name="sp_30">30sp</dimen>
+    <dimen name="sp_36">36sp</dimen>
+    <dimen name="sp_40">40sp</dimen>
+    <dimen name="ui_toast_textsize">@dimen/sp_16</dimen>
+    <dimen name="favorite_double_per_line_height">95dp</dimen>
+    <dimen name="dp_round_margin_left">10dp</dimen>
+    <dimen name="dp_round_margin_right">10dp</dimen>
+    <dimen name="dp_round_margin_top">10dp</dimen>
+    <dimen name="dp_round_margin_bottom">12dp</dimen>
+
+    <dimen name="dp_mall_icon_round">120dp</dimen>
+    <dimen name="exchange_btn_height">46dp</dimen>
+    <dimen name="dp_trans_margin_top_1">10dp</dimen>
+    <dimen name="dp_trans_top_height">200dp</dimen>
+    <dimen name="round_icon_list">65dp</dimen>
+    <dimen name="dp_recode_menu">55dp</dimen>
+
+    <!-- zxing dimen begin -->
+    <dimen name="standard_padding">8dip</dimen>
+    <dimen name="half_padding">4dip</dimen>
+    <!-- zxing dimen end -->
+    
+    <dimen name="calendar_day_headers_paddingbottom">4dp</dimen>
+  <dimen name="calendar_month_topmargin">16dp</dimen>
+  <dimen name="calendar_month_title_bottommargin">4dp</dimen>
+  <dimen name="calendar_text_medium">18sp</dimen>
+  <dimen name="calendar_text_small">14sp</dimen>
+  <dimen name="biz_plugin_weather_selectcity_item_textsize">13.0sp</dimen>
+  <dimen name="biz_plugin_weather_selectcity_group_item_padding">14.0dip</dimen>
+
+    <dimen name="one_dp">1dp</dimen>
+    <dimen name="one_px">1px</dimen>
+
+    <dimen name="ios_tab_font_size">14sp</dimen>
+    <dimen name="wheel_tab_font_size">15sp</dimen>
+    <dimen name="shadow_width">3dp</dimen>
+    <dimen name="slidingmenu_offset">100dp</dimen>
+
+    <dimen name="footer_height">60dp</dimen>
+    <dimen name="header_height">60dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="historyscore_tb">8dp</dimen>
+</resources>

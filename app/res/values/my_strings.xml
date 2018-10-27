@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="login">登录</string>
+    <string name="login_btw">百达屋账户</string>
+    <string name="login_sh">合作商账户</string>
+    <string name="to_register">未有账户？现在注册</string>
+    <string name="forgot_psw">找回密码</string>
+    <!--  -->
+    <string name="register">注册</string>
+    <string name="nickname">昵称</string>
+    <string name="moblie">手机号</string>
+    <string name="grouppurchase_roll">请输入团购卷号</string>
+    <string name="merc_detail">商家详情</string>
+    <string name="psw">密码</string>
+    <string name="psw2">确认密码</string>
+    <!--  -->
+    <string name="reset_button">重置</string>
+    <string name="login_success_tip">授权成功只需小小的一步就可升级账户啦！</string>
+
+    <!--  -->
+    <string name="levelup">升级</string>
+    <string name="bind">绑定</string>
+    <string name="levelup_btw">升级成为百达屋会员</string>
+    <string name="levelup_bind">绑定已有账户</string>
+    <!--  -->
+    <string name="my_detail">我</string>
+    <string name="benefits">权益</string>
+    <string name="order_list">账单</string>
+    <string name="my_setting">设置</string>
+
+    <!--  -->
+    <string name="logout">退出登陆</string>
+    <string name="card_id">身份证号</string>
+    <string name="bind_merc">绑定商家</string>
+    <string name="client_id">btw</string>
+    <string name="redirect_uri">http://betterwood/login</string>
+
+
+    <!--  -->
+    <string name="card">卡</string>
+    <string name="coupon">券</string>
+    <string name="link">联系方式</string>
+    <string name="card_0_balance">现金卡余额</string>
+    <string name="card_1_balance">次数卡余额</string>
+    <string name="card_10_balance">普遍卡余额</string>
+
+    <string name="card_rule">使用规则</string>
+    <string name="card_valid">有效期</string>
+
+    <string name="from_photo">拍照</string>
+    <string name="from_albums">从手机相册选择</string>
+    <string name="personal_data">个人资料</string>
+    <string name="bookingCheckIn">预约入住</string>
+    <string name="citylist">城市列表</string>
+    <string name="selectdate">选择日期</string>
+    <string name="amend">修改</string>
+    <string name="alter_name">姓名</string>
+    <string name="alter_noid">身份证号</string>
+    <string name="alter_name_title">修改姓名</string>
+    <string name="alter_noid_title">修改身份证号</string>
+    <string name="select_city_title">请选择城市</string>
+    <string name="select_hotel_title">选择分店和房型</string>
+
+</resources>

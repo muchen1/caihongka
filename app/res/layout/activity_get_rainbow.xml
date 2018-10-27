@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/l_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <com.rainbowcard.client.widget.LoadingFrameLayout
+        android:id="@+id/fl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_layout">
+
+        <LinearLayout
+            android:id="@+id/l_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.rainbowcard.client.widget.HorizontalListView
+                android:id="@+id/lv_type_status"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="40dp"/>
+
+            <FrameLayout
+                android:id="@+id/fragment_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></FrameLayout>
+
+        </LinearLayout>
+    </com.rainbowcard.client.widget.LoadingFrameLayout>
+</RelativeLayout>

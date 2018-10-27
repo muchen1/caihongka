@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp_m_y_7"
+        android:background="@color/gray_bg_2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/shop_icon"
+            android:layout_width="@dimen/dp_m_y_70"
+            android:layout_height="@dimen/dp_m_y_70"
+            android:layout_margin="@dimen/dp_m_y_10"
+            android:background="@color/app_gray" />
+
+        <TextView
+            android:id="@+id/tv_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_m_y_12"
+            android:layout_toRightOf="@+id/shop_icon"
+            android:ellipsize="end"
+            android:paddingRight="@dimen/dp_m_y_12"
+            android:singleLine="true"
+            android:text="服务评级"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/sp_12" />
+
+        <RelativeLayout
+            android:id="@+id/wark_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_addr"
+            android:layout_marginTop="@dimen/dp_m_y_8"
+            android:layout_toRightOf="@+id/shop_icon">
+
+            <RatingBar
+                android:id="@+id/rc_rate"
+                style="@style/fiveRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:numStars="5"
+                android:rating="5.0" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/code_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wark_layout"
+            android:layout_marginTop="@dimen/dp_m_y_8"
+            android:layout_toRightOf="@+id/shop_icon">
+
+            <TextView
+                android:id="@+id/service_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="服务良好"
+                android:textColor="@color/money_color"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/comment_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/code_layout">
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_margin="@dimen/dp_m_y_12"
+                android:background="@color/gray_bg_2" />
+
+
+            <com.rainbowcard.client.widget.FlowLayout
+                android:layout_below="@+id/line"
+                android:id="@+id/flow_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dp_m_y_10"
+                android:paddingLeft="@dimen/dp_m_y_10"/>
+
+            <EditText
+                android:id="@+id/edit_comment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_m_y_110"
+                android:layout_below="@+id/flow_layout"
+                android:layout_margin="@dimen/dp_m_y_12"
+                android:background="@drawable/bg_layout_focused_comment"
+                android:hint="请输入您的评论"
+                android:gravity="top"
+                android:padding="@dimen/dp_m_y_10"
+                android:textColor="@color/gray_text_context_3"
+                android:textColorHint="@color/gray_text_context_6"
+                android:textSize="@dimen/sp_11" />
+        </RelativeLayout>
+
+        <Button
+            android:layout_below="@+id/comment_layout"
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_m_y_45"
+            android:layout_marginTop="@dimen/dp_m_y_80"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:textColor="@color/app_white"
+            android:textSize="@dimen/sp_16"
+            android:gravity="center"
+            android:background="@drawable/query_select_item"
+            android:text="提 交" />
+    </RelativeLayout>
+
+</LinearLayout>

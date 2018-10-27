@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_m_y_12"
+    android:paddingRight="@dimen/dp_m_y_12"
+    android:background="@color/bg_colors"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_layout_focused"
+        android:layout_height="@dimen/dp_m_y_110">
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_m_y_35">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:text="2017-05-04 17:58:00"
+                android:textColor="@color/money_color"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_time"
+                android:ellipsize="end"
+                android:paddingLeft="@dimen/dp_m_y_10"
+                android:singleLine="true"
+                android:text="迎五一，参与优惠活动赢大奖"
+                android:textColor="@color/title_text"
+                android:textSize="@dimen/sp_13"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:background="@color/line_color" />
+        </RelativeLayout>
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_read"
+            android:layout_width="@dimen/dp_m_y_5"
+            android:layout_height="@dimen/dp_m_y_5"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/dp_m_y_2"
+            android:layout_marginTop="@dimen/dp_m_y_2"
+            android:src="@drawable/dot_selected"
+            />
+
+        <RelativeLayout
+            android:layout_below="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:paddingLeft="@dimen/dp_m_y_10"
+                android:maxLines="2"
+                android:lineSpacingExtra="@dimen/dp_m_y_5"
+                android:textColor="@color/title_text"
+                android:textSize="@dimen/sp_13"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:background="@color/line_color" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

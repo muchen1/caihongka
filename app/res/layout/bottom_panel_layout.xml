@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.rainbowcard.client.widget.BottomControlPanel xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentBottom="true"
+    android:gravity="center_vertical"
+    >
+    <com.rainbowcard.client.widget.ImageText
+        android:layout_weight="1"
+        android:id="@+id/btn_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" />
+
+    <com.rainbowcard.client.widget.ImageText
+        android:layout_weight="1"
+        android:id="@+id/btn_geren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/btn_olympic"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/olympic_icon"/>
+    </RelativeLayout>
+
+    <com.rainbowcard.client.widget.ImageText
+        android:visibility="gone"
+        android:layout_weight="1"
+        android:id="@+id/btn_youxi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <com.rainbowcard.client.widget.ImageText
+        android:layout_weight="1"
+        android:id="@+id/btn_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true" />
+
+</com.rainbowcard.client.widget.BottomControlPanel>

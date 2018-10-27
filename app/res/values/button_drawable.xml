@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <drawable name="main_select_item_pressed">#fff0f0f0</drawable>
+    <drawable name="main_select_item_unpressed">#ffffff</drawable>
+    <drawable name="menu_select_item_pressed">#ff1e85d9</drawable>
+    <drawable name="menu_select_item_pressed2">#1A000000</drawable>
+    <drawable name="menu_select_item_unpressed">#2196F3</drawable>
+    <drawable name="roomchild_select_item_unpressed">#E6E6E6</drawable>
+
+</resources>

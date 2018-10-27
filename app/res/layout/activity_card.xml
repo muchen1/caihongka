@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <com.rainbowcard.client.widget.LoadingFrameLayout
+        android:id="@+id/v_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_layout">
+
+        <!--<android.support.v4.widget.SwipeRefreshLayout
+            android:layout_margin="@dimen/dp_m_y_10"
+            android:id="@+id/v_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_colors">-->
+
+            <com.loopeer.cardstack.CardStackView
+                android:id="@+id/stackview_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clipToPadding="true"
+                android:paddingLeft="@dimen/dp_m_y_12"
+                android:paddingRight="@dimen/dp_m_y_12"
+                android:paddingTop="@dimen/dp_m_y_12"/>
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+    </com.rainbowcard.client.widget.LoadingFrameLayout>
+</RelativeLayout>

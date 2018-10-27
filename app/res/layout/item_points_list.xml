@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_points"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_m_y_50"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@drawable/bg_layout_focused"
+    >
+
+    <TextView
+        android:id="@+id/price_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/tab_unselected_text"
+        android:textSize="14sp"
+        />
+    <TextView
+        android:id="@+id/points_text"
+        android:layout_below="@+id/price_text"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/gray_text_context_3"
+        android:textSize="12sp"
+        />
+    <!--<TextView
+        android:id="@+id/givepoints_text"
+        android:layout_below="@+id/points_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="再赠1000积分"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/no_aotunym"
+        android:textSize="12sp"
+        />-->
+</RelativeLayout>

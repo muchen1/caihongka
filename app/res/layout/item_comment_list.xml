@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_points"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_40">
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/hp_portrait"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            />
+        <TextView
+            android:id="@+id/num"
+            android:layout_toRightOf="@+id/user_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_m_y_8"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/gray_text_context_3"
+            />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:layout_alignParentBottom="true"
+            android:background="@color/line_color" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_layout"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/dp_m_y_10"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_text_context_3"
+            android:textSize="@dimen/sp_13" />
+    </RelativeLayout>
+</RelativeLayout>

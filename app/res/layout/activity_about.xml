@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white"
+    >
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_marginTop="85dp"
+        android:layout_below="@+id/head_layout"
+        android:src="@drawable/set_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/name"
+        android:layout_below="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/sp_18"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/app_black"
+        android:text="彩虹卡"/>
+    <TextView
+        android:id="@+id/code"
+        android:layout_below="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:textColor="@color/app_black"
+        android:text="V1.0"/>
+    <TextView
+        android:id="@+id/agreement"
+        android:layout_below="@+id/code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:textSize="14sp"
+        android:textColor="@color/gray_text_context_3"
+        android:background="@drawable/btn_select_item"
+        android:gravity="center"
+        android:text="Copyright @ 2016 彩虹卡 版权所有\nAll Rights Reserved"/>
+    <TextView
+        android:visibility="gone"
+        android:layout_above="@+id/agreement"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/text"
+        android:textSize="12sp"
+        android:layout_below="@+id/edit_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/tab_unselected_text"
+        android:text="@string/customer_service"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/center_layout"
+        android:layout_below="@+id/code"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+
+        <RelativeLayout
+            android:id="@+id/help_layout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/btn_select_item">
+
+            <TextView
+                android:id="@+id/my_prize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="帮助中心"
+                android:textColor="@color/my_travel_text"
+                android:textSize="15sp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon_more"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+
+        <RelativeLayout
+            android:id="@+id/feedback_layout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/btn_select_item">
+
+            <TextView
+                android:id="@+id/my_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="问题反馈"
+                android:textColor="@color/my_travel_text"
+                android:textSize="15sp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon_more"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+    </LinearLayout>
+
+</RelativeLayout>

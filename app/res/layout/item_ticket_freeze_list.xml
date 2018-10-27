@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_m_y_65"
+    android:paddingLeft="@dimen/dp_m_y_22"
+    android:paddingRight="@dimen/dp_m_y_12"
+    android:background="@color/app_white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        >
+
+        <TextView
+            android:id="@+id/start_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获得时间"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_m_y_5"
+            android:layout_toRightOf="@+id/start_text"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/sp_15" />
+
+        <TextView
+            android:id="@+id/end_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_text"
+            android:layout_marginTop="@dimen/dp_m_y_2"
+            android:text="到期时间"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_text"
+            android:layout_marginLeft="@dimen/dp_m_y_5"
+            android:layout_marginTop="@dimen/dp_m_y_2"
+            android:layout_toRightOf="@+id/end_text"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/sp_15" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/count_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/app_black"
+        android:textStyle="bold"
+        android:textSize="@dimen/sp_16" />
+</RelativeLayout>

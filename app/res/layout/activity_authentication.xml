@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp_m_y_20"
+        android:background="@color/gray_bg_2" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_select_item">
+
+        <TextView
+            android:id="@+id/name_text"
+            style="@style/person_text_style"
+            android:layout_width="wrap_content"
+            android:text="真实姓名" />
+
+        <EditText
+            android:id="@+id/edit_name"
+            style="@style/change_et_base"
+            android:layout_toRightOf="@+id/name_text"
+            android:background="@color/transparent"
+            android:hint="请输入您的真实姓名" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_select_item">
+
+        <TextView
+            android:id="@+id/identity_card_text"
+            style="@style/person_text_style"
+            android:layout_width="wrap_content"
+            android:text="身份证号" />
+
+        <EditText
+            android:id="@+id/edit_identity_card"
+            style="@style/change_et_base"
+            android:layout_toRightOf="@+id/identity_card_text"
+            android:background="@color/transparent"
+            android:hint="请输入您的身份证号" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_select_item">
+
+        <TextView
+            android:id="@+id/select_bank_text"
+            style="@style/person_text_style"
+            android:layout_width="wrap_content"
+            android:text="选择银行" />
+
+        <Spinner
+            android:id="@+id/bank_spinner"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_toRightOf="@+id/select_bank_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"></Spinner>
+        <TextView
+            android:id="@+id/bank_text"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_toRightOf="@+id/select_bank_text"
+            style="@style/person_text_style"
+            android:layout_width="wrap_content"
+            android:text="请选择银行类型" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_select_item">
+
+        <TextView
+            android:id="@+id/card_text"
+            style="@style/person_text_style"
+            android:layout_width="wrap_content"
+            android:text="银行卡号" />
+
+        <EditText
+            android:id="@+id/edit_card"
+            style="@style/change_et_base"
+            android:layout_toRightOf="@+id/card_text"
+            android:background="@color/transparent"
+            android:hint="请输入银行卡号"
+            android:inputType="number" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_select_item">
+
+        <TextView
+            android:id="@+id/phone_text"
+            style="@style/person_text_style"
+            android:layout_width="wrap_content"
+            android:text="预留手机号" />
+
+        <EditText
+            android:id="@+id/edit_phone"
+            style="@style/change_et_base"
+            android:layout_toRightOf="@+id/phone_text"
+            android:background="@color/transparent"
+            android:hint="请输入银行卡预留手机号"
+            android:inputType="number" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+
+
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_m_y_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:text="若不是银行预留手机号，请修改"
+        android:textColor="@color/gray_text_context_3"
+        android:textSize="@dimen/sp_13" />
+
+    <Button
+        android:id="@+id/accomplish"
+        style="@style/bottom_button_style"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp_m_y_40"
+        android:layout_marginBottom="@dimen/dp_m_y_30"
+        android:text="提交" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/title"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="友情提示"
+            android:textStyle="bold"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_2"
+            android:id="@+id/service_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•请确保您的信息真实有效，一经认证不可更改\n•同一身份信息只能实名认证一个彩虹卡账户\n•认证银行卡用于提现，保障您的资金安全\n•如有疑问请联系客服人员"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_12" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+package com.rainbowcard.client.widget.bgabanner;
+
+import android.content.Context;
+import android.support.annotation.DrawableRes;
+import android.support.v4.view.ViewCompat;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.ImageView;
+
+import java.util.Collection;
+import java.util.List;
+
+/**
+ * Created by gc on 2018/1/3
+ */
+public class BGABannerUtil {
+
+    private BGABannerUtil() {
+    }
+
+    public static int dp2px(Context context, float dpValue) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, context.getResources().getDisplayMetrics());
+    }
+
+    public static int sp2px(Context context, float spValue) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spValue, context.getResources().getDisplayMetrics());
+    }
+
+    public static ImageView getItemImageView(Context context, @DrawableRes int placeholderResId) {
+        return getItemImageView(context, placeholderResId, ImageView.ScaleType.CENTER_CROP);
+    }
+
+    public static ImageView getItemImageView(Context context, @DrawableRes int placeholderResId, ImageView.ScaleType scaleType) {
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(placeholderResId);
+        imageView.setClickable(true);
+        imageView.setScaleType(scaleType);
+        return imageView;
+    }
+
+    public static void resetPageTransformer(List<? extends View> views) {
+        if (views == null) {
+            return;
+        }
+
+        for (View view : views) {
+            view.setVisibility(View.VISIBLE);
+            ViewCompat.setAlpha(view, 1);
+            ViewCompat.setPivotX(view, view.getMeasuredWidth() * 0.5f);
+            ViewCompat.setPivotY(view, view.getMeasuredHeight() * 0.5f);
+            ViewCompat.setTranslationX(view, 0);
+            ViewCompat.setTranslationY(view, 0);
+            ViewCompat.setScaleX(view, 1);
+            ViewCompat.setScaleY(view, 1);
+            ViewCompat.setRotationX(view, 0);
+            ViewCompat.setRotationY(view, 0);
+            ViewCompat.setRotation(view, 0);
+        }
+    }
+
+    public static boolean isIndexNotOutOfBounds(int position, Collection collection) {
+        return isCollectionNotEmpty(collection) && position < collection.size();
+    }
+
+    public static boolean isCollectionEmpty(Collection collection, Collection... args) {
+        if (collection == null || collection.isEmpty()) {
+            return true;
+        }
+        for (Collection arg : args) {
+            if (arg == null || arg.isEmpty()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isCollectionNotEmpty(Collection collection, Collection... args) {
+        return !isCollectionEmpty(collection, args);
+    }
+
+}

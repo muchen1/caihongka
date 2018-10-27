@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:minHeight="80dp"
+    android:minWidth="320dp"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/blank_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/alert_buttonlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/gray"
+            android:text="更换头像"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:id="@+id/take_photo_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:background="@drawable/nav_drawer_bt">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/take_photo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="拍照"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/photo_album"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/nav_drawer_bt">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/photos"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="相册"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

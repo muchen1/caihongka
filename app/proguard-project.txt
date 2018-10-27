@@ -1,0 +1,232 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-dontwarn com.taobao.**
+-dontwarn anet.channel.**
+-dontwarn anetwork.channel.**
+-dontwarn org.android.**
+-dontwarn com.xiaomi.**
+-dontwarn com.huawei.**
+-dontwarn org.apache.thrift.**
+
+-keepattributes *Annotation*
+
+-keep class com.taobao.** {*;}
+-keep class org.android.** {*;}
+-keep class anet.channel.** {*;}
+-keep class com.umeng.** {*;}
+-keep class com.xiaomi.** {*;}
+-keep class com.huawei.** {*;}
+-keep class org.apache.thrift.** {*;}
+-keep class com.alibaba.sdk.android.**{*;}
+-keep class com.ut.**{*;}
+-keep class com.ta.**{*;}
+
+-keep public class com.umeng.message.example.example.R$*{
+   public static final int *;
+}
+
+#避免log打印输出
+ -assumenosideeffects class android.util.Log {
+      public static *** v(...);
+      public static *** d(...);
+      public static *** i(...);
+      public static *** w(...);
+ }
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+
+#gson related
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class com.google.gson.** { *;}
+-keep class org.json.** {*;}
+-keep class rainbow.client.**.model.** {*;}
+-keep class rainbow.client.common.exvolley.** {*;}
+-dontwarn android.support.v4.**
+-keep class android.support.v4.** { *; }
+-keep class android.support.v7.widget.SearchView { *; }
+
+
+
+
+#share sdk related
+-keep class cn.sharesdk.**{*;}
+-keep class com.sina.**{*;}
+-keep class **.R$* {*;}
+-keep class **.R{*;}
+-dontwarn cn.sharesdk.**
+-dontwarn **.R$*
+-keep class m.framework.**{*;}
+
+
+#baidu map related
+#-keep class com.baidu.**{*;}
+#-keep class vi.com.gdi.bgl.**{*;}
+#-keep class vi.com.gdi.bgl.android.**{*;}
+
+#alipay related
+
+
+-keep class com.alipay.android.app.IAlixPay{*;}
+-keep class com.alipay.android.app.IAlixPay$Stub{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback$Stub{*;}
+-keep class com.alipay.sdk.app.PayTask{ public *;}
+-keep class com.alipay.sdk.app.AuthTask{ public *;}
+
+#eventbus related
+-keepclassmembers class ** {
+    public void onEvent*(**);
+}
+
+#piscasso related
+-dontwarn com.squareup.okhttp.**
+
+#butterknife related
+-dontwarn butterknife.internal.**
+-keep class **$$ViewInjector { *; }
+-keepnames class * { @butterknife.InjectView *;}
+
+#ActiveAndroid
+#-keep class com.activeandroid.** { *; }
+#-dontwarn com.ikoding.app.biz.dataobject.**
+#-keep public class com.ikoding.app.biz.dataobject.** { *;}
+
+#WXpay
+-keepnames class com.rainbowcard.client.wxapi.WXPayEntryActivity
+
+-keep class com.rainbowcard.client.wxapi.WXEntryActivity
+-keep class com.rainbowcard.client.wxapi.model.WXToken
+-keep class com.rainbowcard.client.model.WXPayData{ * ; }
+-keep class com.rainbowcard.client.model.WXPayModel{ * ; }
+
+-keepattributes *Annotation*
+-keepattributes *JavascriptInterface*
+-keepattributes *InJavaScriptLocalObj*
+
+#umeng message
+#-keep,allowshrinking class org.android.agoo.service.* {
+#    public <fields>;
+#    public <methods>;
+#}
+#-keep,allowshrinking class com.umeng.message.* {
+#    public <fields>;
+#    public <methods>;
+#}
+
+-dontskipnonpubliclibraryclassmembers
+-ignorewarnings
+
+
+
+#umeng share
+-dontshrink
+-dontoptimize
+-dontwarn com.google.android.maps.**
+-dontwarn android.webkit.WebView
+-dontwarn com.umeng.**
+-dontwarn com.tencent.weibo.sdk.**
+-dontwarn com.facebook.**
+
+-keep enum com.facebook.**
+-keepattributes Exceptions,InnerClasses,Signature
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+
+-keep public interface com.facebook.**
+-keep public interface com.tencent.**
+-keep public interface com.umeng.socialize.**
+-keep public interface com.umeng.socialize.sensor.**
+-keep public interface com.umeng.scrshot.**
+
+-keep public class com.umeng.socialize.* {*;}
+-keep public class javax.**
+-keep public class android.webkit.**
+
+-keep class com.facebook.**
+-keep class com.umeng.scrshot.**
+-keep public class com.tencent.** {*;}
+-keep class com.umeng.socialize.sensor.**
+
+-keep class com.tencent.mm.sdk.modelmsg.WXMediaMessage {*;}
+
+-keep class com.tencent.mm.sdk.modelmsg.** implements com.tencent.mm.sdk.modelmsg.WXMediaMessage$IMediaObject {*;}
+
+-keep class im.yixin.sdk.api.YXMessage {*;}
+-keep class im.yixin.sdk.api.** implements im.yixin.sdk.api.YXMessage$YXMessageData{*;}
+
+-keep public class [your_pkg].R$*{
+    public static final int *;
+}
+
+-keep class com.baidu.** {*;}
+-keep class vi.com.** {*;}
+-dontwarn com.baidu.**
+
+-keep    class com.rainbowcard.client.ui.SurprisedActivity$*{
+<methods>;
+}
+-keep    class com.rainbowcard.client.ui.SurprisedActivity{
+<methods>;
+}
+
+-keepclassmembers   class com.rainbowcard.client.ui.SurprisedActivity$*{
+*;
+}
+-keepclassmembers   class com.rainbowcard.client.ui.SurprisedActivity{
+*;
+}
+
+-keep public class com.rainbowcard.client.ui.SurprisedActivity$jsObj {
+    public void HtmlcallJava();
+    public void mutualMethod();
+}
+-keep    class com.rainbowcard.client.ui.IntegralActivity*{
+<methods>;
+}
+-keep    class com.rainbowcard.client.ui.IntegralActivity{
+<methods>;
+}
+
+-keepclassmembers   class com.rainbowcard.client.ui.IntegralActivity$*{
+*;
+}
+-keepclassmembers   class com.rainbowcard.client.ui.IntegralActivity{
+*;
+}
+
+-keep public class com.rainbowcard.client.ui.IntegralActivity$jsObj {
+    public void HtmlcallJava();
+    public void mutualMethod();
+}
+
+

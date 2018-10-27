@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.rainbowcard.client.widget.LoadingFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.rainbowcard.client.widget.DropDownMenu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/dropDownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dddividerColor="@color/app_tiny_gray"
+        app:ddmaskColor="@color/mask_color"
+        app:ddmenuBackgroundColor="@color/white"
+        app:ddmenuSelectedIcon="@drawable/drop_down_selected_icon"
+        app:ddmenuTextSize="12sp"
+        app:ddmenuUnselectedIcon="@drawable/drop_down_unselected_icon"
+        app:ddtextSelectedColor="@color/tab_unselected_text"
+        app:ddtextUnselectedColor="@color/gray_text"
+        app:ddunderlineColor="@color/app_tiny_gray" />
+</com.rainbowcard.client.widget.LoadingFrameLayout>

@@ -1,0 +1,283 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion 23
+//    buildToolsVersion '21.1.2'
+    buildToolsVersion "23.0.2"
+
+    signingConfigs {
+        BtwConfig {
+            storeFile file("../key_store/com.rainbowcard.keystore.jks")
+            storePassword "rainbowcard"
+            keyAlias "rainbowcard"
+            keyPassword "rainbowcard"
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    defaultConfig {
+        applicationId "com.rainbowcard.client"
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 22
+        versionName "2.3.5"
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.BtwConfig
+            minifyEnabled true
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+            proguardFile 'proguard-project.txt'
+            shrinkResources true
+        }
+
+        debug {
+            signingConfig signingConfigs.BtwConfig
+        }
+
+    }
+
+    sourceSets {
+        main {
+            manifest {
+                srcFile 'AndroidManifest.xml'
+            }
+            jniLibs.srcDir 'libs'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+
+    lintOptions {
+        // if true, stop the gradle buildSelectFlowChargeValue if errors are found
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings true
+        // if true, treat all warnings as errors
+        warningsAsErrors false
+        // turn off checking the given issue id's
+        disable 'TypographyFractions', 'TypographyQuotes', 'MissingTranslation', 'ValidFragment', 'ContentDescription', 'InvalidPackage'
+        // if true, show all locations for an error, do not truncate lists, etc.
+        showAll true
+        // if true, generate an XML report for use by for example Jenkins
+        xmlReport true
+        // if true, generate an HTML report (with issue explanations, sourcecode, etc)
+        htmlReport false
+    }
+
+    productFlavors {
+//        dev {
+//            manifestPlaceholders = [channelName: "DEV"]
+//            buildConfigField "boolean", "SHOWLOG", "true"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//        }
+        rc_web {
+            manifestPlaceholders = [channelName: "rc_web"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+        }
+        channel360 {
+            manifestPlaceholders = [channelName: "360"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+		  }
+        tencent {
+            manifestPlaceholders = [channelName: "tencent"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+        }
+        wandoujia {
+            manifestPlaceholders = [channelName: "wandoujia"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+        }
+        xiaomi {
+            manifestPlaceholders = [channelName: "xiaomi"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+        }
+        anzhi {
+            manifestPlaceholders = [channelName: "anzhi"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+        }
+        baidu {
+            manifestPlaceholders = [channelName: "baidu"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+        }
+        lenovo {
+            manifestPlaceholders = [channelName: "lenovo"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+		  }
+        oppo {
+            manifestPlaceholders = [channelName: "oppo"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+		  }
+        vivo {
+            manifestPlaceholders = [channelName: "vivo"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+		  }
+        huawei {
+            manifestPlaceholders = [channelName: "huawei"]
+            buildConfigField "boolean", "SHOWLOG", "false"
+            buildConfigField "boolean", "SHOWLOTTERY", "true"
+		  }
+//        letv {
+//            manifestPlaceholders = [channelName: "letv"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+//        meizu {
+//            manifestPlaceholders = [channelName: "meizu"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//        }
+//        sogou {
+//            manifestPlaceholders = [channelName: "sogou"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+//        UC {
+//            manifestPlaceholders = [channelName: "UC"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+//        pp {
+//            manifestPlaceholders = [channelName: "pp"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+//        jifeng {
+//            manifestPlaceholders = [channelName: "jifeng"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+//        rc_zfb {
+//            manifestPlaceholders = [channelName: "rc_zfb"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//        }
+//        rc_weixin {
+//            manifestPlaceholders = [channelName: "rc_weixin"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//        }
+//        rc_wap {
+//            manifestPlaceholders = [channelName: "rc_wap"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+//        rc_groupon {
+//            manifestPlaceholders = [channelName: "rc_groupon"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+//        channel91 {
+//            manifestPlaceholders = [channelName: "91"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+//        appchina {
+//            manifestPlaceholders = [channelName: "appchina"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+//       googleplay {
+//            manifestPlaceholders = [channelName: "googleplay"]
+//            buildConfigField "boolean", "SHOWLOG", "false"
+//            buildConfigField "boolean", "SHOWLOTTERY", "true"
+//		  }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+}
+
+
+
+android.applicationVariants.all { variant ->
+    variant.outputs.each { output ->
+        if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
+            def file = output.outputFile
+            output.outputFile = new File(file.parent, "rainbow-" + versionName + "-" + variant.productFlavors[0].manifestPlaceholders.channelName + ".apk")
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:cardview-v7:21.0.2'
+    //    compile 'com.google.zxing:core:3.1.0'
+    //    compile 'com.google.zxing:android-core:3.1.0'
+    //    compile 'com.google.zxing:android-integration:3.1.0'
+    compile 'se.emilsjolander:stickylistheaders:2.5.0'
+    compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    //    compile 'com.github.traex.rippleeffect:library:1.2.3'
+    //    compile 'com.getbase:floatingactionbutton:1.5.1'
+    compile 'com.edmodo:rangebar:1.0.0'
+    //        compile project(':app:libs:AndroidTouchGallery')
+    compile project(':app:libs:FancyCoverFlow:library')
+    compile project(':app:libs:PullToRefreshAndLoad-lib')
+    compile project(':PushSDK')
+    //    compile files('libs/baidumapapi_search_v3_6_1.jar')
+    //    compile files('libs/baidumapapi_base_v3_6_1.jar')
+    //    compile files('libs/baidumapapi_map_v3_6_1.jar')
+    //    compile files('libs/locSDK_6.13.jar')
+    compile 'com.android.support:support-v13:21.0.+'
+    //    compile 'com.android.support:cardview-v7:21.0.2'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-vector-drawable:23.4.0'
+    compile 'com.android.support:animated-vector-drawable:23.4.0'
+    compile 'com.android.support:recyclerview-v7:22.2.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.google.code.gson:gson:2.3'
+    compile 'com.mcxiaoke.volley:library:1.0.6'
+    compile 'com.edmodo:cropper:1.0.1@aar'
+    compile 'com.squareup.picasso:picasso:2.3.3'
+    compile 'de.greenrobot:eventbus:2.2.1'
+    compile 'com.jakewharton:disklrucache:2.0.2'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
+    compile 'com.jakewharton:butterknife:5.1.2'
+    compile 'com.github.chrisbanes.photoview:library:1.2.3@aar'
+    compile 'com.mcxiaoke.viewpagerindicator:library:2.4.1@aar'
+    compile 'joda-time:joda-time:2.5'
+    compile 'com.daimajia.swipelayout:library:1.1.8@aar'
+    compile 'com.lsjwzh:materialloadingprogressbar:0.5.3-RELEASE'
+    compile 'com.akexorcist:RoundCornerProgressBar:2.0.3'
+    compile 'com.github.iwgang:countdownview:1.2'
+    compile 'com.loopeer.library:cardstack:1.0.2'
+    compile 'com.facebook.rebound:rebound:0.3.8'
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    compile 'com.malinskiy:materialicons:1.0.2'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.flyco.pageindicator:FlycoPageIndicator_Lib:1.0.0@aar'
+    compile files('libs/baidumapapi_base_v4_1_0.jar')
+    compile files('libs/baidumapapi_search_v4_1_0.jar')
+    compile files('libs/baidumapapi_util_v4_1_0.jar')
+    compile files('libs/baidumapapi_map_v4_1_0.jar')
+    compile files('libs/alipaySdk-20160516.jar')
+    compile files('libs/BestpaySDK_V3.0.4.jar')
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile files('libs/SocialSDK_WeChat_Simplify.jar')
+}

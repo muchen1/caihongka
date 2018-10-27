@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.Index"  parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.WhiteCursorSearchView" parent="AppTheme">
+        <item name="autoCompleteTextViewStyle">@style/SearchViewStyle</item>
+        <item name="android:searchViewStyle">@style/search_edtext</item>
+    </style>
+
+</resources>

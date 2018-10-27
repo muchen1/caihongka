@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors"
+    >
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+    <View
+        android:id="@+id/line"
+        android:layout_below="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/app_gray"/>
+
+<com.rainbowcard.client.widget.LoadingFrameLayout
+    android:id="@+id/v_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/line">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_white"
+        android:orientation="vertical">
+        <com.rainbowcard.client.widget.GridViewWithHeaderAndFooter
+            android:id="@+id/lv_snatch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="@dimen/dp_m_y_5"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:background="@color/app_white"
+            android:verticalSpacing="@dimen/one_px"/>
+    </LinearLayout>
+</com.rainbowcard.client.widget.LoadingFrameLayout>
+</RelativeLayout>

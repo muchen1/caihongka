@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+
+    <LinearLayout
+        android:id="@+id/nav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head_layout"
+        android:background="@color/bg_colors"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/app_gray"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_m_y_40">
+            <com.rainbowcard.client.widget.HorizontalListView
+                android:id="@+id/lv_type_status"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center" />
+            <View
+                android:layout_width="@dimen/one_dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_m_y_5"
+                android:layout_marginBottom="@dimen/dp_m_y_5"
+                android:layout_centerInParent="true"
+                android:background="@color/app_tiny_gray"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_color" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_m_y_5"
+        android:layout_below="@+id/nav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.rainbowcard.client.widget.LoadingFrameLayout
+            android:id="@+id/v_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/v_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+                <com.rainbowcard.client.widget.ScrollToFooterLoadMoreListView
+                    android:id="@+id/lv_cash_record"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_layout"
+                    android:background="@color/bg_colors"
+                    android:divider="@color/bg_colors"
+                    android:dividerHeight="@dimen/one_px"
+                    android:footerDividersEnabled="false" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </com.rainbowcard.client.widget.LoadingFrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/withdraw_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/bank_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_m_y_50"
+                android:background="@drawable/btn_select_item">
+                <ImageView
+                    android:id="@+id/bank_icon"
+                    android:layout_width="@dimen/dp_m_y_24"
+                    android:layout_height="@dimen/dp_m_y_24"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_m_y_22"
+                    android:src="@drawable/me_icbc"/>
+                <TextView
+                    android:id="@+id/tv_bank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/bank_icon"
+                    android:layout_marginLeft="@dimen/dp_m_y_18"
+                    android:textColor="@color/gray_text"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/sp_12" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/dp_m_y_12"
+                    android:layout_marginRight="@dimen/dp_m_y_12"
+                    android:background="@color/bg_colors"/>
+
+                <TextView
+                    android:id="@+id/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_12"
+                    android:text="编辑"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp_m_y_5"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/btn_select_item"
+                    android:layout_marginRight="@dimen/dp_m_y_7"
+                    android:textColor="@color/app_black"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/money_layout"
+                android:layout_below="@+id/bank_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_m_y_100"
+                android:background="@drawable/btn_select_item">
+                <EditText
+                    android:id="@+id/price_edit"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_m_y_18"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:clickable="false"
+                    android:textColor="@color/app_black"
+                    android:textColorHint="@color/app_gray"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_edittext_gray"
+                    android:layout_marginRight="@dimen/dp_m_y_12"
+                    android:paddingLeft="@dimen/dp_m_y_45"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/sp_30" />
+                <TextView
+                    android:id="@+id/money_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="¥"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/sp_30"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="@dimen/dp_m_y_22"/>
+
+                <TextView
+                    android:id="@+id/all_withdraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_12"
+                    android:text="全部"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp_m_y_5"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/btn_select_item"
+                    android:layout_marginRight="@dimen/dp_m_y_7"
+                    android:textColor="@color/stroke"/>
+
+                <TextView
+                    android:id="@+id/tv_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_m_y_22"
+                    android:layout_marginBottom="@dimen/dp_m_y_5"
+                    android:textColor="@color/money_color"
+                    android:layout_alignParentBottom="true"
+                    android:text="退款最低额度为10元"
+                    android:textSize="@dimen/sp_12" />
+            </RelativeLayout>
+
+            <Button
+                android:layout_below="@+id/money_layout"
+                android:id="@+id/submit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_m_y_45"
+                android:background="@drawable/button_darkgray"
+                android:text="提交申请"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/dialog_line_color"
+                android:gravity="center"
+                android:enabled="false"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:layout_marginTop="@dimen/dp_m_y_80"
+                />
+
+            <TextView
+                android:id="@+id/tv_hint"
+                android:layout_below="@+id/submit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginTop="@dimen/dp_m_y_15"
+                android:textColor="@color/app_gray"
+                android:text="预计1个工作日到账，请留意银行到账通知"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_faq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_m_y_22"
+                android:layout_marginBottom="@dimen/dp_m_y_20"
+                android:textColor="@color/app_gray"
+                android:padding="@dimen/dp_m_y_5"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="常见问题"
+                android:textSize="@dimen/sp_12" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

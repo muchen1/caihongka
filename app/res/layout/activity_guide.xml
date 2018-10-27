@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                style="@style/MatchMatch">
+
+    <com.rainbowcard.client.widget.bgabanner.BGAGuideLinkageLayout style="@style/MatchMatch">
+
+        <com.rainbowcard.client.widget.bgabanner.BGABanner
+            android:id="@+id/banner_guide_background"
+            style="@style/MatchMatch"
+            app:banner_pageChangeDuration="1000"
+            app:banner_pointAutoPlayAble="false"
+            app:banner_pointContainerBackground="@android:color/transparent"
+            app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+            app:banner_pointTopBottomMargin="15dp"
+            app:banner_transitionEffect="fade"/>
+
+        <com.rainbowcard.client.widget.bgabanner.BGABanner
+
+            android:id="@+id/banner_guide_foreground"
+            style="@style/MatchMatch"
+            app:banner_pageChangeDuration="1000"
+            app:banner_pointAutoPlayAble="false"
+            app:banner_pointContainerBackground="@android:color/transparent"
+            app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+            app:banner_pointTopBottomMargin="15dp"
+            app:banner_transitionEffect="alpha"/>
+    </com.rainbowcard.client.widget.bgabanner.BGAGuideLinkageLayout>
+
+    <TextView
+        android:id="@+id/tv_guide_skip"
+        style="@style/WrapWrap"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="18dp"
+        android:clickable="true"
+        android:padding="4dp"
+        android:text="跳过 >"
+        android:textColor="@color/app_white"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btn_guide_enter"
+        style="@style/WrapWrap"
+        android:layout_height="@dimen/dp_m_y_35"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/bg_immediately_blue"
+        android:paddingTop="@dimen/dp_m_y_1"
+        android:paddingBottom="@dimen/dp_m_y_1"
+        android:paddingRight="@dimen/dp_m_y_20"
+        android:paddingLeft="@dimen/dp_m_y_20"
+        android:textColor="@color/stroke"
+        android:textSize="15sp"
+        android:text="立即体验"
+
+        tools:visibility="visible"/>
+</RelativeLayout>

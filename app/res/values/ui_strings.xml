@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- common -->
+    <string name="share">分享</string>
+    <string name="none">none</string>
+    <string name="back">返回</string>
+    <string name="confirm">确定</string>
+    <string name="submit">提交</string>
+    <string name="next">下一步</string>
+    <string name="menu">菜单</string>
+    <string name="save">保存</string>
+    <string name="sex_m">男</string>
+    <string name="sex_f">女</string>
+    <string name="sex_o">其它</string>
+    <string name="button_y">是</string>
+    <string name="button_n">否</string>
+    <string name="button_copy">复制</string>
+    <string name="button_ok">确定</string>
+    <string name="button_ok2">确认</string>
+    <string name="button_book">预订</string>
+    <string name="button_book_failed">预订失败</string>
+    <string name="dialog_title_tips">提示</string>
+    <string name="loading_getcode">正在发送验证码&#8230;</string>
+    <string name="load_failed">载入失败</string>
+    <string name="button_reset">重置</string>
+    <string name="button_pay">支付</string>
+    <string name="full">充值</string>
+    <string name="main_select_date_label">住 %d晚</string>
+    <string name="coming_soon">此功能正在开发，敬请期待&#8230;</string>
+    <string name="copy_success">已复制到剪贴版</string>
+    <string name="copy_failed">复制失败，可能是您的系统版本过低</string>
+
+    <!-- other -->
+    <string name="date_sunday">周日</string>
+    <string name="date_monday">周一</string>
+    <string name="date_tuesday">周二</string>
+    <string name="date_wednesday">周三</string>
+    <string name="date_thursday">周四</string>
+    <string name="date_friday">周五</string>
+    <string name="date_saturday">周六</string>
+
+    <!--  -->
+    <string name="check_code_phone">手机号：</string>
+    <string name="check_code_get">获取验证码</string>
+    <string name="check_code_send_again">再次发送</string>
+    <string name="check_code_code">输入短信验证码</string>
+    <string name="check_code_check">验证</string>
+    <string name="check_code_code_null">请输入验证码</string>
+    <string name="check_code_sent_tip">验证码已发送</string>
+
+    <!--  -->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载&#8230;</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+</resources>

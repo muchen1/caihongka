@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"  xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:minHeight="65dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:background="@color/keyword_stroke">
+        <include
+            android:id="@+id/nav_back"
+            layout="@layout/nav_back"/>
+    </android.support.v7.widget.Toolbar>
+
+    <com.rainbowcard.client.widget.LoadingFrameLayout
+        android:id="@+id/v_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/v_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <com.rainbowcard.client.widget.ScrollToFooterLoadMoreListView
+                android:background="@color/bg_colors"
+                android:id="@+id/search_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_my_list"
+                android:footerDividersEnabled="false"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </com.rainbowcard.client.widget.LoadingFrameLayout>
+</LinearLayout>

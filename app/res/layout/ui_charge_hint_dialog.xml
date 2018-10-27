@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alert_dialog"
+    android:layout_width="250dp"
+    android:layout_height="235dip"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/icon_background">
+
+    <TextView
+        android:id="@+id/alert_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="收费提示"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/dp_m_y_18"
+        android:layout_marginTop="@dimen/dp_m_y_17"
+        android:textColor="@color/app_black"/>
+    <TextView
+        android:id="@+id/alert_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alert_title"
+        android:textColor="@color/gray_text_context_3"
+        android:text="本次退款需要收费，退款金额超出免手续费金额后将按 20% 收取手续费。"
+        android:lineSpacingMultiplier="1.1"
+        android:layout_marginLeft="@dimen/dp_m_y_18"
+        android:layout_marginRight="@dimen/dp_m_y_18"
+        android:textSize="@dimen/sp_13"
+        android:layout_marginTop="@dimen/dp_m_y_12"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_below="@+id/alert_tip"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_px"
+        android:layout_marginLeft="@dimen/dp_m_y_18"
+        android:layout_marginRight="@dimen/dp_m_y_18"
+        android:layout_marginTop="@dimen/dp_m_y_12"
+        android:background="@color/bg_colors"
+        />
+
+    <TextView
+        android:id="@+id/limit_text"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="@dimen/dp_m_y_12"
+        style="@style/alert_text_base"
+        android:text="本次退款金额"/>
+    <TextView
+        android:id="@+id/cash_money"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="@dimen/dp_m_y_12"
+        android:layout_alignParentRight="true"
+        style="@style/alert_money_text_base"/>
+    <TextView
+        android:id="@+id/exceed_text"
+        android:layout_below="@+id/limit_text"
+        android:layout_marginTop="@dimen/dp_m_y_12"
+        style="@style/alert_text_base"
+        android:text="需收取手续费金额"/>
+    <TextView
+        android:id="@+id/exceed_money"
+        android:layout_below="@+id/limit_text"
+        android:layout_marginTop="@dimen/dp_m_y_12"
+        android:layout_alignParentRight="true"
+        style="@style/alert_money_text_base"/>
+    <TextView
+        android:id="@+id/charges_text"
+        android:layout_below="@+id/exceed_text"
+        android:layout_marginTop="@dimen/dp_m_y_12"
+        style="@style/alert_text_base"
+        android:text="本次手续费"/>
+    <TextView
+        android:id="@+id/charges_money"
+        android:layout_below="@+id/exceed_text"
+        android:layout_marginTop="@dimen/dp_m_y_12"
+        android:layout_alignParentRight="true"
+        style="@style/alert_money_text_base"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_m_y_12"
+        android:layout_marginBottom="@dimen/dp_m_y_10">
+
+        <TextView
+            android:id="@+id/alert_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/stroke"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:background="@drawable/btn_select_item"
+            android:text="继续退款"/>
+        <TextView
+            android:id="@+id/alert_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/alert_ok"
+            android:layout_marginRight="@dimen/dp_m_y_35"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/app_black"
+            android:padding="5dp"
+            android:background="@drawable/btn_select_item"
+            android:text="取消"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alert_dialog"
+    android:layout_width="300dp"
+    android:layout_height="230dp"
+    android:layout_gravity="center"
+    android:background="@color/transparent">
+    <RelativeLayout
+        android:id="@+id/content_layout"
+        android:layout_width="@dimen/dp_m_y_280"
+        android:layout_height="@dimen/dp_m_y_210"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/dp_m_y_12"
+        android:background="@drawable/bg_layout_focused">
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_m_y_40"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_m_y_45">
+            <TextView
+            android:id="@+id/sell_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/app_black"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:textStyle="bold"
+            android:text="出售数量"
+            />
+
+            <EditText
+                android:id="@+id/edit_sell"
+                style="@style/change_et_base"
+                android:layout_toRightOf="@+id/sell_text"
+                android:background="@drawable/bg_layout_focused"
+                android:inputType="number"
+                android:digits="1234567890" />
+
+            <TextView
+                android:id="@+id/sell_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_13"
+                android:textColor="@color/stroke"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_m_y_7"
+                android:background="@drawable/btn_select_item"
+                android:padding="@dimen/dp_m_y_5"
+                android:layout_alignParentRight="true"
+                android:text="全部出售"
+                />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/confirm_sell"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_m_y_40"
+            android:layout_marginBottom="@dimen/dp_m_y_32"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/app_white"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/query_select_item"
+            android:text="确定出售" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/query_icon"
+        android:layout_alignParentRight="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/me_close"/>
+</RelativeLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp_m_y_20"
+        android:background="@color/gray_bg_2" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/btn_select_item">
+
+        <TextView
+            android:id="@+id/remittance_text"
+            style="@style/person_text_style"
+            android:layout_width="wrap_content"
+            android:text="汇款金额   " />
+
+        <EditText
+            android:id="@+id/edit_remittance_price"
+            style="@style/change_et_base"
+            android:layout_toRightOf="@+id/remittance_text"
+            android:background="@color/transparent"
+            android:inputType="number"
+            android:hint="请输入汇款金额" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/btn_select_item">
+
+        <TextView
+            android:id="@+id/card_text"
+            style="@style/person_text_style"
+            android:layout_width="wrap_content"
+            android:text="汇款卡号   " />
+
+        <EditText
+            android:id="@+id/edit_remittance_number"
+            style="@style/change_et_base"
+            android:layout_toRightOf="@+id/card_text"
+            android:background="@color/transparent"
+            android:inputType="number"
+            android:hint="请输入您汇款所使用的银行卡号" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/btn_select_item">
+
+        <TextView
+            android:id="@+id/name_text"
+            style="@style/person_text_style"
+            android:layout_width="wrap_content"
+            android:text="汇款人       " />
+
+        <EditText
+            android:id="@+id/edit_remittance_name"
+            style="@style/change_et_base"
+            android:layout_toRightOf="@+id/name_text"
+            android:background="@color/transparent"
+            android:hint="请输入汇款人姓名" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_select_item">
+
+        <TextView
+            android:id="@+id/remark_text"
+            android:layout_marginTop="@dimen/dp_m_y_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/app_black"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:text="备注(选填)" />
+
+        <EditText
+            android:layout_marginTop="@dimen/dp_m_y_5"
+            android:layout_marginBottom="@dimen/dp_m_y_5"
+            android:id="@+id/edit_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:paddingRight="@dimen/dp_m_y_15"
+            android:textColorHint="@color/gray_text_context_6"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/gray_text_context_3"
+            android:layout_toRightOf="@+id/remark_text"
+            android:background="@color/transparent"
+            android:gravity="left"
+            android:hint="您可输入银行汇款的其他信息，便于工作人员快速核实，例：汇款时间、交易流水号等"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+
+
+    <Button
+        android:id="@+id/accomplish"
+        style="@style/bottom_button_style"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp_m_y_80"
+        android:text="提交" />
+
+
+</LinearLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CommonFont" parent="@android:style/TextAppearance">
+    </style>
+
+    <style name="CommonFont.Micro">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="CommonFont.Small">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="CommonFont.Normal">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="CommonFont.Medium">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="CommonFont.Large">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="CommonFont.Micro.Black">
+        <item name="android:textColor">@color/app_black</item>
+    </style>
+    <style name="CommonFont.Micro.Blue">
+        <item name="android:textColor">@color/app_blue</item>
+    </style>
+    <style name="CommonFont.Micro.Gray">
+        <item name="android:textColor">@color/app_gray</item>
+    </style>
+    <style name="CommonFont.Micro.Orange">
+        <item name="android:textColor">@color/app_orange</item>
+    </style>
+    <style name="CommonFont.Micro.Red">
+        <item name="android:textColor">@color/app_red</item>
+    </style>
+    <style name="CommonFont.Micro.White">
+        <item name="android:textColor">@color/app_white</item>
+    </style>
+
+
+    <style name="CommonFont.Small.Black">
+        <item name="android:textColor">@color/app_black</item>
+    </style>
+    <style name="CommonFont.Small.Blue">
+        <item name="android:textColor">@color/app_blue</item>
+    </style>
+    <style name="CommonFont.Small.Gray">
+        <item name="android:textColor">@color/app_gray</item>
+    </style>
+    <style name="CommonFont.Small.Orange">
+        <item name="android:textColor">@color/app_orange</item>
+    </style>
+    <style name="CommonFont.Small.Red">
+        <item name="android:textColor">@color/app_red</item>
+    </style>
+    <style name="CommonFont.Small.White">
+        <item name="android:textColor">@color/app_white</item>
+    </style>
+
+    <style name="CommonFont.Normal.Black">
+        <item name="android:textColor">@color/app_black</item>
+    </style>
+    <style name="CommonFont.Normal.Blue">
+        <item name="android:textColor">@color/app_blue</item>
+    </style>
+    <style name="CommonFont.Normal.Gray">
+        <item name="android:textColor">@color/app_gray</item>
+    </style>
+    <style name="CommonFont.Normal.Orange">
+        <item name="android:textColor">@color/tab_unselected_text</item>
+    </style>
+    <style name="CommonFont.Normal.Red">
+        <item name="android:textColor">@color/app_red</item>
+    </style>
+    <style name="CommonFont.Normal.White">
+        <item name="android:textColor">@color/app_white</item>
+    </style>
+
+    <style name="CommonFont.Medium.Black">
+        <item name="android:textColor">@color/app_black</item>
+    </style>
+    <style name="CommonFont.Medium.Blue">
+        <item name="android:textColor">@color/app_blue</item>
+    </style>
+    <style name="CommonFont.Medium.Gray">
+        <item name="android:textColor">@color/app_gray</item>
+    </style>
+    <style name="CommonFont.Medium.Orange">
+        <item name="android:textColor">@color/app_orange</item>
+    </style>
+    <style name="CommonFont.Medium.Red">
+        <item name="android:textColor">@color/app_red</item>
+    </style>
+    <style name="CommonFont.Medium.White">
+        <item name="android:textColor">@color/app_white</item>
+    </style>
+
+
+    <style name="CommonFont.Large.Black">
+        <item name="android:textColor">@color/app_black</item>
+    </style>
+    <style name="CommonFont.Large.Blue">
+        <item name="android:textColor">@color/app_blue</item>
+    </style>
+    <style name="CommonFont.Large.Gray">
+        <item name="android:textColor">@color/app_gray</item>
+    </style>
+    <style name="CommonFont.Large.Orange">
+        <item name="android:textColor">@color/app_orange</item>
+    </style>
+    <style name="CommonFont.Large.Red">
+        <item name="android:textColor">@color/app_red</item>
+    </style>
+    <style name="CommonFont.Large.White">
+        <item name="android:textColor">@color/app_white</item>
+    </style>
+</resources>

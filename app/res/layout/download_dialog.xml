@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alert_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_m_y_170"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/icon_background"
+    android:paddingTop="20dp"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/alert_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_m_y_12"
+        android:textSize="@dimen/sp_16"
+        android:text="正在下载最新安装包"
+        android:textColor="@color/gray_text"/>
+
+
+    <!--<ProgressBar
+        android:layout_below="@id/alert_title"
+        android:layout_margin="10dp"
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />-->
+
+    <ProgressBar
+        android:layout_below="@id/alert_title"
+        android:layout_marginLeft="@dimen/dp_m_y_12"
+        android:layout_marginRight="@dimen/dp_m_y_12"
+        android:layout_marginTop="@dimen/dp_m_y_20"
+        android:layout_marginBottom="@dimen/dp_m_y_12"
+        android:id="@+id/progress"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:maxHeight="@dimen/dp_m_y_5"
+        android:minHeight="@dimen/dp_m_y_5"
+        android:progressDrawable="@drawable/custom_progress" />
+
+    <TextView
+        android:id="@+id/alert_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress"
+        android:textColor="#f90"
+        android:gravity="center"
+        android:textSize="@dimen/sp_14"
+        android:layout_marginLeft="@dimen/dp_m_y_12"/>
+    <TextView
+        android:id="@+id/alert_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress"
+        android:textColor="#f90"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:textSize="@dimen/sp_14"
+        android:layout_marginRight="@dimen/dp_m_y_12"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_45"
+        android:layout_alignParentBottom="true"
+       >
+        <View
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_px"
+            android:background="@color/dialog_line_color"/>
+        <TextView
+            android:id="@+id/alert_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/gray_text"
+            android:layout_toLeftOf="@+id/line"
+            android:gravity="center"
+            android:layout_margin="@dimen/one_dp"
+            android:background="@drawable/btn_select_item"
+            android:text="取消"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

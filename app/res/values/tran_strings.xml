@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="tran_bind_other"><u>绑定其它商户</u></string>
+    <string name="tran_unbound_title">选择联盟商家</string>
+
+    <string name="tran_to_login">去登录</string>
+    <string name="tran_to_bind">去绑定</string>
+    <string name="no_mall_can_bind">没有可绑定的商家</string>
+    <string name="immediately_tran_to_login">立即登录</string>
+    <string name="immediately_tran_to_bind">立即绑定</string>
+    <string name="tran_tip_1">请登陆后再进行积分兑换</string>
+    <string name="tran_tip_2">请绑定商家后再进行积分兑换</string>
+
+</resources>

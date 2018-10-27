@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_layout"
+        android:background="@color/bg_colors"
+        >
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/app_gray"/>
+        <com.rainbowcard.client.widget.HorizontalListView
+            android:id="@+id/lv_type_status"
+            android:layout_below="@+id/line1"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_color" />
+
+        <RelativeLayout
+            android:id="@+id/add_layout"
+            android:layout_below="@+id/lv_type_status"
+            android:layout_width="match_parent"
+            android:background="@drawable/bg_layout_focused"
+            android:layout_marginTop="@dimen/dp_m_y_8"
+            android:layout_marginLeft="@dimen/dp_m_y_18"
+            android:layout_marginRight="@dimen/dp_m_y_18"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_height="40dp">
+            <Button
+                android:id="@+id/add_discount"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_width="@dimen/dp_m_y_60"
+                android:layout_alignParentRight="true"
+                android:layout_height="match_parent"
+                android:text="兑换"
+                android:gravity="center"
+                android:background="@drawable/btn_select_item"
+                android:textColor="@color/tab_unselected_text"/>
+            <View
+                android:layout_toLeftOf="@+id/add_discount"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/app_tiny_gray"/>
+            <EditText
+                android:id="@+id/discount_edit"
+                android:layout_toLeftOf="@+id/add_discount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/gray_text"
+                android:singleLine="true"
+                android:hint="@string/hint_discount"
+                android:background="@color/transparent"
+                android:layout_marginLeft="@dimen/dp_m_y_10"
+                android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+        <com.rainbowcard.client.widget.LoadingFrameLayout
+            android:id="@+id/v_frame"
+            android:layout_below="@+id/add_layout"
+            android:layout_marginTop="@dimen/dp_m_y_8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/v_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+                <com.rainbowcard.client.widget.ScrollToFooterLoadMoreListView
+                    android:id="@+id/lv_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_layout"
+                    android:background="@color/bg_colors"
+                    android:divider="@color/bg_colors"
+                    android:dividerHeight="@dimen/dp_m_y_8"
+                    android:footerDividersEnabled="false" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </com.rainbowcard.client.widget.LoadingFrameLayout>
+        <RelativeLayout
+            android:id="@+id/relakey"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            >
+
+            <android.inputmethodservice.KeyboardView
+                android:id="@+id/keyboard_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:keyBackground="@color/bg_colors"
+                android:keyTextColor="@color/white"
+                android:keyTextSize="20sp"
+                android:labelTextSize="15sp"
+                android:keyPreviewLayout="@layout/keyborad_preview_layout"
+                android:padding="3dp"
+                android:visibility="invisible" />
+            <TextView
+                android:id="@+id/hideshow"
+                android:layout_above="@+id/keyboard_view"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@drawable/menu_select_item_pressed2"
+                android:text=">>>"
+                android:gravity="center"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

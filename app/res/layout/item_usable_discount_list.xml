@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_m_y_18"
+    android:paddingRight="@dimen/dp_m_y_18"
+    android:background="@color/bg_colors"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:background="@drawable/shape_top_corner_no_bottom_line"
+        android:layout_height="@dimen/dp_m_y_70">
+        <RelativeLayout
+            android:layout_marginTop="1dp"
+            android:id="@+id/right_layout"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shape_top_right_corner_blue">
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="7.5折"
+                android:textColor="@color/app_white"
+                android:textSize="@dimen/sp_20" />
+            <TextView
+                android:id="@+id/tv_restrict"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="满100使用"
+                android:layout_below="@+id/tv_money"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/app_white"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_past"
+            android:layout_marginRight="@dimen/dp_m_y_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:layout_toLeftOf="@+id/right_layout"
+            android:paddingTop="@dimen/dp_m_y_2"
+            android:paddingBottom="@dimen/dp_m_y_2"
+            android:paddingLeft="@dimen/dp_m_y_5"
+            android:paddingRight="@dimen/dp_m_y_5"
+            android:text="即将过期"
+            android:background="@drawable/bg_layout_discount_past"
+            android:textColor="@color/app_white"
+            android:textSize="@dimen/sp_11" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_m_y_12"
+            android:layout_marginLeft="@dimen/dp_m_y_15"
+            android:layout_toLeftOf="@+id/tv_past"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:text="洗车优惠券"
+            android:textColor="@color/stroke"
+            android:textSize="@dimen/sp_14" />
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_m_y_15"
+            android:layout_marginLeft="@dimen/dp_m_y_15"
+            android:layout_toLeftOf="@+id/right_layout"
+            android:layout_below="@+id/tv_name"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="2017.03.16-2017.04.15"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_12" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_2"
+        android:background="@color/stroke"/>
+</LinearLayout>

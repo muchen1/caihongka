@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linear_list_card_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:stackHeaderHeight="160dp">
+
+    <RelativeLayout
+        android:id="@+id/frame_list_card_item"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/me_rainbow_card">
+
+        <TextView
+            android:id="@+id/text_list_card_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/sp_15"
+            android:layout_marginRight="@dimen/dp_m_y_20"
+            android:text="0033445566"
+            android:textColor="@color/card_num_color"
+            android:layout_marginTop="@dimen/dp_m_y_12"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/container_list_content"
+        android:animateLayoutChanges="true"
+        android:layout_marginTop="@dimen/dp_m_y_30"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp_m_y_18"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/yuci"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/app_gray"
+            android:text="余次"
+            android:textSize="@dimen/sp_14"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/yuci"
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2次"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:textColor="@color/gray_text_context_3"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/yue"
+            android:layout_below="@+id/yuci"
+            android:layout_marginTop="@dimen/dp_m_y_18"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/app_gray"
+            android:text="余额"
+            android:textSize="@dimen/sp_14"/>
+        <TextView
+            android:layout_toRightOf="@+id/yue"
+            android:id="@+id/balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/count"
+            android:layout_marginTop="@dimen/dp_m_y_18"
+            android:text="20.00元"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:textColor="@color/gray_text_context_3"
+            android:textSize="14sp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            android:id="@+id/default_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

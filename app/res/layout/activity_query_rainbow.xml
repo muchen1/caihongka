@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/l_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <com.rainbowcard.client.widget.LoadingFrameLayout
+        android:id="@+id/fl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_layout">
+
+        <RelativeLayout
+            android:id="@+id/l_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:orientation="vertical"
+            >
+
+
+            <RelativeLayout
+                android:id="@+id/query_card_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_m_y_45"
+                android:background="@drawable/bg_layout_rainbow"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_m_y_12"
+                    android:text="卡号"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/sp_14" />
+
+                <EditText
+                    android:id="@+id/et_card"
+                    style="@style/bookticket_et_base"
+                    android:background="@color/transparent"
+                    android:digits="1234567890"
+                    android:hint="请输入您彩虹卡号"
+                    android:inputType="number"
+                    />
+
+            </RelativeLayout>
+
+            <ViewStub
+                android:layout_below="@+id/query_card_layout"
+                android:id="@+id/viewstub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout="@layout/sub_layout"
+                />
+
+
+            <Button
+                android:id="@+id/query_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_m_y_40"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:layout_marginBottom="@dimen/dp_m_y_50"
+                android:background="@drawable/query_select_item"
+                android:text="查询"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+        </RelativeLayout>
+    </com.rainbowcard.client.widget.LoadingFrameLayout>
+</RelativeLayout>

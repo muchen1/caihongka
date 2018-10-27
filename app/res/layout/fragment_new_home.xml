@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.rainbowcard.client.widget.LoadingFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/v_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/head_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_white"
+        android:orientation="vertical">
+        <com.rainbowcard.client.widget.ScrollToFooterLoadMoreListView
+            android:id="@+id/lv_snatch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider_my_list"
+            android:footerDividersEnabled="false" />
+
+        <!--<android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/v_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_white">
+
+            <com.rainbowcard.client.widget.ScrollToFooterLoadMoreListView
+                android:id="@+id/lv_snatch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_my_list"
+                android:footerDividersEnabled="false" />
+        </android.support.v4.widget.SwipeRefreshLayout>-->
+    </LinearLayout>
+</com.rainbowcard.client.widget.LoadingFrameLayout>

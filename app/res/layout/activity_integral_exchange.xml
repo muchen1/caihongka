@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+    <View
+        android:id="@+id/line"
+        android:layout_below="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/app_gray"/>
+
+    <RelativeLayout
+        android:layout_below="@+id/line"
+        android:id="@+id/select_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_60"
+        android:background="@drawable/btn_select_item"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_m_y_12"
+            android:text="新增配送地址"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_m_y_10"
+            android:background="@drawable/icon_more" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/addr_layout"
+        android:visibility="gone"
+        android:layout_below="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_60"
+        android:background="@drawable/btn_select_item"
+        >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_m_y_10"
+            android:src="@drawable/icon_more" />
+
+        <TextView
+            android:paddingLeft="@dimen/dp_m_y_22"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/sp_14"
+            android:text="刘爱成"
+            android:textColor="@color/gray_text"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_toRightOf="@+id/name"
+            android:paddingLeft="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_14"
+            android:text="13800138000"
+            android:textColor="@color/gray_text"
+            android:layout_alignParentTop="true"
+            />
+        <TextView
+            android:id="@+id/address"
+            android:layout_below="@+id/number"
+            android:layout_marginLeft="@dimen/dp_m_y_22"
+            android:layout_marginRight="@dimen/dp_m_y_30"
+            android:layout_marginTop="@dimen/dp_m_y_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:text="河北省承德市兴隆县的快对方的感受肯定aaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            android:textColor="@color/app_gray"
+            />
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/goods_layout"
+        android:layout_below="@+id/select_layout"
+        android:layout_marginTop="@dimen/dp_m_y_5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_144"
+        android:background="@color/app_white">
+
+        <RelativeLayout
+            android:id="@+id/image_layout"
+            android:layout_width="@dimen/dp_m_y_110"
+            android:layout_height="@dimen/dp_m_y_62"
+            android:layout_marginTop="@dimen/dp_m_y_19"
+            android:layout_marginBottom="@dimen/dp_m_y_19"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:background="@drawable/bg_goods_frame">
+            <ImageView
+                android:id="@+id/goods_img"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/one_px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/me_rainbow_card"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/goods_name"
+            android:layout_toRightOf="@+id/image_layout"
+            android:layout_marginTop="@dimen/dp_m_y_30"
+            android:textColor="@color/title_text"
+            android:textSize="@dimen/sp_14"
+            android:layout_width="wrap_content"
+            android:text="汽车挡风玻璃清洗液"
+            android:singleLine="true"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goods_name"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_12"
+            android:layout_marginTop="@dimen/dp_m_y_5"
+            android:text="提示："
+            android:layout_toRightOf="@+id/image_layout"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goods_name"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_12"
+            android:layout_marginTop="@dimen/dp_m_y_5"
+            android:text="成功兑换后5个工作日内发货，\n非质量问题，不可退换"
+            android:layout_toRightOf="@+id/hint"/>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_below="@+id/image_layout"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/app_tiny_gray" />
+        <RelativeLayout
+            android:layout_below="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/sp_14"
+                android:layout_width="wrap_content"
+                android:text="所需积分："
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_m_y_12"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/goods_integral"
+                android:textColor="@color/money_color"
+                android:textSize="@dimen/sp_14"
+                android:layout_width="wrap_content"
+                android:text="1000"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/exchange_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_45"
+        android:layout_below="@+id/goods_layout"
+        android:background="@drawable/query_select_item"
+        android:text="确认"
+        android:layout_marginTop="@dimen/dp_m_y_80"
+        android:layout_marginLeft="@dimen/dp_m_y_12"
+        android:layout_marginRight="@dimen/dp_m_y_12"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+</RelativeLayout>

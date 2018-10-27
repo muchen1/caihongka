@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rainbowcard.client" >
+
+    <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />-->
+    <!--<uses-permission android:name="android.permission.READ_LOGS" />-->
+    <!--<uses-permission android:name="android.permission.CAMERA" />-->
+    <!--<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />-->
+    <!--<uses-permission android:name="android.permission.BROADCAST_STICKY" />-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!--<permission
+        android:name="com.rainbowcard.client.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />-->
+
+    <!-- Required  一些系统要求的权限，如访问网络等-->
+    <!--<uses-permission android:name="com.rainbowcard.client.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />-->
+
+    <!-- Optional for location -->
+    <!--<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />-->
+
+    <!-- To retrieve the account name (email) as part of sign-in: -->
+    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" /> &lt;!&ndash; To auto-complete the email text field in the login form with the user's emails &ndash;&gt;
+    <uses-permission android:name="android.permission.READ_PROFILE" />-->
+
+    <!--ShareSDK用到的额外权限-->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permissiofn.GET_ACCOUNTS" />
+
+    <!-- renren sso Permission for Unit Test -->
+    <!-- QQ、QQ空间所需权限 -->
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!--end ShareSDK-->
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name="com.rainbowcard.client.base.YHApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.rainbowcard.client.ui.WelcomeActivity"
+            android:theme="@style/AppTheme.Launcher"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.GetRainbowCardActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.RechargeRainbowCardActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.RechargeAccountActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.QueryRainbowCardActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.KeyWordsAct"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.WhiteCursorSearchView"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.PhotoViewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.SearchBranchActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.PayStatusActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.AlipayWapActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".ui.FeedBackActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.CheckIllegalActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.SearchResultActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.MyAccountActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.MyWalletActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.RechargeRecordActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.BranchActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.CollectShopActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.ShopDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.ShopOrderActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.ShopOrderSucceedActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.AboutActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.GuideActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.SelectCityActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.SettingActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.UserSetActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.ChangePasswordActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.ChangePhoneActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.MyOrderActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.CardActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.MyDiscountActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.MessageActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.MessageDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.UsableDiscountActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.RechargeOrderActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.CommentActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.CommentListActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.OrderDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.RechargeOrderDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.SurprisedActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.IntegralActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.MyCardActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.BindCardActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.AddressActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.ManageAddressActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.EditAddressActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.IntegralShopActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.GoodsDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.GoodsListActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.ExchangeListActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.ExchangeDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.IntegralExchangeActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.ExchangeOrderSucceedActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.AuthenticationActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.ModificationBankActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.BankTransferActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.RemittanceInfoActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.FreeWashTicketActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.FreeWashDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.FreeWashTicketEntranceActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.FinanceRecordActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.FreeWashTrialActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.FreeWashOrderActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.WithdrawDepositActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.FaqActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.CapitalDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.InviteActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.InviteDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.FinancePayStatusActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.RemittanceStatusActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".ui.LoginActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.RegistActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.AgreementActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.AllActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ui.FindPasswordActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="com.rainbowcard.client.ui.signcalendar.CalendarActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <!--微信-->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+            android:name="com.rainbowcard.client.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.rainbowcard.client.common.PayActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <service android:name=".ui.MyPushIntentServer" />
+
+        <!-- ###################注册SDK使用的Activity###################### -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        <!--分享编辑页-->
+        <activity
+            android:name="com.umeng.socialize.editorpage.ShareActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.UMDefault"
+            />
+        <!-- 腾讯SSO授权的Activity注册 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1105858542" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity android:name="com.bestpay.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustPan|stateHidden|adjustResize"/>
+
+
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5837a7e0ae1bf85291000493" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="7eed29f760858b834c0e0a55ff2508b6" />
+
+        <!--<meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" >
+        </meta-data>-->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${channelName}" />
+
+
+        <!-- Rich push 核心功能 since 2.0.6-->
+
+        <!-- Required SDK核心功能-->
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="xwRI5qKxdeipKCxNIYMBF6ddsw7hI84W" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data android:name="android.max_aspect" android:value="2.1" />
+    </application>
+</manifest>

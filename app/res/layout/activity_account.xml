@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors">
+
+    <RelativeLayout
+        android:id="@+id/member_rl"
+        android:layout_width="match_parent"
+        android:layout_height="174dp"
+        android:background="@drawable/me_account_background"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+
+            <RelativeLayout
+                android:id="@+id/nav_back"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/menu_select_item"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/back_normal" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/right_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:background="@drawable/menu_select_item"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/right_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="充值记录"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/midle_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dp"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="我的账户"
+                android:textColor="@color/app_white"
+                android:textSize="@dimen/sp_20" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/dp_m_y_18"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账户余额"
+                android:textColor="@color/app_white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/default_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_m_y_20"
+                android:layout_toRightOf="@+id/account"
+                android:text="默认"
+                android:textColor="@color/app_white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/account"
+                android:layout_marginTop="@dimen/dp_m_y_18"
+                android:textColor="@color/app_white"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/account_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dp_m_y_15"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:background="@drawable/bg_layout_focused_transpa"
+            android:padding="@dimen/dp_m_y_5"
+            android:text="默认账户设置"
+            android:textColor="@color/app_white"
+            android:textSize="@dimen/sp_11" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/recharge_btn"
+        style="@style/bottom_button_style"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/dp_m_y_18"
+
+        android:text="去充值" />
+
+    <com.rainbowcard.client.widget.MyListView
+        android:id="@+id/card_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/recharge_btn"
+        android:layout_below="@+id/member_rl"
+        android:layout_margin="@dimen/dp_m_y_10"
+        android:background="@color/bg_colors"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/bg_colors"
+        android:dividerHeight="@dimen/dp_m_y_10"
+        android:footerDividersEnabled="false"
+        android:scrollbars="vertical"
+        android:scrollingCache="false" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/no_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_m_y_10"
+        android:padding="@dimen/dp_m_y_10"
+        android:background="@drawable/btn_select_item"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="没有绑定彩虹卡"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/sp_14" />
+</RelativeLayout>

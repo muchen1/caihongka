@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="@color/bg_colors"
+                android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/query_select_item"
+        android:gravity="center"
+        style="@style/CommonFont.Medium.White"
+        android:text="确认"
+        android:textColor="@color/bottom_btn_text"
+        />
+    <TextView
+        android:id="@+id/title"
+        android:layout_below="@id/head_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_m_y_12"
+        android:layout_marginBottom="@dimen/dp_m_y_8"
+        android:layout_marginTop="@dimen/dp_m_y_15"
+        android:text="确认信息"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/sp_12" />
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/affirm_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:background="@drawable/bg_layout_rainbow">
+
+        <TextView
+            android:id="@+id/order_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_15"
+            android:text="订单号"
+            android:gravity="center_vertical"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_13" />
+
+
+        <TextView
+            android:id="@+id/tv_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/dp_m_y_15"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_14" />
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_below="@+id/tv_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:layout_marginBottom="@dimen/dp_m_y_15"
+            android:text="下单时间"
+            android:gravity="center_vertical"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_13" />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_below="@+id/tv_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_14" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_goods_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/affirm_layout"
+        android:background="@color/app_white"
+        >
+        <ViewStub
+            android:id="@+id/sub_recharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/sub_recharge"
+            />
+        <ViewStub
+            android:id="@+id/sub_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/sub_buy"
+            />
+        <ViewStub
+            android:id="@+id/sub_recharge_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/sub_recharge_account"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/rl_goods_info"
+        android:id="@+id/discount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_layout_rainbow">
+        <TextView
+            android:id="@+id/discount_text"
+            android:text="优惠券"
+            style="@style/person_text_style"
+            android:textSize="@dimen/sp_13"/>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/discount_count"
+            android:layout_toRightOf="@+id/discount_text"
+            android:text="2张可用"
+            android:layout_marginLeft="@dimen/dp_m_y_25"
+            android:textColor="@color/stroke"
+            style="@style/person_text_style"/>
+        <ImageView
+            android:id="@+id/right_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/me_arrow"
+            android:layout_marginRight="2dp"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_toLeftOf="@+id/right_icon"
+            android:id="@+id/discount_status"
+            android:textColor="@color/stroke"
+            style="@style/person_text_style"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pay_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_40"
+        android:layout_below="@+id/discount_layout"
+        android:layout_marginBottom="@dimen/dp_m_y_15"
+        android:background="@color/app_white">
+
+        <TextView
+            android:id="@+id/buy_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:text="需付款"
+            android:gravity="center_vertical"
+            android:textColor="@color/app_black"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/sp_14" />
+
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_centerVertical="true"
+            android:textColor="@color/money_color"
+            android:textSize="@dimen/sp_14" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_below="@+id/pay_layout"
+        android:id="@+id/select_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_m_y_12"
+        android:layout_marginBottom="@dimen/dp_m_y_8"
+        android:text="选择支付方式"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/sp_12" />
+
+
+    <ListView
+        android:id="@+id/lv_pay_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/select_text"
+        android:layout_above="@+id/tv_confirm"
+        android:background="@drawable/bg_layout_rainbow"
+        android:divider="@drawable/divider_merchant_list"
+        >
+    </ListView>
+</RelativeLayout>

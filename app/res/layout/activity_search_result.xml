@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <com.rainbowcard.client.widget.LoadingFrameLayout
+        android:id="@+id/v_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_colors"
+            android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/top_layout"
+                    android:layout_width="match_parent"
+                    android:background="@color/white"
+                    android:layout_height="64dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/plate_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/tab_unselected_text"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp_14"
+                        android:layout_marginTop="@dimen/dp_m_y_12"
+                        android:layout_marginRight="@dimen/dp_m_y_12"
+                        android:layout_marginLeft="@dimen/dp_m_y_12"/>
+                    <TextView
+                        android:id="@+id/illegal_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_m_y_12"
+                        android:layout_marginLeft="@dimen/dp_m_y_12"
+                        android:layout_marginTop="@dimen/dp_m_y_8"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/gray_text"
+                        />
+                </LinearLayout>
+                    <android.support.v4.widget.SwipeRefreshLayout
+                        android:layout_below="@+id/top_layout"
+                        android:layout_marginTop="@dimen/dp_m_y_10"
+                        android:id="@+id/v_refresh"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/bg_colors">
+                <com.rainbowcard.client.widget.ScrollToFooterLoadMoreListView
+                    android:id="@+id/lv_snatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_colors"
+                    android:divider="@color/bg_colors"
+                    android:dividerHeight="@dimen/dp_m_y_12"
+                    android:footerDividersEnabled="false" />
+                    </android.support.v4.widget.SwipeRefreshLayout>
+                </RelativeLayout>
+        </LinearLayout>
+    </com.rainbowcard.client.widget.LoadingFrameLayout>
+    <RelativeLayout
+        android:id="@+id/succeed_layout"
+        android:visibility="gone"
+        android:layout_below="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/succeed_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/nav_encourage"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_below="@+id/succeed_image"
+            android:layout_marginTop="@dimen/dp_m_y_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/gray_text"
+            android:text="太棒了"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_below="@+id/text"
+            android:layout_marginTop="@dimen/dp_m_y_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/plate_text"
+            android:layout_below="@+id/succeed_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/tab_unselected_text"
+            />
+        <TextView
+            android:id="@+id/succeed_text"
+            android:layout_below="@+id/succeed_image"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/gray_text"
+            />
+        </LinearLayout>
+        <TextView
+            android:layout_below="@+id/layout"
+            android:layout_marginTop="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/sp_14"
+            android:text="点击右上角分享，然后告知朋友们吧"
+            android:textColor="@color/gray_text"
+            />
+
+
+    </RelativeLayout>
+ </RelativeLayout>

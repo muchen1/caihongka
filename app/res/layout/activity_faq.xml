@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_select_item"
+        android:orientation="vertical"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:background="@color/gray_bg_2" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_m_y_40"
+            android:text="1.账户中哪些金额可申请退款？"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+        <TextView
+            android:layout_margin="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可退款金额包括1)充值余额，2)参与彩虹卡免费洗车项目到期后金额"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/gray_text_context_3"
+            android:textSize="@dimen/sp_13" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_m_y_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_select_item"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_m_y_40"
+            android:text="2.退款是否有手续费？"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+        <TextView
+            android:layout_margin="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1)参与彩虹卡免费洗车项目到期后金额若申请退款则无需支付手续费\n2)没有进行消费过的充值余额若申请退款需收取手续费，费率为20%"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/gray_text_context_3"
+            android:textSize="@dimen/sp_13" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_m_y_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_select_item"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_m_y_40"
+            android:text="3.申请退款后多久能到账？"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+        <TextView
+            android:layout_margin="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="申请退款后退款金额下一个工作日到账，如超过3个工作日未到账请联系官方客服400-825-7788"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/gray_text_context_3"
+            android:textSize="@dimen/sp_13" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:layout_marginBottom="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="如遇周六、日、节假日特殊时间，顺延至节后第一个工作日到账."
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_13" />
+    </LinearLayout>
+</LinearLayout>

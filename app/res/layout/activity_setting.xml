@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors"
+    android:orientation="vertical"
+    >
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+        <View
+            android:layout_marginTop="@dimen/dp_m_y_20"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+
+        <RelativeLayout
+            android:id="@+id/phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+
+            <TextView
+                android:text="拨打客服"
+                style="@style/person_text_style"/>
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/me_arrow"
+                android:layout_marginRight="2dp"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_toLeftOf="@+id/icon"
+                android:id="@+id/service_tel"
+                android:text="400-825-7788"
+                style="@style/person_text_style"
+                android:textColor="@color/stroke"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+        <View
+            android:layout_marginTop="@dimen/dp_m_y_20"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+
+        <RelativeLayout
+            android:id="@+id/account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+
+            <TextView
+                android:text="用户设置"
+                style="@style/person_text_style"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/me_arrow"
+                android:layout_marginRight="2dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+        <View
+            android:layout_marginTop="@dimen/dp_m_y_20"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+
+        <RelativeLayout
+            android:id="@+id/clear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+            <TextView
+                android:id="@+id/my_clear"
+                android:text="清除缓存"
+                style="@style/person_text_style"/>
+            <ImageView
+                android:id="@+id/right_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/me_arrow"
+                android:layout_marginRight="2dp"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_toLeftOf="@+id/right_icon"
+                android:id="@+id/clear_size"
+                android:text="24M"
+                android:textColor="@color/app_gray"
+                style="@style/person_text_style"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+        <RelativeLayout
+            android:id="@+id/update_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+            <TextView
+                android:id="@+id/my_lottery"
+                android:text="检测更新"
+                style="@style/person_text_style"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/me_arrow"
+                android:layout_marginRight="2dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_bg_2" />
+
+
+        <RelativeLayout
+            android:id="@+id/feedback_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_select_item">
+            <TextView
+                android:id="@+id/my_message"
+                android:text="问题反馈"
+                style="@style/person_text_style"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/me_arrow"
+                android:layout_marginRight="2dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+
+    <RelativeLayout
+        android:id="@+id/about_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_select_item">
+        <TextView
+            android:id="@+id/my_set"
+            android:text="关于彩虹卡"
+            style="@style/person_text_style"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/me_arrow"
+            android:layout_marginRight="2dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg_2" />
+
+    <TextView
+        android:id="@+id/exit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_40"
+        android:layout_marginTop="@dimen/dp_m_y_20"
+        android:layout_marginLeft="@dimen/dp_m_y_12"
+        android:layout_marginRight="@dimen/dp_m_y_12"
+        android:text="退出登录"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/gray_text"
+        android:gravity="center"
+        android:background="@drawable/btn_select_item"/>
+
+
+</LinearLayout>

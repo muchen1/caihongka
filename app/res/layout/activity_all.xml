@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_layout"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/app_gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="@dimen/dp_m_y_15"
+            android:layout_marginBottom="@dimen/dp_m_y_15"
+            android:text="彩虹服务"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_15" />
+
+        <com.rainbowcard.client.widget.MyGridView
+            android:id="@+id/rainbow_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:overScrollMode="never" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="@dimen/dp_m_y_15"
+            android:layout_marginBottom="@dimen/dp_m_y_15"
+            android:text="其他推荐"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_15" />
+
+        <com.rainbowcard.client.widget.MyGridView
+            android:id="@+id/recommend_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:overScrollMode="never" />
+    </LinearLayout>
+</RelativeLayout>

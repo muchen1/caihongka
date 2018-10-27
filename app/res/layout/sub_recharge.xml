@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_colors">
+    <RelativeLayout
+        android:id="@+id/card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_40"
+        android:background="@color/app_white">
+
+        <TextView
+            android:id="@+id/card_text"
+            style="@style/person_text_style"
+            android:textSize="@dimen/sp_13"
+            android:text="充值卡号" />
+
+        <TextView
+            android:id="@+id/tv_card"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            style="@style/person_text_style" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_px"
+            android:background="@color/gray_bg_2"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card_layout"
+        android:background="@color/app_white">
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_goods_points_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/dp_m_y_2"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:text="姓名"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_2"
+            android:gravity="center_vertical"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_goods_price_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:text="手机"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:layout_below="@id/tv_name"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_14" />
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_phone"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:layout_marginBottom="@dimen/dp_m_y_15"
+            android:text="充值金额"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/tv_goods_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:layout_below="@id/tv_phone"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:layout_marginBottom="@dimen/dp_m_y_15"
+            android:textColor="@color/money_color"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+</RelativeLayout>

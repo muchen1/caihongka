@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white"
+    >
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+    <EditText
+        android:id="@+id/edit_feedback"
+        android:layout_below="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_edittext_focused"
+        android:padding="@dimen/dp_m_y_5"
+        android:layout_margin="@dimen/dp_m_y_12"
+        android:textColorHint="#AAAAAA"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/app_black"
+        android:hint="请输入您的宝贵意见，字数1000以内。我们将第一时间关注，不断优化改进..."
+        android:gravity="top"
+        android:layout_height="200dp" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/text"
+        android:layout_below="@+id/edit_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="@string/customer_service"/>
+    <Button
+        android:id="@+id/confirm"
+        android:text="提  交"
+        style="@style/bottom_button_style"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alert_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="170dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/icon_background"
+    android:paddingTop="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/alert_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="退出登录"
+        android:textSize="18sp"
+        android:textColor="@color/gray"/>
+    <TextView
+        android:id="@+id/alert_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alert_title"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alert_tip"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:id="@+id/alert_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/blue5"
+            android:layout_alignParentRight="true"
+            android:padding="2dp"
+            android:background="@drawable/btn_select_item"
+            android:text="退出"/>
+        <TextView
+            android:id="@+id/alert_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/alert_ok"
+            android:layout_marginRight="30dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:padding="2dp"
+            android:background="@drawable/btn_select_item"
+            android:text="取消"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

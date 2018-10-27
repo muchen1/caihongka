@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string-array name="country_codes">
+    <item>-</item>
+    <item>AR</item>
+    <item>AU</item>
+    <item>BR</item>
+    <item>BG</item>
+    <item>CA</item>
+    <item>CH</item>
+    <item>CN</item>
+    <item>CZ</item>
+    <item>DE</item>
+    <item>DK</item>
+    <item>ES</item>
+    <item>FI</item>
+    <item>FR</item>
+    <item>GB</item>
+    <item>GR</item>
+    <item>HU</item>
+    <item>ID</item>
+    <item>IT</item>
+    <item>JP</item>
+    <item>KR</item>
+    <item>NL</item>
+    <item>PL</item>
+    <item>PT</item>
+    <item>RO</item>
+    <item>RU</item>
+    <item>SE</item>
+    <item>SK</item>
+    <item>SI</item>
+    <item>TR</item>
+    <item>TW</item>
+    <item>US</item>
+  </string-array>
+  <string-array name="preferences_front_light_values">
+    <item>ON</item>
+    <item>AUTO</item>
+    <item>OFF</item>
+  </string-array>
+  <string-array name="star_level">
+        <item>不限</item>
+        <item>★</item>
+        <item>★★</item>
+        <item>★★★</item>
+        <item>★★★★</item>
+        <item>★★★★★</item>
+    </string-array>
+  <string-array name="scenic_theme">
+        <item>不限</item>
+        <item>主题乐园</item>
+        <item>名胜古迹</item>
+        <item>餐饮美食</item>
+        <item>户外拓展</item>
+        <item>文化宗教</item>
+        <item>演出表演</item>
+        <item>山水园林</item>
+        <item>字画工艺</item>
+        <item>登山探险</item>
+        <item>城市观光</item>
+    </string-array>
+  <string-array name="grade">
+        <item>不限</item>
+        <item>A</item>
+        <item>AA</item>
+        <item>AAA</item>
+        <item>AAAA</item>
+        <item>AAAAA</item>
+    </string-array>
+    <string-array name="scenic_price">
+        <item>不限</item>
+        <item>0—10</item>
+        <item>10—50</item>
+        <item>50—100</item>
+        <item>100以上</item>
+    </string-array>
+    <string-array name="price">
+        <item>不限</item>
+        <item>100元以下</item>
+        <item>100-200元</item>
+        <item>200-500元</item>
+        <item>500-1000元</item>
+        <item>1000元以上</item>
+    </string-array>
+    <string-array name="certificate">
+        <item>身份证</item>
+        <item>护照</item>
+    </string-array>
+    <string-array name="data">
+        <item>请选择银行</item>
+        <item>工商银行</item>
+        <item>中国银行</item>
+        <item>农业银行</item>
+        <item>建设银行</item>
+        <item>招商银行</item>
+        <item>浦发银行</item>
+        <item>中信银行</item>
+        <item>兴业银行</item>
+    </string-array>
+
+</resources>

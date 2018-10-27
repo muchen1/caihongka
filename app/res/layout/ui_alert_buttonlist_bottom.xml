@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:minHeight="80dp"
+    android:minWidth="320dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择地图导航"
+        android:gravity="center"
+        android:textColor="@color/app_black"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:background="@color/app_tiny_gray"
+         />
+
+    <LinearLayout
+        android:id="@+id/alert_buttonlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_white"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/alert_buttonlist_bottom_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_m_y_42"
+            android:background="@drawable/btn_select_item"
+            android:text="取消"
+            android:textColor="@color/app_black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/wheel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_white"
+        >
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/tab_unselected_text" />
+
+    <RelativeLayout
+        android:id="@+id/accomplish_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_45"
+        android:layout_below="@+id/line1"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_select_item"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_m_y_10"
+            android:text="取消"
+            android:textColor="@color/detail_fgm_unselect"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/accomplish_layout"
+        android:background="@color/tab_unselected_text" />
+    <com.rainbowcard.client.widget.MyGridView
+        android:layout_margin="@dimen/dp_m_y_10"
+        android:layout_below="@+id/line2"
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="@dimen/dp_m_y_10"
+        android:numColumns="8"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="@dimen/dp_m_y_10" />
+
+
+    </RelativeLayout>

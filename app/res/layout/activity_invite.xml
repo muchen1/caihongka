@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/invite_bg">
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+        <RelativeLayout
+            android:id="@+id/nav_back"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/menu_select_item"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_normal" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/detail_layout"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/dp_m_y_12"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_55"
+        android:background="@drawable/btn_select_item">
+
+        <RelativeLayout
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/ticket_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/app_black"
+                android:textSize="@dimen/sp_16" />
+            <TextView
+                android:id="@+id/invite_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_text_context_3"
+                android:textSize="@dimen/sp_11"
+                android:layout_below="@+id/ticket_count"
+                android:layout_marginTop="@dimen/dp_m_y_2"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_5"
+            android:src="@drawable/me_arrow"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/invity_btn"
+        android:layout_above="@+id/detail_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/dp_m_y_200"
+        android:layout_height="@dimen/dp_m_y_50"
+        android:background="@drawable/invite_btn"
+        android:layout_marginTop="@dimen/dp_m_y_5"
+        android:layout_marginBottom="@dimen/dp_m_y_10"/>
+    <TextSwitcher
+        android:layout_above="@+id/invity_btn"
+        android:id="@+id/profileSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_32"
+        android:inAnimation="@anim/push_up_in"
+        android:minHeight="32dp"
+        android:gravity="center"
+        android:background="@color/transparent"
+
+        android:outAnimation="@anim/push_up_out"/>
+</RelativeLayout>

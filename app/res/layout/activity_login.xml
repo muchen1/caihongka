@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_below="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/app_gray" />
+
+    <LinearLayout
+        android:layout_below="@+id/line"
+        android:id="@+id/verification_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_m_y_50"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/text_white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#f6f6f6">
+
+            <TextView
+                android:id="@+id/vphone_text"
+                style="@style/person_text_style"
+                android:text="手机号" />
+
+            <EditText
+                android:id="@+id/v_edit_phone"
+                style="@style/change_et_base"
+                android:layout_toRightOf="@+id/vphone_text"
+                android:background="@color/transparent"
+                android:inputType="phone"
+                android:hint="请输入手机号" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/text_white" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#f6f6f6">
+
+            <TextView
+                android:id="@+id/v_text"
+                style="@style/person_text_style"
+                android:text="验证码" />
+
+            <EditText
+                android:id="@+id/edit_verification"
+                style="@style/change_et_base"
+                android:layout_toRightOf="@+id/v_text"
+                android:background="@color/transparent"
+                android:inputType="number"
+                android:hint="请输入短信验证码" />
+
+            <Button
+                android:id="@+id/verification_btn"
+                android:layout_width="@dimen/dp_m_y_80"
+                android:layout_height="@dimen/dp_m_y_30"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_m_y_12"
+                android:background="@drawable/query_select_item"
+                android:text="获取验证码"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/text_white" />
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="invisible"
+        android:layout_below="@+id/line"
+        android:id="@+id/password_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_m_y_50"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/text_white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#f6f6f6">
+
+            <TextView
+                android:id="@+id/pphone_text"
+                style="@style/person_text_style"
+                android:text="手机" />
+
+            <EditText
+                android:id="@+id/p_edit_phone"
+                style="@style/change_et_base"
+                android:layout_toRightOf="@+id/pphone_text"
+                android:background="@color/transparent"
+                android:inputType="phone"
+                android:hint="请输入手机号" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/text_white" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#f6f6f6">
+
+            <TextView
+                android:id="@+id/password_text"
+                style="@style/person_text_style"
+                android:text="密码" />
+
+            <EditText
+                android:id="@+id/edit_password"
+                style="@style/change_et_base"
+                android:layout_toRightOf="@+id/password_text"
+                android:background="@color/transparent"
+                android:password="true"
+                android:hint="请输入密码" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/text_white" />
+
+    </LinearLayout>
+
+<RelativeLayout
+    android:layout_below="@+id/password_login"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/find_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_m_y_5"
+        android:text="忘记密码"
+        android:layout_margin="@dimen/dp_m_y_15"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/tab_unselected_text"
+        android:background="@drawable/btn_select_item"
+        android:layout_alignParentRight="true"/>
+    <TextView
+        android:id="@+id/voice_verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_m_y_5"
+        android:text="收不到短信？点此采用电话语音接收"
+        android:layout_margin="@dimen/dp_m_y_10"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/gray"
+        android:background="@drawable/btn_select_item"
+        android:layout_alignParentRight="true"/>
+    <Button
+        android:layout_below="@+id/find_password"
+        android:id="@+id/login_btn"
+        android:background="@drawable/query_select_item"
+        android:layout_marginTop="@dimen/dp_m_y_50"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_40"
+        android:layout_marginRight="@dimen/dp_m_y_15"
+        android:layout_marginLeft="@dimen/dp_m_y_15"
+        android:gravity="center"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/white"
+        android:text="登 录" />
+
+    <TextView
+        android:layout_below="@+id/login_btn"
+        android:id="@+id/regist_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新用户注册"
+        android:layout_marginLeft="@dimen/dp_m_y_15"
+        android:layout_marginTop="@dimen/dp_m_y_45"
+        android:padding="@dimen/dp_m_y_5"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/tab_unselected_text"
+        android:background="@drawable/btn_select_item"/>
+    <TextView
+        android:layout_below="@+id/login_btn"
+        android:id="@+id/login_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_m_y_5"
+        android:text="密码登录"
+        android:layout_marginRight="@dimen/dp_m_y_15"
+        android:layout_marginTop="@dimen/dp_m_y_45"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/tab_unselected_text"
+        android:background="@drawable/btn_select_item"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
+</RelativeLayout>

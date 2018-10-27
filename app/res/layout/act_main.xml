@@ -1,0 +1,184 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <com.rainbowcard.client.widget.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_layout"
+        android:background="@color/app_white"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_popup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head_layout"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_calendar"
+                android:orientation="vertical"
+                android:paddingTop="1dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#eef7fd">
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/calendar"/>
+
+                    <TextView
+                        android:layout_toRightOf="@+id/icon"
+                        android:id="@+id/popupwindow_calendar_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_black"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="2015-08-09"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_black"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:text="今日已有1000008人签到"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <com.rainbowcard.client.ui.signcalendar.SignCalendar
+                    android:id="@+id/popupwindow_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:clickable="false"></com.rainbowcard.client.ui.signcalendar.SignCalendar>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_bg_1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sign_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/app_black"
+                android:textSize="14sp"
+                android:text="小主，连续签到可赚取更多积分哟！"/>
+
+            <Button
+                android:id="@+id/btn_signIn"
+                android:layout_width="120dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/ll_popup"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_sign_bg_selector"
+                android:text="立即签到"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="2dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/number1"
+                    android:layout_width="wrap_content"
+                    android:textSize="12sp"
+                    android:text="1"
+                    android:gravity="center"
+                    android:background="@drawable/blue"
+                    android:textColor="@color/app_white"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_toRightOf="@id/number1"
+                    android:layout_alignBottom="@+id/number1"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/tab_unselected_text"
+                    android:textSize="15sp"
+                    android:text="签到说明"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_below="@+id/text"
+                    android:layout_alignLeft="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/gray_text_context_3"
+                    android:textSize="14sp"
+                    android:layout_height="wrap_content" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:padding="2dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/number2"
+                    android:layout_width="wrap_content"
+                    android:textSize="12sp"
+                    android:text="2"
+                    android:gravity="center"
+                    android:background="@drawable/blue"
+                    android:textColor="@color/app_white"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_toRightOf="@id/number2"
+                    android:layout_alignBottom="@+id/number2"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/tab_unselected_text"
+                    android:textSize="15sp"
+                    android:text="积分奖励明细"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_below="@+id/text2"
+                    android:layout_alignLeft="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/gray_text_context_3"
+                    android:textSize="14sp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/sign_bg"/>
+        </LinearLayout>
+    </com.rainbowcard.client.widget.MyScrollView>
+
+</RelativeLayout>

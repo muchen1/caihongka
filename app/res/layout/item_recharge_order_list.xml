@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_select_item"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_35">
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:text="未消费"
+            android:textColor="@color/money_color"
+            android:textSize="@dimen/sp_12" />
+
+
+        <TextView
+            android:id="@+id/recharge_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/dp_m_y_10"
+            android:singleLine="true"
+            android:text="充值账户："
+            android:textColor="@color/title_text"
+            android:textSize="@dimen/sp_14" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/status"
+            android:layout_toRightOf="@+id/recharge_text"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/dp_m_y_10"
+            android:singleLine="true"
+            android:text="账户余额"
+            android:textColor="@color/title_text"
+            android:textSize="@dimen/sp_14"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/line_color" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_80">
+
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="充值金额："
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_13" />
+        <TextView
+            android:id="@+id/price"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_m_y_10"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:singleLine="true"
+            android:text="￥100"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_13" />
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_text"
+            android:layout_marginTop="@dimen/dp_m_y_5"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:text="未使用"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_13" />
+        <TextView
+            android:layout_below="@+id/price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_m_y_5"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:text="优惠券："
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_13" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            >
+        <TextView
+            android:id="@+id/pay_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:text="￥100"
+            android:textColor="@color/money_color"
+            android:textSize="@dimen/sp_18" />
+        <TextView
+            android:id="@+id/need_text"
+            android:layout_toLeftOf="@+id/pay_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp_m_y_17"
+            android:text="需付款："
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/sp_13" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_35">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/dp_m_y_10"
+            android:singleLine="true"
+            android:text="2017-01-12 15:44:56"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/pay_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:background="@drawable/bg_layout_focused_orange"
+            android:gravity="center"
+            android:padding="@dimen/dp_m_y_5"
+            android:paddingRight="@dimen/dp_m_y_10"
+            android:text="  去支付  "
+            android:textColor="@color/money_color"
+            android:textSize="@dimen/sp_12" />
+        <TextView
+            android:id="@+id/cancel_btn"
+            android:layout_toLeftOf="@+id/pay_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_m_y_12"
+            android:background="@drawable/bg_layout_focused"
+            android:gravity="center"
+            android:padding="@dimen/dp_m_y_5"
+            android:text="取消订单"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentTop="true"
+            android:background="@color/line_color" />
+    </RelativeLayout>
+</LinearLayout>

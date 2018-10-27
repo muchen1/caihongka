@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alert_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+    <RelativeLayout
+        android:id="@+id/rainbow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head_layout">
+
+        <ViewStub
+            android:id="@+id/sub_recharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/sub_recharge_order" />
+
+        <ViewStub
+            android:id="@+id/sub_buy_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/sub_buy_order" />
+
+        <ViewStub
+            android:id="@+id/sub_recharge_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/sub_recharge_account_order"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pay_layout"
+        android:layout_below="@+id/rainbow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_40"
+        android:layout_marginTop="@dimen/dp_m_y_40"
+        android:background="@color/white"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/pay_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/hp_pay_success" />
+
+
+        <TextView
+            android:id="@+id/tv_pay_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/pay_image"
+            android:layout_centerVertical="true"
+            android:text="支付完成"
+            android:textColor="@color/tab_unselected_text"
+            android:layout_marginLeft="@dimen/dp_m_y_12"
+            android:textStyle="bold"
+            android:textSize="@dimen/sp_15" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/code_layout"
+        android:layout_below="@+id/pay_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_m_y_40"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已支付完成，领卡成功"
+            android:layout_centerVertical="true"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/sp_14" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:visibility="invisible"
+        android:layout_below="@+id/code_layout"
+        android:id="@+id/info"
+        android:layout_marginTop="@dimen/dp_m_y_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您的卡片即将被邮寄至您填写的地址"
+        android:textColor="@color/gray_text"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/sp_14" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_m_y_50"
+        android:layout_below="@+id/info">
+    <Button
+        android:layout_weight="1"
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:text="完 成"
+        android:layout_marginLeft="@dimen/dp_m_y_12"
+        android:layout_marginRight="@dimen/dp_m_y_6"
+        android:background="@drawable/bg_layout_focused_blue"
+        android:layout_height="@dimen/dp_m_y_40"
+        android:textSize="@dimen/sp_15"
+        android:textColor="@color/tab_unselected_text"
+        android:gravity="center"
+        />
+    <Button
+        android:layout_weight="1"
+        android:id="@+id/detail_btn"
+        android:layout_width="match_parent"
+        android:text="订单详情"
+        android:layout_marginLeft="@dimen/dp_m_y_6"
+        android:layout_marginRight="@dimen/dp_m_y_12"
+        android:background="@drawable/query_select_item"
+        android:layout_height="@dimen/dp_m_y_40"
+        android:textSize="@dimen/sp_15"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+    </LinearLayout>
+</RelativeLayout>

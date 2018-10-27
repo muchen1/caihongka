@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_btn_calendar"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+<com.rainbowcard.client.calendar.widget.DayView
+    android:id="@+id/tvDayView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@drawable/bg_btn_calendar"
+    android:textSize="18sp"
+    android:text="23"
+    android:textColor="@color/app_black"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    />
+<com.rainbowcard.client.calendar.widget.DayView
+    android:visibility="gone"
+    android:id="@+id/tvChina"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/bg_btn_calendar"
+    android:textSize="15sp"
+    android:textColor="@color/text_white"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"/>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tx_order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_m_y_40"
+        android:textSize="@dimen/sp_14"
+        android:gravity="center"
+        android:text="全部"/>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/iv_select"
+        android:layout_width="80dp"
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/tab_unselected_text"
+        />
+
+</RelativeLayout>
