@@ -243,4 +243,11 @@
     <string name="progressActivityErrorButton">重新加载</string>
     <string name="progressActivityEmptyTitlePlaceholder">未加载到任何内容!</string>
     <string name="progressActivityEmptyContentPlaceholder">We couldn\'t find anything. Tap the button to take your first image</string>
+
+    <string name="car_num_string">车牌号</string>
+    <string name="insurance_common_text">普通车险</string>
+    <string name="insurance_common_newcar">我的车辆是新车</string>
+    <string name="insurance_common_text1">安全 · 放心 · 省钱</string>
+    <string name="insurance_common_form_title">车辆基本信息</string>
+    <string name="insurance_common_form_city">投保地区</string>
 </resources>

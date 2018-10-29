@@ -40,6 +40,7 @@ import com.rainbowcard.client.ui.AllActivity;
 import com.rainbowcard.client.ui.BindCardActivity;
 import com.rainbowcard.client.ui.BranchActivity;
 import com.rainbowcard.client.ui.CheckIllegalActivity;
+import com.rainbowcard.client.ui.CommonInsuranceActivity;
 import com.rainbowcard.client.ui.FreeWashTicketEntranceActivity;
 import com.rainbowcard.client.ui.GoodsDetailActivity;
 import com.rainbowcard.client.ui.IntegralActivity;
@@ -557,11 +558,13 @@ public class HomeFragment extends MyBasicFragment implements ViewPager.OnPageCha
 //                                    MobclickAgent.onEventValue(getActivity(),mDatas.get(pos).eventId,null,pos);
                                     Intent intent;
                                     if(mDatas.size() > 8 && pos == 7){
-                                        intent = new Intent(getActivity(), AllActivity.class);
-                                        intent.putExtra(Constants.KEY_BANNERS, (Serializable) mDatas);
-                                        intent.putExtra(Constants.KEY_CITY_ID,instance.cityId);
-                                        intent.putExtra(Constants.KEY_LAT,instance.lat);
-                                        intent.putExtra(Constants.KEY_LNG,instance.lng);
+//                                        intent = new Intent(getActivity(), AllActivity.class);
+//                                        intent.putExtra(Constants.KEY_BANNERS, (Serializable) mDatas);
+//                                        intent.putExtra(Constants.KEY_CITY_ID,instance.cityId);
+//                                        intent.putExtra(Constants.KEY_LAT,instance.lat);
+//                                        intent.putExtra(Constants.KEY_LNG,instance.lng);
+//                                        startActivity(intent);
+                                        intent = new Intent(getActivity(), CommonInsuranceActivity.class);
                                         startActivity(intent);
                                     }else {
                                         MobclickAgent.onEventValue(getActivity(),mDatas.get(pos).umClickKey,null,pos);

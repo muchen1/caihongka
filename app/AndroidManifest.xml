@@ -402,6 +402,10 @@
             android:name="com.rainbowcard.client.ui.signcalendar.CalendarActivity"
             android:screenOrientation="portrait"
             />
+        <activity
+            android:name=".ui.CommonInsuranceActivity"
+            android:screenOrientation="portrait"
+            />
 
         <!--微信-->
         <activity
