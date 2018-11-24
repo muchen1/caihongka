@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <TextView
+        android:id="@+id/dialog_text_choice_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="取消"/>
+
+    <TextView
+        android:id="@+id/dialog_text_choice_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/app_blue"
+        android:text="确定"/>
+
+    <com.rainbowcard.client.widget.NumberPickerView
+        android:id="@+id/dialog_text_choice_pickview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_text_choice_ok"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        app:npv_ShowCount="3"
+        app:npv_ShowDivider="true"
+        app:npv_DividerColor="@color/app_blue"
+        app:npv_TextColorSelected="@color/black"
+        app:npv_TextSizeSelected="@dimen/sp_16"
+        app:npv_TextColorNormal="@color/app_gray"
+        app:npv_TextSizeNormal="@dimen/sp_14"
+        app:npv_ItemPaddingVertical="@dimen/dp_m_x_25"
+
+        ></com.rainbowcard.client.widget.NumberPickerView>
+
+</RelativeLayout>

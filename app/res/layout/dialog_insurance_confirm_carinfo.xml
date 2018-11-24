@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <TextView
+        android:id="@+id/dialog_insurance_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/dp_m_x_25"
+        android:text="请确认车辆信息"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        android:textColor="@color/app_blue"/>
+
+    <TextView
+        android:id="@+id/textview_car_style_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_insurance_title"
+        android:layout_marginBottom="20dp"
+        android:text="品牌型号："
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textview_car_style_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="大众FV轿车"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@id/textview_car_style_key"
+        />
+
+    <TextView
+        android:id="@+id/textview_insurance_force_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_car_style_key"
+        android:layout_marginBottom="20dp"
+        android:text="交强险到期日："
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textview_insurance_force_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2018-11-04"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@id/textview_insurance_force_key"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textview_insurance_force_key"
+        android:layout_toLeftOf="@id/textview_insurance_force_value"
+        android:layout_marginRight="5dp"
+        android:textSize="@dimen/sp_12"
+        android:background="@drawable/btn_sign_bg_enable"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/white"
+        android:text="可以续保"/>
+
+    <TextView
+        android:id="@+id/textview_insurance_business_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_insurance_force_key"
+        android:layout_marginBottom="20dp"
+        android:text="商业险到期日："
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textview_insurance_business_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2018-11-04"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@id/textview_insurance_business_key"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textview_insurance_business_value"
+        android:layout_toLeftOf="@id/textview_insurance_business_value"
+        android:layout_marginRight="5dp"
+        android:textSize="@dimen/sp_12"
+        android:background="@drawable/btn_sign_bg_enable"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/white"
+        android:text="可以续保"/>
+
+    <TextView
+        android:id="@+id/textview_insurance_person_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_insurance_business_key"
+        android:layout_marginBottom="@dimen/dp_m_x_25"
+        android:text="被保人类型："
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textview_insurance_person_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@id/textview_insurance_person_key"
+        android:text="个人/*拓"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/textview_insurance_person_key"
+        android:gravity="center"
+        android:background="@drawable/bg_blue_btn_normal"
+        android:textColor="@color/white"
+        android:text="确认信息无误"
+        android:textSize="18sp"
+        />
+
+</RelativeLayout>

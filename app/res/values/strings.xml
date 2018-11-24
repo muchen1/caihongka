@@ -250,4 +250,7 @@
     <string name="insurance_common_text1">安全 · 放心 · 省钱</string>
     <string name="insurance_common_form_title">车辆基本信息</string>
     <string name="insurance_common_form_city">投保地区</string>
+
+    <string name="insurance_choice_text">险种选择</string>
+
 </resources>

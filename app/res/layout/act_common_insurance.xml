@@ -66,7 +66,9 @@
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
                     android:background="@drawable/bg_edittext_comment"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <ImageView
                         android:layout_width="@dimen/dp_m_y_17"
@@ -80,12 +82,29 @@
                         android:text="@string/car_num_string"
                         android:textSize="@dimen/sp_17"
                         />
+
+                    <Spinner
+                        android:id="@+id/ac_spiner_car_city"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown"
+                        android:dropDownWidth="80dp"
+                        android:background="@drawable/bg_blue_border_white_btn_normal"
+                        />
+
+
                     <EditText
+                        android:id="@+id/common_insurance_carnum_edittext"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         style="@style/bookticket_et_base"
                         android:background="@color/transparent"
+                        android:paddingLeft="@dimen/dp_m_y_5"
+                        android:paddingRight="@dimen/dp_m_y_5"
                         android:hint="输入车牌号"/>
 
                 </LinearLayout>
@@ -129,11 +148,32 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                android:gravity="center"
-                >
-                
+                android:gravity="center">
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:checked="true"
+                    style="@style/CustomCheckboxTheme2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_m_y_5"
+                    android:textSize="10sp"
+                    android:text="提交车险订单即视为您已同意"
+                    />
+
+                <TextView
+                    android:id="@+id/ci_text_protocol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/cal_color_green"
+                    android:textSize="10sp"
+                    android:text="车险合作政策"/>
             </LinearLayout>
             <TextView
+                android:id="@+id/ci_bt_next"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="@dimen/dp_m_y_10"
@@ -149,6 +189,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/act_common_insurance_text_footer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

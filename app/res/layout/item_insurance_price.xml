@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_m_y_80">
+
+    <ImageView
+        android:layout_width="@dimen/dp_m_y_80"
+        android:layout_height="@dimen/dp_m_y_40"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_m_x_15"
+        android:src="@drawable/bg_insurance_choice_bjmp_disable"/>
+
+    <LinearLayout
+        android:id="@+id/item_insurance_price_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="@dimen/dp_m_x_15"
+        android:visibility="gone"
+        >
+
+        <com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_m_y_10"
+            android:textSize="17sp"
+            android:textColor="@color/app_blue"
+            android:text="正在查询报价"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_insurance_price_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="@dimen/dp_m_x_15">
+
+        <TextView
+            android:id="@+id/item_insurance_price_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingTop="@dimen/dp_m_y_5"
+            android:paddingBottom="@dimen/dp_m_y_5"
+            android:paddingLeft="@dimen/dp_m_y_10"
+            android:paddingRight="@dimen/dp_m_y_10"
+            android:background="@drawable/bg_layout_focused_red_full"
+            android:text="9折"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/item_insurance_price_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/item_insurance_price_discount"
+            android:layout_marginLeft="@dimen/dp_m_y_10"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/app_orange"
+            android:text="¥3681.07"
+            />
+
+        <TextView
+            android:id="@+id/item_insurance_price_old"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_toRightOf="@id/item_insurance_price_discount"
+            android:layout_alignRight="@id/item_insurance_price_new"
+            android:layout_below="@id/item_insurance_price_new"
+            android:textSize="@dimen/sp_18"
+            android:text="¥3977.06"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_toRightOf="@id/item_insurance_price_new"
+            android:layout_marginLeft="@dimen/dp_m_y_10"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_right_disabled"
+            />
+
+    </RelativeLayout>
+
+</FrameLayout>

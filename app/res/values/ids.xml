@@ -24,4 +24,8 @@
   <item type="id" name="return_scan_result"/>
     <item name="cb_item_tag" type="id"></item>
   <item name="banner_indicatorId" type="id" />
+
+  <item name="type_header" type="integer"/>
+  <item name="type_footer" type="integer"/>
+  <item name="type_child" type="integer"/>
 </resources>

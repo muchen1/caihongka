@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_insurance_choice_child_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:paddingRight="@dimen/dp_m_y_10"
+    android:paddingLeft="@dimen/dp_m_y_10">
+
+    <ImageView
+        android:id="@+id/item_child_enable"
+        android:layout_width="18dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/icon_right_disable"/>
+
+    <TextView
+        android:id="@+id/item_child_textview_title"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/item_child_enable"
+        android:layout_marginLeft="5dp"
+        android:text="司机责任险"/>
+
+    <TextView
+        android:id="@+id/item_child_textview_bjmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/item_child_textview_title"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="不计免赔"
+        android:textColor="@color/app_gray_masking"
+        android:background="@drawable/bg_insurance_choice_bjmp_disable"
+        />
+
+    <ImageView
+        android:id="@+id/item_child_choice_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/arrow_down_insurance"/>
+
+    <TextView
+        android:id="@+id/item_child_choice_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/item_child_choice_arrow"
+        android:text="不投保"/>
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <TextView
+        android:id="@+id/header_title_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head_layout"
+        android:text="*默认选择的是您去年的参保险种"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/app_blue"/>
+
+    <view
+        android:id="@+id/diver_line_between_header_list"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/header_title_tips"
+        android:background="#f6f6f6"></view>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listview_insurance_choice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_title_tips"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="12dp"
+        android:background="@color/gray_bg_1">
+
+        <TextView
+            android:id="@+id/textview_insurance_choice_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="6dp"
+            android:text="已选：6个险种"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/textview_insurance_last_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="车险起保日期为2018-11-05"
+            android:layout_below="@id/textview_insurance_choice_num"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/bt_insurance_get_price"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_m_y_55"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/dp_m_y_10"
+            android:paddingRight="@dimen/dp_m_y_10"
+            android:gravity="center_vertical"
+            android:text="获取报价"
+            android:textSize="@dimen/sp_17"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@color/app_blue"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
