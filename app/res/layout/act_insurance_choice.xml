@@ -61,7 +61,7 @@
         <TextView
             android:id="@+id/bt_insurance_get_price"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_m_y_55"
+            android:layout_height="@dimen/dp_m_y_60"
             android:layout_alignParentRight="true"
             android:paddingLeft="@dimen/dp_m_y_10"
             android:paddingRight="@dimen/dp_m_y_10"

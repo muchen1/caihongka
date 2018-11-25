@@ -13,11 +13,7 @@ import com.rainbowcard.client.widget.HeadControlPanel;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-/**
- * 选完车险之后的赠送礼包选择界面
- */
-
-public class GiftsChoiceForInsturanceActivity extends MyBaseActivity {
+public class InsuranceConfirmActivity extends MyBaseActivity {
 
     @InjectView(R.id.nav_back)
     RelativeLayout mBackBtn;
@@ -32,8 +28,8 @@ public class GiftsChoiceForInsturanceActivity extends MyBaseActivity {
         setContentView(R.layout.act_insurance_price);
         parseIntent(getIntent());
         ButterKnife.inject(this);
-        UIUtils.setMiuiStatusBarDarkMode(GiftsChoiceForInsturanceActivity.this,true);
-        UIUtils.setMeizuStatusBarDarkIcon(GiftsChoiceForInsturanceActivity.this,true);
+        UIUtils.setMiuiStatusBarDarkMode(InsuranceConfirmActivity.this,true);
+        UIUtils.setMeizuStatusBarDarkIcon(InsuranceConfirmActivity.this,true);
         initView();
         initData();
     }
