@@ -29,7 +29,7 @@ public class InsurancePriceActivity extends MyBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_insurance_choice);
+        setContentView(R.layout.act_insurance_price);
         parseIntent(getIntent());
         ButterKnife.inject(this);
         UIUtils.setMiuiStatusBarDarkMode(InsurancePriceActivity.this,true);

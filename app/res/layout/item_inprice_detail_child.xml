@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_m_y_50">
+
+    <TextView
+        android:id="@+id/item_inprice_detail_child_name"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_m_x_15"
+        android:textSize="@dimen/sp_18"
+        android:text="交强险"
+        />
+
+    <TextView
+        android:id="@+id/item_inprice_detail_child_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="@dimen/dp_m_x_15"
+        android:textSize="@dimen/sp_20"
+        android:textColor="@color/app_orange"
+        android:text="¥123"/>
+
+</LinearLayout>

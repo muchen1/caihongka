@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_m_y_30"
+    android:background="@color/app_gray_masking">
+    
+    <View
+        android:layout_width="@dimen/dp_m_y_10"
+        android:layout_height="match_parent"
+        android:background="@color/app_blue"/>
+
+    <TextView
+        android:id="@+id/item_inprice_detail_groupheader_header"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_m_y_5"
+        android:text="交强车船(起保日期为2018-11-11)"
+        />
+    <ImageView
+        android:id="@+id/item_inprice_detail_groupheader_editicon"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_m_x_15"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/set_fk"/>
+
+    <TextView
+        android:id="@+id/item_inprice_detail_groupheader_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="@dimen/dp_m_y_5"
+        android:textColor="@color/cal_color_green"
+        android:text="纠正"/>
+
+</LinearLayout>

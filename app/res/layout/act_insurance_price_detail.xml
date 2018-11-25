@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/head_layout"
+        layout="@layout/head_panel_layout" />
+
+    <RelativeLayout
+        android:id="@+id/inprice_detail_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_60"
+        android:layout_below="@id/head_layout"
+        >
+        <ImageView
+            android:layout_width="@dimen/dp_m_y_80"
+            android:layout_height="@dimen/dp_m_y_40"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_m_x_15"
+            android:src="@color/app_orange"/>
+        <ImageView
+            android:id="@+id/inprice_detail_header_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_m_y_18"
+            android:src="@drawable/ic_arrow_right_disabled"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_m_x_15"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/inprice_detail_header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/inprice_detail_header_arrow"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/sp_18"
+            android:layout_marginRight="@dimen/dp_m_y_5"
+            android:textColor="@color/app_gray"
+            android:text="调整保险项目"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_60"
+        android:layout_alignParentBottom="true">
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/app_gray"></View>
+        
+        <TextView
+            android:id="@+id/inprice_bottom_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_m_x_15"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/black"
+            android:text="合计:"/>
+
+        <TextView
+            android:id="@+id/inprice_bottom_price_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/inprice_bottom_text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_m_y_5"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/app_orange"
+            android:text="¥3681.07"/>
+
+        <TextView
+            android:id="@+id/inprice_bottom_price_old"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/inprice_bottom_price_new"
+            android:layout_marginLeft="@dimen/dp_m_y_10"
+            android:textColor="@color/app_gray"
+            android:textSize="@dimen/sp_15"
+            android:text="¥3977.06"
+            />
+
+        <TextView
+            android:id="@+id/inprice_bottom_price_next"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/dp_m_y_10"
+            android:paddingRight="@dimen/dp_m_y_10"
+            android:gravity="center"
+            android:background="@color/app_blue"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/white"
+            android:text="下一步"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/inprice_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/inprice_detail_header">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
