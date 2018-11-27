@@ -115,7 +115,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="交强险起保日期："/>
+                android:text="商业险起保日期："/>
 
             <TextView
                 android:id="@+id/item_date_syx_text"
