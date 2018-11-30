@@ -14,11 +14,13 @@
         android:layout_below="@id/head_layout"
         >
         <ImageView
+            android:id="@+id/inprice_detail_header_companyicon"
             android:layout_width="@dimen/dp_m_y_80"
             android:layout_height="@dimen/dp_m_y_40"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_m_x_15"
             android:src="@color/app_orange"/>
+
         <ImageView
             android:id="@+id/inprice_detail_header_arrow"
             android:layout_width="wrap_content"
