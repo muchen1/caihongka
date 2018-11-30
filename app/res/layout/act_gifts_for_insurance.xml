@@ -134,11 +134,11 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="车船险金额"
+                    android:text="车船税金额"
                     android:textColor="@color/black"
                     android:textSize="@dimen/sp_16"/>
                 <TextView
-                    android:id="@+id/item_middle_ccx_price"
+                    android:id="@+id/item_middle_ccs_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
