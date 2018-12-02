@@ -1,8 +1,11 @@
 package com.rainbowcard.client.ui;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.google.gson.JsonObject;
 import com.rainbowcard.client.R;
 import com.rainbowcard.client.base.API;
 import com.rainbowcard.client.base.Constants;
@@ -20,14 +24,23 @@ import com.rainbowcard.client.base.MyBaseActivity;
 import com.rainbowcard.client.common.exvolley.btw.BtwRespError;
 import com.rainbowcard.client.common.exvolley.btw.BtwVolley;
 import com.rainbowcard.client.common.exvolley.utils.VolleyUtils;
+import com.rainbowcard.client.model.InsuranceChoiceModel;
+import com.rainbowcard.client.model.InsuranceModelServerProxy;
+import com.rainbowcard.client.model.InsurancePriceModel;
+import com.rainbowcard.client.ui.adapter.InsuranceChoiceAdapter;
 import com.rainbowcard.client.utils.MD5Util;
 import com.rainbowcard.client.utils.MyConfig;
 import com.rainbowcard.client.utils.UIUtils;
+import com.rainbowcard.client.utils.Util;
 import com.rainbowcard.client.widget.HeadControlPanel;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -157,21 +170,24 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
         }
     }
 
-    String url = "http://t.yangyanxing.com/bx/api/getCarInfo";
+    String url = "http://118.24.202.95:5000/bx/api/getCarInfo";
     private void searchUserinfoByCarnum(String carnum) {
         String token = String.format(getString(R.string.token),
                 MyConfig.getSharePreStr(CommonInsuranceActivity.this,
                         Constants.USERINFO, Constants.UID));
 
-        String province = ((TextView) (mCityNumSpinner.getSelectedView())).getText().toString();
+        String province = ((TextView) (mCityNumSpinner.getSelectedView())).getText().toString().trim();
         String carNumString = province + carnum.toUpperCase();
         StringBuilder stringBuilder = new StringBuilder("LicenseNo=");
         stringBuilder.append(carNumString).append("&").append("shopId=").append("1").append("&")
                 .append("secKey=yangwangdai");
+        Log.e("daipeng", "secCode===" + stringBuilder.toString());
         String sceCode = MD5Util.stringMD5(stringBuilder.toString());
+        Log.e("daipeng", "secCode===" + sceCode);
+
         withBtwVolley().load(url)
                 .method(Request.Method.POST)
-                .setParam("LicenseNo", URLEncoder.encode(carNumString))
+                .setParam("LicenseNo", carNumString)
                 .setParam("shopId", "1")
                 .setParam("secCode", sceCode)
                 .setHeader("Authorization", token)
@@ -192,21 +208,117 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                     @Override
                     public void onResponse(String resp) {
 
+                        // 请求完成之后开始解析
+                        InsuranceChoiceModel insuranceChoiceModel = new InsuranceChoiceModel();
+                        InsurancePriceModel insurancePriceModel = new InsurancePriceModel();
+
+
+                        try {
+                            JSONObject alldata = new JSONObject(resp);
+                            // 用户信息
+                            JSONObject personData = alldata.getJSONObject("data").getJSONObject("UserInfo");
+                            // 车主姓名
+                            String personName = personData.getString("InsuredName");
+                            // 车牌号
+                            String carNum = personData.getString("LicenseNo");
+                            // 车类型
+                            String carType = personData.getString("ModleName");
+                            // 强制险到期时间
+                            String forceExpireDate = personData.getString("ForceExpireDate");
+                            // 强制险开始日期
+                            String nextForceStartDate = personData.getString("NextForceStartDate");
+                            // 商业险到期日期
+                            String businessExpireDate = personData.getString("BusinessExpireDate");
+                            // 商业险开始日期
+                            String nextBusinessStartDate = personData.getString("NextBusinessStartDate");
+
+
+                            // 报价中的可以显示的保险公司信息
+                            JSONArray insuranceCompanyList = alldata.getJSONArray("ComList");
+                            List<InsurancePriceModel.PriceEntity> priceList = new ArrayList<>();
+                            for (int i = 0; i < insuranceCompanyList.length(); i++) {
+                                JSONObject company = insuranceCompanyList.getJSONObject(i);
+                                InsurancePriceModel.PriceEntity priceEntity = new InsurancePriceModel.PriceEntity();
+                                priceEntity.companyId = company.getInt("comCode");
+                                priceEntity.companyName = company.getString("name");
+                                priceEntity.iconurl = company.getString("icon");
+                                priceEntity.showResult = false;
+                                priceList.add(priceEntity);
+                            }
+                            insurancePriceModel.listData = priceList;
+                            insurancePriceModel.carNum = carNum;
+                            insurancePriceModel.carType = carType;
+                            insurancePriceModel.carJqxDate = nextForceStartDate;
+                            insurancePriceModel.carSyxDate = nextBusinessStartDate;
+                            insurancePriceModel.carPerson = personName;
+                            insurancePriceModel.status = 0;
+
+                            // 险种选择model
+                            insuranceChoiceModel.status = 0;
+                            insuranceChoiceModel.data = new ArrayList<>();
+                            JSONArray syxArray = alldata.getJSONArray("NextBXinfo");
+                            for (int j = 0; j < syxArray.length(); j++) {
+                                JSONObject insuranceObject = syxArray.getJSONObject(j);
+                                InsuranceChoiceModel.ChildItemEntity childItemEntity = new InsuranceChoiceModel.ChildItemEntity();
+                                childItemEntity.style = InsuranceChoiceAdapter.ITEM_TYPE_CHILD;
+                                childItemEntity.insuranceName = insuranceObject.getString("name");
+                                childItemEntity.insuranceStatusTextKey = insuranceObject.getInt("default");
+                                childItemEntity.insuranceBjmpStatus = insuranceObject.getJSONObject("BuJiMian")
+                                        .getInt("value");
+                                childItemEntity.insuranceBjmpKey = insuranceObject.getJSONObject("BuJiMian").getString("name");
+
+                                if (childItemEntity.insuranceBjmpStatus == 1 || childItemEntity.insuranceStatusTextKey != 0) {
+                                    childItemEntity.insuranceStatus = true;
+                                }
+                                childItemEntity.insuranceAllPrice = new SparseArray<>();
+                                JSONObject options = insuranceObject.getJSONObject("option");
+                                JSONArray optionNames = options.names();
+                                for (int k = 0; k < optionNames.length(); k ++) {
+                                    childItemEntity.insuranceAllPrice.append(options.getInt(optionNames.getString(k)), optionNames.getString(k));
+                                }
+
+                                childItemEntity.insuranceKey = insuranceObject.getString("key");
+                                insuranceChoiceModel.data.add(childItemEntity);
+                            }
+
+                            InsuranceModelServerProxy.getInstance().setModel(carNum,
+                                    insuranceChoiceModel, insurancePriceModel);
+
+
+                            // 解析成功之后跳界面
+                            Intent intent = new Intent(CommonInsuranceActivity.this, InsuranceChoiceActivity.class);
+                            intent.putExtra("carNum", carNum);
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            // donothing
+                            Log.e("daipeng", "发生异常了==" + e.getMessage());
+                            Toast.makeText(CommonInsuranceActivity.this, "服务异常，请稍后重试", Toast.LENGTH_LONG);
+                        }
+
                     }
 
                     @Override
                     public void onBtwError(BtwRespError<String> error) {
+                        Log.e("daipeng", "onBtwError==" + error.errorMessage);
+                        Log.e("daipeng", "onBtwError==" + error.errorCode);
+                        Log.e("daipeng", "onBtwError==" + error.result);
+                        Toast.makeText(CommonInsuranceActivity.this, "服务异常，请稍后重试", Toast.LENGTH_LONG);
 
                     }
 
                     @Override
                     public void onNetworkError(VolleyUtils.NetworkError error) {
+                        Log.e("daipeng", "onNetworkError==" + error.message);
+                        Toast.makeText(CommonInsuranceActivity.this, "请检查网络配置", Toast.LENGTH_LONG);
+
 
                     }
 
                     @Override
                     public void onRefreToken() {
-
+                        Log.e("daipeng", "refershtoken==");
+                        // token失效，重新登录
+                        refreshToken();
                     }
                 }).excute();
 

@@ -43,9 +43,9 @@ public class InsuranceChoiceChildItemHolder extends RecyclerView.ViewHolder impl
 
     public void onBind(final InsuranceChoiceModel.ChildItemEntity entity) {
         mEntity = entity;
-        mItemTitle.setText(entity.insuranceType);
-        mItemStatus.setText(entity.insuranceStatusText);
-        mItemBjmp.setVisibility(entity.insuranceBjmp ? View.VISIBLE : View.INVISIBLE);
+        mItemTitle.setText(entity.insuranceName);
+        mItemStatus.setText(entity.insuranceAllPrice.get(entity.insuranceStatusTextKey));
+        mItemBjmp.setVisibility(entity.insuranceBjmpStatus == 2 ? View.VISIBLE : View.INVISIBLE);
         mItemBjmp.setBackgroundResource(entity.insuranceStatus ? R.drawable.bg_insurance_choice_bjmp_enable
                 : R.drawable.bg_insurance_choice_bjmp_disable);
 
@@ -57,13 +57,20 @@ public class InsuranceChoiceChildItemHolder extends RecyclerView.ViewHolder impl
             // 点击选择框的时候回调出来，显示选择框
             case R.id.item_child_choice_text:
                 // 直接把这个传递回去，用来弹出选择框
+
+                String[] showText = new String[mEntity.insuranceAllPrice.size()];
+                for (int i = 0; i < mEntity.insuranceAllPrice.size(); i++) {
+                    showText[i] = mEntity.insuranceAllPrice.valueAt(i);
+                }
                 new TextChoiceDialog(itemView.getContext(), new TextChoiceDialog.OnTextChoiceListener() {
                     @Override
                     public void onTextChoice(String text) {
-                         mEntity.insuranceStatusText = text;
-                         mItemStatus.setText(text);
+                        mEntity.insuranceStatusTextKey = mEntity.insuranceAllPrice.keyAt(mEntity
+                                .insuranceAllPrice.indexOfValue(text));
+                        mItemStatus.setText(text);
                     }
-                }, mEntity.insuranceAllPrice).show();
+                }, showText).show();
+
                 // 回调回去
                 if (mListener != null) {
                     mListener.onClick(mEntity, R.id.item_child_choice_text);
@@ -75,15 +82,17 @@ public class InsuranceChoiceChildItemHolder extends RecyclerView.ViewHolder impl
                 // 如果本来总开关是开启状态,则把所有的都设置为关闭，只在这里设置entity的值，回调到adapter的时候再刷新数据
                 if (mEntity.insuranceStatus) {
                     mEntity.insuranceStatus = false;
-                    mEntity.insuranceBjmp = false;
+                    mEntity.insuranceBjmpStatus = 0;
                     // 0的位置应该是 不投保 方案
-                    mEntity.insuranceStatusText = mEntity.insuranceAllPrice[0];
+                    mEntity.insuranceStatusTextKey = mEntity.insuranceAllPrice.keyAt(0);
+
+
                 } else {
                     // 如果原来是关闭的，就把所有的开启
                     mEntity.insuranceStatus = true;
-                    mEntity.insuranceBjmp = true;
+                    mEntity.insuranceBjmpStatus = 1;
                     // 默认拿到第一个，应该是 投保 文案，或者是 金额
-                    mEntity.insuranceStatusText = mEntity.insuranceAllPrice[1];
+                    mEntity.insuranceStatusTextKey = mEntity.insuranceAllPrice.keyAt(1);
                 }
                 if (mListener != null) {
                     mListener.onClick(mEntity, R.id.item_insurance_choice_child_rootview);
@@ -94,13 +103,13 @@ public class InsuranceChoiceChildItemHolder extends RecyclerView.ViewHolder impl
                 // 如果是不计免赔文案的点击，改变状态，回调回去
                 // 如果原来是没有选择该item，则首先把该item选中;如果本来就是选中状态，则只改变 不计免赔 自身的状态
                 if (mEntity.insuranceStatus) {
-                    mEntity.insuranceBjmp = !mEntity.insuranceBjmp;
+                    mEntity.insuranceBjmpStatus = mEntity.insuranceBjmpStatus == 1 ? 0 : 1;
                 } else {
                     // 如果原来是关闭的，就把所有的开启
                     mEntity.insuranceStatus = true;
-                    mEntity.insuranceBjmp = true;
+                    mEntity.insuranceBjmpStatus = 1;
                     // 默认拿到第一个，应该是 投保 文案，或者是 金额
-                    mEntity.insuranceStatusText = mEntity.insuranceAllPrice[1];
+                    mEntity.insuranceStatusTextKey = mEntity.insuranceAllPrice.keyAt(1);
                 }
                 if (mListener != null) {
                     mListener.onClick(mEntity, R.id.item_child_textview_bjmp);

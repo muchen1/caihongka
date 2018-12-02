@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.rainbowcard.client.R;
 import com.rainbowcard.client.base.MyBaseActivity;
 import com.rainbowcard.client.model.InsuranceChoiceModel;
+import com.rainbowcard.client.model.InsuranceModelServerProxy;
+import com.rainbowcard.client.model.InsurancePriceModel;
 import com.rainbowcard.client.ui.adapter.InsuranceChoiceAdapter;
 import com.rainbowcard.client.utils.UIUtils;
 import com.rainbowcard.client.widget.HeadControlPanel;
@@ -39,6 +41,8 @@ public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnCl
 
     private InsuranceChoiceAdapter mListAdapter;
 
+    private String mCarNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +67,7 @@ public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnCl
     }
 
     private void initData() {
+        mInsuranceChoiceModel = InsuranceModelServerProxy.getInstance().getInsuranceChoiceModel(mCarNum);
         if (mInsuranceChoiceModel != null) {
             mListAdapter = new InsuranceChoiceAdapter(InsuranceChoiceActivity.this,
                     mInsuranceChoiceModel.data);
@@ -73,8 +78,7 @@ public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnCl
 
     private void parseIntent(Intent intent) {
         if (intent != null) {
-            mInsuranceChoiceModel = (InsuranceChoiceModel) intent
-                    .getSerializableExtra(InsuranceChoiceModel.INTENT_KEY_FOR_THIS);
+            mCarNum = intent.getStringExtra("carNum");
         }
     }
 

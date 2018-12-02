@@ -1,17 +1,14 @@
 package com.rainbowcard.client.ui.viewholder;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
 import com.rainbowcard.client.R;
-import com.rainbowcard.client.model.InsurancePirceModel;
+import com.rainbowcard.client.model.InsurancePriceModel;
 
-public class InsurancePriceListHolder extends BaseViewHolder<InsurancePirceModel.PriceEntity>
+public class InsurancePriceListHolder extends BaseViewHolder<InsurancePriceModel.PriceEntity>
         implements View.OnClickListener {
 
     // 保险公司的icon
@@ -41,7 +38,7 @@ public class InsurancePriceListHolder extends BaseViewHolder<InsurancePirceModel
     }
 
     @Override
-    public void onBind(int position, InsurancePirceModel.PriceEntity d) {
+    public void onBind(int position, InsurancePriceModel.PriceEntity d) {
         // todo icon没有加入
         mLoadingLayout.setVisibility(d.showResult ? View.INVISIBLE : View.VISIBLE);
         mResultLayout.setVisibility(d.showResult ? View.VISIBLE : View.INVISIBLE);

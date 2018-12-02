@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rainbowcard.client.R;
-import com.rainbowcard.client.model.InsurancePirceModel;
+import com.rainbowcard.client.model.InsurancePriceModel;
 import com.rainbowcard.client.ui.viewholder.BaseViewHolder;
 import com.rainbowcard.client.ui.viewholder.InsurancePriceListHolder;
 
@@ -15,11 +15,11 @@ import java.util.List;
 
 public class InsurancePriceListAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
-    private List<InsurancePirceModel.PriceEntity> mDatas;
+    private List<InsurancePriceModel.PriceEntity> mDatas;
     private Context mContext;
     private LayoutInflater mInflater;
 
-    public InsurancePriceListAdapter(Context context, List<InsurancePirceModel.PriceEntity> data) {
+    public InsurancePriceListAdapter(Context context, List<InsurancePriceModel.PriceEntity> data) {
         this.mContext = context;
         mInflater = LayoutInflater.from(context);
         mDatas = data;
@@ -30,7 +30,7 @@ public class InsurancePriceListAdapter extends RecyclerView.Adapter<BaseViewHold
         mInflater = LayoutInflater.from(context);
     }
 
-    public void setData(List<InsurancePirceModel.PriceEntity> data) {
+    public void setData(List<InsurancePriceModel.PriceEntity> data) {
         mDatas = data;
         notifyDataSetChanged();
     }

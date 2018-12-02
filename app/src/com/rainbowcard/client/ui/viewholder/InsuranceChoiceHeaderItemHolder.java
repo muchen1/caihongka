@@ -27,7 +27,7 @@ public class InsuranceChoiceHeaderItemHolder extends RecyclerView.ViewHolder {
     }
 
     public void onBind(final InsuranceChoiceModel.HeaderItemEntity entity) {
-        mHeaderTitle.setText(entity.insuranceType);
+        mHeaderTitle.setText(entity.insuranceName);
         mHeaderSwitch.setChecked(entity.isuranceSwitch);
         mHeaderSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

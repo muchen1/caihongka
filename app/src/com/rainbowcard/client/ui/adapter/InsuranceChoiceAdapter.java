@@ -37,7 +37,7 @@ public class InsuranceChoiceAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         this.mContext = context;
         mInflater = LayoutInflater.from(context);
         mData = datats;
-        parseData();
+//        parseData();
 
     }
 
@@ -48,7 +48,7 @@ public class InsuranceChoiceAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     public void setData(List<InsuranceChoiceModel.BaseEntity> data) {
         mData = data;
-        parseData();
+//        parseData();
         notifyDataSetChanged();
     }
 
@@ -120,7 +120,7 @@ public class InsuranceChoiceAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         // 如果由选中到未选中，则移除item；如果从未选择到选中则增加item
         // 如果是商业险
         if (mData.indexOf(entity) == 1) {
-            parseData();
+//            parseData();
             notifyDataSetChanged();
         }
     }

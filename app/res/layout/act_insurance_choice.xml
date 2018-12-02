@@ -17,18 +17,18 @@
         android:paddingBottom="10dp"
         android:textColor="@color/app_blue"/>
 
-    <view
+    <View
         android:id="@+id/diver_line_between_header_list"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_below="@id/header_title_tips"
-        android:background="#f6f6f6"></view>
+        android:background="#f6f6f6"></View>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listview_insurance_choice"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/header_title_tips"
+        android:layout_below="@id/diver_line_between_header_list"
         >
 
     </android.support.v7.widget.RecyclerView>

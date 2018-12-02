@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 报价页面的数据结构
  */
-public class InsurancePirceModel {
+public class InsurancePriceModel {
 
     @Expose
     @SerializedName("status")
@@ -56,18 +56,23 @@ public class InsurancePirceModel {
     /**
      * 基础entity，为抽象类
      */
-    public abstract class PriceEntity {
+    public static class PriceEntity {
 
         // 表示保险公司的icon
         @Expose
         @SerializedName("iconurl")
         public String iconurl;
 
+        // 表示保险公司名称
+        @Expose
+        @SerializedName("company_name")
+        public String companyName;
+
 
         // 表示保险公司的唯一标识，用来请求价格
         @Expose
         @SerializedName("company_id")
-        public String companyId;
+        public int companyId;
 
         // 表示展示结果页还是loading页
         @Expose
