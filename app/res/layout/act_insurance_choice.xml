@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,27 +12,82 @@
         android:id="@+id/header_title_tips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/head_layout"
         android:text="*默认选择的是您去年的参保险种"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/app_blue"/>
 
+    <RelativeLayout
+        android:id="@+id/item_jqx_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_45"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/item_jqx_container_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="交强险/车船险"
+            />
+
+        <Switch
+            android:id="@+id/item_jqx_container_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            />
+
+    </RelativeLayout>
+
     <View
-        android:id="@+id/diver_line_between_header_list"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:layout_below="@id/header_title_tips"
+        android:background="#f6f6f6"></View>
+
+    <RelativeLayout
+        android:id="@+id/item_syx_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_m_y_45"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/item_syx_container_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="商业险"
+            />
+
+        <Switch
+            android:id="@+id/item_syx_container_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
         android:background="#f6f6f6"></View>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listview_insurance_choice"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/diver_line_between_header_list"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         >
 
     </android.support.v7.widget.RecyclerView>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +110,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:text="车险起保日期为2018-11-05"
-            android:layout_below="@id/textview_insurance_choice_num"
             android:visibility="gone"
             />
 
@@ -76,4 +131,4 @@
     </RelativeLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

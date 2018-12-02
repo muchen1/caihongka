@@ -260,7 +260,6 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                             for (int j = 0; j < syxArray.length(); j++) {
                                 JSONObject insuranceObject = syxArray.getJSONObject(j);
                                 InsuranceChoiceModel.ChildItemEntity childItemEntity = new InsuranceChoiceModel.ChildItemEntity();
-                                childItemEntity.style = InsuranceChoiceAdapter.ITEM_TYPE_CHILD;
                                 childItemEntity.insuranceName = insuranceObject.getString("name");
                                 childItemEntity.insuranceStatusTextKey = insuranceObject.getInt("default");
                                 childItemEntity.insuranceBjmpStatus = insuranceObject.getJSONObject("BuJiMian")

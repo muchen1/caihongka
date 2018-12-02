@@ -18,40 +18,17 @@ public class InsuranceChoiceModel implements Serializable {
     public int status;
     @Expose
     @SerializedName("data")
-    public List<BaseEntity> data;
+    public List<ChildItemEntity> data;
 
     /**
-     * 基础entity，为抽象类
+     * 带有switch开关的itemEntity
      */
-    public static abstract class BaseEntity {
-
-        // 表示样式，0表示header，1表示child样式
-        @Expose
-        @SerializedName("style")
-        public int style;
+    public static class ChildItemEntity {
 
         // 表示文案
         @Expose
         @SerializedName("insurance_name")
         public String insuranceName;
-
-    }
-
-    /**
-     * header对应的entity
-     */
-    public static class HeaderItemEntity extends BaseEntity {
-
-        // 表示本次续保的生效日期
-        @Expose
-        @SerializedName("insurance_switch")
-        public boolean isuranceSwitch;
-    }
-
-    /**
-     * 带有switch开关的itemEntity
-     */
-    public static class ChildItemEntity extends BaseEntity {
 
         // 表示该保险的key
         @Expose

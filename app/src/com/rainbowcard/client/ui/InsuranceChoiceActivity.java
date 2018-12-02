@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.rainbowcard.client.R;
@@ -24,7 +26,8 @@ import se.emilsjolander.stickylistheaders.ExpandableStickyListHeadersListView;
 /**
  * 险种选择 页面
  */
-public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnClickListener {
+public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnClickListener,
+        CompoundButton.OnCheckedChangeListener {
 
     @InjectView(R.id.listview_insurance_choice)
     RecyclerView mListviewInsuranceChoice;
@@ -36,6 +39,10 @@ public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnCl
     HeadControlPanel mHeadControlPanel;
     @InjectView(R.id.bt_insurance_get_price)
     TextView mBtGetPrice;
+    @InjectView(R.id.item_jqx_container_switch)
+    Switch mJqxSwitch;
+    @InjectView(R.id.item_syx_container_switch)
+    Switch mSyxSwitch;
 
     private InsuranceChoiceModel mInsuranceChoiceModel;
 
@@ -64,6 +71,11 @@ public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnCl
         mBackBtn.setOnClickListener(this);
         mBtGetPrice.setOnClickListener(this);
         mListviewInsuranceChoice.setLayoutManager(new LinearLayoutManager(this));
+
+        mSyxSwitch.setChecked(true);
+        mJqxSwitch.setChecked(true);
+        mSyxSwitch.setOnCheckedChangeListener(this);
+        mJqxSwitch.setOnCheckedChangeListener(this);
     }
 
     private void initData() {
@@ -91,6 +103,15 @@ public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnCl
             case R.id.bt_insurance_get_price:
                 // 跳转到报价页面
                 break;
+        }
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (buttonView == mJqxSwitch) {
+
+        } else if (buttonView == mSyxSwitch) {
+            mListviewInsuranceChoice.setVisibility(isChecked ? View.VISIBLE : View.INVISIBLE);
         }
     }
 }
