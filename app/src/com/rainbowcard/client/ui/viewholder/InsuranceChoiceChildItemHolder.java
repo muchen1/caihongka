@@ -94,14 +94,14 @@ public class InsuranceChoiceChildItemHolder extends RecyclerView.ViewHolder impl
                 // 如果本来总开关是开启状态,则把所有的都设置为关闭，只在这里设置entity的值，回调到adapter的时候再刷新数据
                 if (mEntity.insuranceStatus) {
                     mEntity.insuranceStatus = false;
-                    mEntity.insuranceBjmpStatus = 0;
+                    mEntity.insuranceBjmpStatus = mEntity.insuranceBjmpStatus == 2 ? 2 : 0;
                     // 0的位置应该是 不投保 方案
                     mEntity.insuranceStatusTextKey = mEntity.insuranceAllPrice.keyAt(0);
 
                 } else {
                     // 如果原来是关闭的，就把所有的开启
                     mEntity.insuranceStatus = true;
-                    mEntity.insuranceBjmpStatus = 1;
+                    mEntity.insuranceBjmpStatus = mEntity.insuranceBjmpStatus == 2 ? 2 : 1;
                     // 默认拿到第一个，应该是 投保 文案，或者是 金额
                     mEntity.insuranceStatusTextKey = mEntity.insuranceAllPrice.keyAt(1);
                 }

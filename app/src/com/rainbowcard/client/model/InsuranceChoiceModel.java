@@ -23,11 +23,11 @@ public class InsuranceChoiceModel implements Serializable {
 
     @Expose
     @SerializedName("jqx_switch")
-    public boolean jqxSwitch;
+    public boolean jqxSwitch = true;
 
     @Expose
     @SerializedName("syx_switch")
-    public boolean syxSwitch;
+    public boolean syxSwitch = true;
 
 
     /**
