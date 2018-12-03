@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_m_y_80"
+    android:background="@color/white"
     >
 
     <ImageView
@@ -19,18 +20,19 @@
         android:orientation="horizontal"
         android:layout_gravity="center_vertical|right"
         android:layout_marginRight="@dimen/dp_m_x_15"
-        android:visibility="gone"
         >
 
-        <com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar
-            android:layout_width="20dp"
-            android:layout_height="20dp" />
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_m_y_10"
-            android:textSize="17sp"
             android:textColor="@color/app_blue"
             android:text="正在查询报价"/>
 
@@ -41,7 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|right"
-        android:layout_marginRight="@dimen/dp_m_x_15">
+        android:layout_marginRight="@dimen/dp_m_x_15"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/item_insurance_price_discount"

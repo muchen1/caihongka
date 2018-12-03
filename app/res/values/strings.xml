@@ -252,5 +252,7 @@
     <string name="insurance_common_form_city">投保地区</string>
 
     <string name="insurance_choice_text">险种选择</string>
+    <string name="insurance_price_title_text">报价</string>
+    <string name="insurance_price_choice_num_format">已选险种（%1$d）</string>
 
 </resources>

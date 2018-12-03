@@ -2,6 +2,7 @@ package com.rainbowcard.client.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class InsurancePriceListAdapter extends RecyclerView.Adapter<BaseViewHold
         this.mContext = context;
         mInflater = LayoutInflater.from(context);
         mDatas = data;
+        Log.e("daipeng", "InsurancePriceListAdapter==" + mDatas.size());
     }
 
     public InsurancePriceListAdapter(Context context) {
@@ -37,19 +39,21 @@ public class InsurancePriceListAdapter extends RecyclerView.Adapter<BaseViewHold
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Log.e("daipeng", "onCreateViewHolder==" + viewType);
         View itemView = mInflater.inflate(R.layout.item_insurance_price, parent, false);
         return new InsurancePriceListHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
+        Log.e("daipeng", "onBindViewHolder==" + position);
         holder.bind(position, mDatas.get(position));
     }
 
     @Override
     public int getItemCount() {
         if (mDatas != null) {
-            mDatas.size();
+            return mDatas.size();
         }
         return 0;
     }

@@ -27,7 +27,9 @@ import com.rainbowcard.client.common.exvolley.utils.VolleyUtils;
 import com.rainbowcard.client.model.InsuranceChoiceModel;
 import com.rainbowcard.client.model.InsuranceModelServerProxy;
 import com.rainbowcard.client.model.InsurancePriceModel;
+import com.rainbowcard.client.model.UserInfoEntity;
 import com.rainbowcard.client.ui.adapter.InsuranceChoiceAdapter;
+import com.rainbowcard.client.utils.GsonUtil;
 import com.rainbowcard.client.utils.MD5Util;
 import com.rainbowcard.client.utils.MyConfig;
 import com.rainbowcard.client.utils.UIUtils;
@@ -217,25 +219,14 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                             JSONObject alldata = new JSONObject(resp);
                             // 用户信息
                             JSONObject personData = alldata.getJSONObject("data").getJSONObject("UserInfo");
-                            // 车主姓名
-                            String personName = personData.getString("InsuredName");
+                            insurancePriceModel.userInfoEntity = (InsurancePriceModel.UserInfoEntity)
+                                    GsonUtil.fromJson(personData.toString(), InsurancePriceModel.UserInfoEntity.class);
                             // 车牌号
                             String carNum = personData.getString("LicenseNo");
-                            // 车类型
-                            String carType = personData.getString("ModleName");
-                            // 强制险到期时间
-                            String forceExpireDate = personData.getString("ForceExpireDate");
-                            // 强制险开始日期
-                            String nextForceStartDate = personData.getString("NextForceStartDate");
-                            // 商业险到期日期
-                            String businessExpireDate = personData.getString("BusinessExpireDate");
-                            // 商业险开始日期
-                            String nextBusinessStartDate = personData.getString("NextBusinessStartDate");
-
 
                             // 报价中的可以显示的保险公司信息
                             JSONArray insuranceCompanyList = alldata.getJSONArray("ComList");
-                            List<InsurancePriceModel.PriceEntity> priceList = new ArrayList<>();
+                            insurancePriceModel.listData = new ArrayList<>();
                             for (int i = 0; i < insuranceCompanyList.length(); i++) {
                                 JSONObject company = insuranceCompanyList.getJSONObject(i);
                                 InsurancePriceModel.PriceEntity priceEntity = new InsurancePriceModel.PriceEntity();
@@ -243,14 +234,10 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                                 priceEntity.companyName = company.getString("name");
                                 priceEntity.iconurl = company.getString("icon");
                                 priceEntity.showResult = false;
-                                priceList.add(priceEntity);
+                                insurancePriceModel.listData.add(priceEntity);
                             }
-                            insurancePriceModel.listData = priceList;
-                            insurancePriceModel.carNum = carNum;
-                            insurancePriceModel.carType = carType;
-                            insurancePriceModel.carJqxDate = nextForceStartDate;
-                            insurancePriceModel.carSyxDate = nextBusinessStartDate;
-                            insurancePriceModel.carPerson = personName;
+
+                            Log.e("daipeng", "insurancePriceModel.listData==" + insurancePriceModel.listData.size());
                             insurancePriceModel.status = 0;
 
                             // 险种选择model
@@ -273,6 +260,10 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                                 JSONObject options = insuranceObject.getJSONObject("option");
                                 JSONArray optionNames = options.names();
                                 for (int k = 0; k < optionNames.length(); k ++) {
+                                    Log.e("daipeng", "insuranceName==" + childItemEntity.insuranceName);
+                                    Log.e("daipeng", "k===" + k);
+                                    Log.e("daipeng", "optionNames==" + optionNames.getString(k));
+                                    Log.e("daipeng", "optionvalue==" + options.getInt(optionNames.getString(k)));
                                     childItemEntity.insuranceAllPrice.append(options.getInt(optionNames.getString(k)), optionNames.getString(k));
                                 }
 

@@ -25,7 +25,7 @@
 
     <com.rainbowcard.client.widget.NumberPickerView
         android:id="@+id/dialog_text_choice_pickview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/dialog_text_choice_ok"
         android:layout_marginTop="30dp"
@@ -34,6 +34,8 @@
         app:npv_ShowCount="3"
         app:npv_ShowDivider="true"
         app:npv_DividerColor="@color/app_blue"
+        app:npv_DividerMarginLeft="@dimen/dp_m_y_100"
+        app:npv_DividerMarginRight="@dimen/dp_m_y_100"
         app:npv_TextColorSelected="@color/black"
         app:npv_TextSizeSelected="@dimen/sp_16"
         app:npv_TextColorNormal="@color/app_gray"

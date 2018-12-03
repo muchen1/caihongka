@@ -39,8 +39,8 @@
 
     <ImageView
         android:id="@+id/item_child_choice_arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="15dp"
+        android:layout_width="15dp"
+        android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:src="@drawable/arrow_down_insurance"/>
@@ -48,14 +48,10 @@
     <TextView
         android:id="@+id/item_child_choice_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@id/item_child_choice_arrow"
         android:text="不投保"/>
-
-
-
-
-
 
 </RelativeLayout>

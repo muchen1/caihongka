@@ -67,6 +67,7 @@ public class InsuranceChoiceAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     public void onClick(final InsuranceChoiceModel.ChildItemEntity entity, int viewId) {
         switch (viewId) {
             case R.id.item_child_choice_text:
+                notifyItemChanged(mData.indexOf(entity));
                 // break
                 break;
             case R.id.item_insurance_choice_child_rootview:

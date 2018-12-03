@@ -16,9 +16,19 @@ public class InsuranceChoiceModel implements Serializable {
     @Expose
     @SerializedName("status")
     public int status;
+
     @Expose
     @SerializedName("data")
     public List<ChildItemEntity> data;
+
+    @Expose
+    @SerializedName("jqx_switch")
+    public boolean jqxSwitch;
+
+    @Expose
+    @SerializedName("syx_switch")
+    public boolean syxSwitch;
+
 
     /**
      * 带有switch开关的itemEntity
@@ -62,4 +72,5 @@ public class InsuranceChoiceModel implements Serializable {
 
 
     }
+
 }

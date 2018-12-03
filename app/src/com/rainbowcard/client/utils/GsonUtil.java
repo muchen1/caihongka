@@ -15,6 +15,8 @@
  */
 package com.rainbowcard.client.utils;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -96,6 +98,7 @@ public class GsonUtil<T> {
 			Gson gson = gsonb.create();
 			obj = gson.fromJson(json,clazz);
 		} catch (Exception e) {
+			Log.e("daipeng", "发生异常了==" + e.getMessage());
 			e.printStackTrace();
 		}
 		return obj;

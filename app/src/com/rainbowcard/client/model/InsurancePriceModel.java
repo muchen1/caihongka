@@ -1,5 +1,7 @@
 package com.rainbowcard.client.model;
 
+import android.util.SparseArray;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -13,45 +15,15 @@ public class InsurancePriceModel {
     @Expose
     @SerializedName("status")
     public int status;
-    // header中的汽车牌号
-    @Expose
-    @SerializedName("car_num")
-    public String carNum;
-
-    // header中的被保人
-    @Expose
-    @SerializedName("car_person")
-    public String carPerson;
-
-    // header中的汽车类型
-    @Expose
-    @SerializedName("car_type")
-    public String carType;
-
-    // header 中的交强险起始日期
-    @Expose
-    @SerializedName("carJqxDate")
-    public String carJqxDate;
-
-    // header 中的商业险起始日期
-    @Expose
-    @SerializedName("carSyxDate")
-    public String carSyxDate;
-
-    // middle 中已经选择的险种数量
-    @Expose
-    @SerializedName("insuranceNum")
-    public String insuranceNum;
-
-    // middle 中已经选择的险种明细
-    @Expose
-    @SerializedName("insuranceText")
-    public String insuranceText;
-
 
     @Expose
     @SerializedName("list_data")
     public List<PriceEntity> listData;
+
+    @Expose
+    @SerializedName("userinfo")
+    public UserInfoEntity userInfoEntity;
+
 
     /**
      * 基础entity，为抽象类
@@ -93,5 +65,144 @@ public class InsurancePriceModel {
         @Expose
         @SerializedName("price_old")
         public String priceOld;
+    }
+
+    public static class UserInfoEntity {
+
+        @Expose
+        @SerializedName("CredentislasNum")
+        public String credentislasNum;
+
+        @Expose
+        @SerializedName("IdType")
+        public int idType;
+
+        @Expose
+        @SerializedName("ForceExpireDate")
+        public String forceExpireDate;
+
+        @Expose
+        @SerializedName("RateFactor4")
+        public int rateFactor4;
+
+        @Expose
+        @SerializedName("RateFactor2")
+        public float rateFactor2;
+
+        @Expose
+        @SerializedName("RateFactor3")
+        public float rateFactor3;
+
+        @Expose
+        @SerializedName("RateFactor1")
+        public float rateFactor1;
+
+        @Expose
+        @SerializedName("HolderIdCard")
+        public String holderIdCard;
+
+        @Expose
+        @SerializedName("PurchasePrice")
+        public int purchasePrice;
+
+        @Expose
+        @SerializedName("NextBusinessStartDate")
+        public String nextBusinessStartDate;
+
+        @Expose
+        @SerializedName("LicenseColor")
+        public int licenseColor;
+
+        @Expose
+        @SerializedName("RegisterDate")
+        public String registerDate;
+
+        @Expose
+        @SerializedName("NextForceStartDate")
+        public String nextForceStartDate;
+
+        @Expose
+        @SerializedName("ModleName")
+        public String modleName;
+
+        @Expose
+        @SerializedName("InsuredName")
+        public String insuredName;
+
+        @Expose
+        @SerializedName("BusinessExpireDate")
+        public String businessExpireDate;
+
+        @Expose
+        @SerializedName("PostedName")
+        public String postedName;
+
+        @Expose
+        @SerializedName("FuelType")
+        public int fuelType;
+
+        @Expose
+        @SerializedName("LicenseNo")
+        public String licenseNo;
+
+        @Expose
+        @SerializedName("CarUsedType")
+        public int carUsedType;
+
+        @Expose
+        @SerializedName("InsuredIdType")
+        public int insuredIdType;
+
+        @Expose
+        @SerializedName("ProofType")
+        public int proofType;
+
+        @Expose
+        @SerializedName("HolderIdType")
+        public int holderIdType;
+
+        @Expose
+        @SerializedName("ClauseType")
+        public int clauseType;
+
+        @Expose
+        @SerializedName("LicenseOwner")
+        public String licenseOwner;
+
+        @Expose
+        @SerializedName("InsuredMobile")
+        public String insuredMobile;
+
+        @Expose
+        @SerializedName("CityCode")
+        public int cityCode;
+
+        @Expose
+        @SerializedName("RunRegion")
+        public int runRegion;
+
+        @Expose
+        @SerializedName("HolderMobile")
+        public String holderMobile;
+
+        @Expose
+        @SerializedName("IsPublic")
+        public int isPublic;
+
+        @Expose
+        @SerializedName("SeatCount")
+        public int seatCount;
+
+        @Expose
+        @SerializedName("EngineNo")
+        public String engineNo;
+
+        @Expose
+        @SerializedName("CarVin")
+        public String CarVin;
+
+        @Expose
+        @SerializedName("InsuredIdCard")
+        public String insuredIdCard;
     }
 }

@@ -1,6 +1,7 @@
 package com.rainbowcard.client.ui.viewholder;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +22,8 @@ public class InsuranceChoiceChildItemHolder extends RecyclerView.ViewHolder impl
     public TextView mItemBjmp;
     // 商报情况下该item是否处于可用状态
     public ImageView mItemImgStatus;
+    // 下拉选择按钮
+    public ImageView mItemStatusArrow;
 
     // 点击下拉选择框
     public ChildItemChoiceClickListener mListener;
@@ -33,21 +36,26 @@ public class InsuranceChoiceChildItemHolder extends RecyclerView.ViewHolder impl
         mItemTitle = (TextView) itemView.findViewById(R.id.item_child_textview_title);
         mItemBjmp = (TextView) itemView.findViewById(R.id.item_child_textview_bjmp);
         mItemImgStatus = (ImageView) itemView.findViewById(R.id.item_child_enable);
+        mItemStatusArrow = (ImageView) itemView.findViewById(R.id.item_child_choice_arrow);
         mRootView = itemView.findViewById(R.id.item_insurance_choice_child_rootview);
         mListener = l;
 
         mRootView.setOnClickListener(this);
         mItemStatus.setOnClickListener(this);
         mItemBjmp.setOnClickListener(this);
+        mItemStatusArrow.setOnClickListener(this);
     }
 
     public void onBind(final InsuranceChoiceModel.ChildItemEntity entity) {
         mEntity = entity;
         mItemTitle.setText(entity.insuranceName);
         mItemStatus.setText(entity.insuranceAllPrice.get(entity.insuranceStatusTextKey));
-        mItemBjmp.setVisibility(entity.insuranceBjmpStatus == 2 ? View.VISIBLE : View.INVISIBLE);
-        mItemBjmp.setBackgroundResource(entity.insuranceStatus ? R.drawable.bg_insurance_choice_bjmp_enable
+        mItemBjmp.setVisibility(entity.insuranceBjmpStatus == 2 ? View.INVISIBLE : View.VISIBLE);
+        mItemBjmp.setTextColor(entity.insuranceBjmpStatus == 1 ? mItemBjmp.getResources().getColor(R.color.app_blue)
+                : mItemBjmp.getResources().getColor(R.color.app_gray_masking));
+        mItemBjmp.setBackgroundResource(entity.insuranceBjmpStatus == 1 ? R.drawable.bg_insurance_choice_bjmp_enable
                 : R.drawable.bg_insurance_choice_bjmp_disable);
+        mItemImgStatus.setImageResource(entity.insuranceStatus ? R.drawable.icon_right_enable : R.drawable.icon_right_disable);
 
     }
 
@@ -56,25 +64,29 @@ public class InsuranceChoiceChildItemHolder extends RecyclerView.ViewHolder impl
         switch (v.getId()) {
             // 点击选择框的时候回调出来，显示选择框
             case R.id.item_child_choice_text:
+            case R.id.item_child_choice_arrow:
                 // 直接把这个传递回去，用来弹出选择框
 
                 String[] showText = new String[mEntity.insuranceAllPrice.size()];
                 for (int i = 0; i < mEntity.insuranceAllPrice.size(); i++) {
                     showText[i] = mEntity.insuranceAllPrice.valueAt(i);
+                    Log.e("daipeng", "showText===" + showText[i]);
+
                 }
+                Log.e("daipeng", "showText===" + showText.length);
                 new TextChoiceDialog(itemView.getContext(), new TextChoiceDialog.OnTextChoiceListener() {
                     @Override
                     public void onTextChoice(String text) {
                         mEntity.insuranceStatusTextKey = mEntity.insuranceAllPrice.keyAt(mEntity
                                 .insuranceAllPrice.indexOfValue(text));
-                        mItemStatus.setText(text);
+                        mEntity.insuranceStatus = mEntity.insuranceStatusTextKey == 0 ? false : true;
+                        // 回调回去
+                        if (mListener != null) {
+                            mListener.onClick(mEntity, R.id.item_child_choice_text);
+                        }
                     }
                 }, showText).show();
 
-                // 回调回去
-                if (mListener != null) {
-                    mListener.onClick(mEntity, R.id.item_child_choice_text);
-                }
                 break;
             // 点击整个Item，处理状态，并且回调回去
             case R.id.item_insurance_choice_child_rootview:
@@ -85,7 +97,6 @@ public class InsuranceChoiceChildItemHolder extends RecyclerView.ViewHolder impl
                     mEntity.insuranceBjmpStatus = 0;
                     // 0的位置应该是 不投保 方案
                     mEntity.insuranceStatusTextKey = mEntity.insuranceAllPrice.keyAt(0);
-
 
                 } else {
                     // 如果原来是关闭的，就把所有的开启

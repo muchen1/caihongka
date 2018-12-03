@@ -1,5 +1,6 @@
 package com.rainbowcard.client.ui.viewholder;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -7,6 +8,8 @@ import android.widget.TextView;
 
 import com.rainbowcard.client.R;
 import com.rainbowcard.client.model.InsurancePriceModel;
+import com.rainbowcard.client.ui.ShopDetailActivity;
+import com.squareup.picasso.Picasso;
 
 public class InsurancePriceListHolder extends BaseViewHolder<InsurancePriceModel.PriceEntity>
         implements View.OnClickListener {
@@ -40,6 +43,13 @@ public class InsurancePriceListHolder extends BaseViewHolder<InsurancePriceModel
     @Override
     public void onBind(int position, InsurancePriceModel.PriceEntity d) {
         // todo icon没有加入
+        Log.e("daipeng", "onBind=" + d.showResult);
+        Picasso.with(mInsuranceCompanyIcon.getContext())
+                .load(d.iconurl)
+                .fit()
+                .centerCrop()
+                .placeholder(R.drawable.detail_default)
+                .error(R.drawable.detail_default).into(mInsuranceCompanyIcon);
         mLoadingLayout.setVisibility(d.showResult ? View.INVISIBLE : View.VISIBLE);
         mResultLayout.setVisibility(d.showResult ? View.VISIBLE : View.INVISIBLE);
         mResultOldPriceText.setText(d.priceOld);

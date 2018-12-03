@@ -102,6 +102,9 @@ public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnCl
                 break;
             case R.id.bt_insurance_get_price:
                 // 跳转到报价页面
+                Intent intent = new Intent(InsuranceChoiceActivity.this, InsurancePriceActivity.class);
+                intent.putExtra("carNum", mCarNum);
+                startActivity(intent);
                 break;
         }
     }
@@ -109,8 +112,9 @@ public class InsuranceChoiceActivity extends MyBaseActivity implements View.OnCl
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if (buttonView == mJqxSwitch) {
-
+            mInsuranceChoiceModel.jqxSwitch = isChecked;
         } else if (buttonView == mSyxSwitch) {
+            mInsuranceChoiceModel.syxSwitch = isChecked;
             mListviewInsuranceChoice.setVisibility(isChecked ? View.VISIBLE : View.INVISIBLE);
         }
     }

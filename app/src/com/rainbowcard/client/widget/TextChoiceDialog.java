@@ -37,11 +37,12 @@ public class TextChoiceDialog extends Dialog implements View.OnClickListener {
     private void initView() {
         setContentView(R.layout.dialog_text_choice);
         mTextPickerView = (NumberPickerView) findViewById(R.id.dialog_text_choice_pickview);
+        mTextPickerView.setDisplayedValuesAndPickedIndex(mChoiceData, 1, true);
+
         mBtCancel = (TextView) findViewById(R.id.dialog_text_choice_cancel);
         mBtOk = (TextView) findViewById(R.id.dialog_text_choice_ok);
         mBtOk.setOnClickListener(this);
         mBtCancel.setOnClickListener(this);
-        mTextPickerView.setDisplayedValues(mChoiceData);
     }
 
     @Override

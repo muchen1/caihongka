@@ -3,5 +3,6 @@
     <corners
         android:radius="@dimen/dp_m_y_50">
     </corners>
-    <solid android:color="@color/app_gray_masking"></solid>
+    <stroke android:color="@color/app_gray_masking" android:width="1dp"></stroke>
+    <solid android:color="@color/white"></solid>
 </shape>

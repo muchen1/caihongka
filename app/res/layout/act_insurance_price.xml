@@ -14,7 +14,8 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="15dp"
-        android:paddingBottom="15dp">
+        android:paddingBottom="15dp"
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/item_header_icon"
@@ -78,10 +79,11 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="#dbdbdb"></View>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-
+        android:background="@color/white"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="0dp"
@@ -93,13 +95,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_12"
                 android:text="交强险起保日期："/>
 
             <TextView
                 android:id="@+id/item_date_jqx_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019-8-9"/>
+                android:textSize="@dimen/sp_12"
+                android:text="2019-08-09"/>
         </LinearLayout>
         <View
             android:layout_width="1px"
@@ -115,13 +119,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_12"
                 android:text="商业险起保日期："/>
 
             <TextView
                 android:id="@+id/item_date_syx_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019-8-9"/>
+                android:textSize="@dimen/sp_12"
+
+                android:text="2019-08-09"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -135,12 +142,14 @@
         android:layout_height="1px"
         android:layout_marginTop="10dp"
         android:background="#dbdbdb"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:paddingRight="10dp"
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/item_choice_insurance_num"
