@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
@@ -14,7 +14,6 @@
         android:layout_marginBottom="@dimen/dp_m_x_25"
         android:text="请确认车辆信息"
         android:textSize="@dimen/sp_20"
-        android:textStyle="bold"
         android:textColor="@color/app_blue"/>
 
     <TextView
@@ -33,6 +32,10 @@
         android:layout_height="wrap_content"
         android:text="大众FV轿车"
         android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_toRightOf="@id/textview_car_style_key"
         android:layout_alignBaseline="@id/textview_car_style_key"
         />
 
@@ -114,13 +117,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/textview_insurance_person_key"
+        android:gravity="right"
+        android:singleLine="true"
+        android:ellipsize="end"
         android:layout_alignBaseline="@id/textview_insurance_person_key"
         android:text="个人/*拓"/>
 
     <TextView
+        android:id="@+id/insurance_confirm_button"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/textview_insurance_person_key"
+        android:layout_marginBottom="@dimen/dp_m_y_20"
         android:gravity="center"
         android:background="@drawable/bg_blue_btn_normal"
         android:textColor="@color/white"

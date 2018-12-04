@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,7 +35,10 @@ import com.rainbowcard.client.utils.MD5Util;
 import com.rainbowcard.client.utils.MyConfig;
 import com.rainbowcard.client.utils.UIUtils;
 import com.rainbowcard.client.utils.Util;
+import com.rainbowcard.client.widget.CommonInsuranceConfirmDialog;
 import com.rainbowcard.client.widget.HeadControlPanel;
+import com.rainbowcard.client.widget.adlibrary.AdConstant;
+import com.rainbowcard.client.widget.adlibrary.AnimDialogUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -50,7 +54,7 @@ import butterknife.InjectView;
 /**
  * 普通车险 页面
  */
-public class CommonInsuranceActivity extends MyBaseActivity implements View.OnClickListener {
+public class CommonInsuranceActivity extends MyBaseActivity implements View.OnClickListener, CommonInsuranceConfirmDialog.onConfirmClickListener {
 
     @InjectView(R.id.head_layout)
     HeadControlPanel mHeadControlPanel;
@@ -72,6 +76,7 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
     // spinner的数据
     private List mCityNumSpinnerData;
 
+    private String mCarNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -222,7 +227,7 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                             insurancePriceModel.userInfoEntity = (InsurancePriceModel.UserInfoEntity)
                                     GsonUtil.fromJson(personData.toString(), InsurancePriceModel.UserInfoEntity.class);
                             // 车牌号
-                            String carNum = personData.getString("LicenseNo");
+                            mCarNum = personData.getString("LicenseNo");
 
                             // 报价中的可以显示的保险公司信息
                             JSONArray insuranceCompanyList = alldata.getJSONArray("ComList");
@@ -271,14 +276,15 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                                 insuranceChoiceModel.data.add(childItemEntity);
                             }
 
-                            InsuranceModelServerProxy.getInstance().setModel(carNum,
+                            InsuranceModelServerProxy.getInstance().setModel(mCarNum,
                                     insuranceChoiceModel, insurancePriceModel);
 
+                            // 解析成功之后出确认弹窗
+                            new CommonInsuranceConfirmDialog(CommonInsuranceActivity.this, android.R.style.Theme_Material_Light_Dialog_NoActionBar)
+                                    .initData(mCarNum)
+                                    .setOnConfirmClickListener(CommonInsuranceActivity.this)
+                                    .show();
 
-                            // 解析成功之后跳界面
-                            Intent intent = new Intent(CommonInsuranceActivity.this, InsuranceChoiceActivity.class);
-                            intent.putExtra("carNum", carNum);
-                            startActivity(intent);
                         } catch (Exception e) {
                             // donothing
                             Log.e("daipeng", "发生异常了==" + e.getMessage());
@@ -312,5 +318,13 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                     }
                 }).excute();
 
+    }
+
+    @Override
+    public void onConfirmBtClick() {
+        // 点击确认弹窗跳转到报价页面
+        Intent intent = new Intent(CommonInsuranceActivity.this, InsuranceChoiceActivity.class);
+        intent.putExtra("carNum", mCarNum);
+        startActivity(intent);
     }
 }
