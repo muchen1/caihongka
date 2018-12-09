@@ -1,6 +1,7 @@
 package com.rainbowcard.client.model;
 
 import android.text.TextUtils;
+import android.util.SparseArray;
 
 /**
  * 由于服务端接口比较大，在一次请求中把险种选择页面，报价页面的所需信息都返回了，所以做一个代理，
@@ -20,7 +21,8 @@ public class InsuranceModelServerProxy {
     private InsurancePriceModel mInsurancePriceModel;
 
     // 报价详情页面所需数据
-    private InsurancePriceDetailModel mInsurancePriceDetailModel;
+    private SparseArray<InsurancePriceDetailModel> mInsurancePriceDetailModels = new SparseArray<>();
+
 
     private InsuranceModelServerProxy() {
 
@@ -47,6 +49,23 @@ public class InsuranceModelServerProxy {
         this.mInsuranceChoiceModel = model;
         this.mCarNum = carNum;
         this.mInsurancePriceModel = priceModel;
+    }
+
+    /**
+     * 设置报价详情页的model
+     * @param companyId
+     * @param model
+     */
+    public void setPriceDetailModel(int companyId, InsurancePriceDetailModel model) {
+        mInsurancePriceDetailModels.append(companyId, model);
+    }
+
+    /**
+     * 获取报价详情页面的model
+     * @return
+     */
+    public InsurancePriceDetailModel getInsurancePriceDetailModel(int companyId) {
+        return mInsurancePriceDetailModels.get(companyId);
     }
 
     /**

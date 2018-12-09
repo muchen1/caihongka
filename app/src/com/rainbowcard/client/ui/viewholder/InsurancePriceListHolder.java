@@ -1,5 +1,7 @@
 package com.rainbowcard.client.ui.viewholder;
 
+import android.content.Intent;
+import android.graphics.Paint;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.TextView;
 
 import com.rainbowcard.client.R;
 import com.rainbowcard.client.model.InsurancePriceModel;
+import com.rainbowcard.client.ui.InsurancePriceDetailActivity;
 import com.rainbowcard.client.ui.ShopDetailActivity;
 import com.squareup.picasso.Picasso;
 
@@ -36,6 +39,7 @@ public class InsurancePriceListHolder extends BaseViewHolder<InsurancePriceModel
         mResultNewPriceText = findView(R.id.item_insurance_price_new);
         mResultOldPriceText = findView(R.id.item_insurance_price_old);
 
+        mResultOldPriceText.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         mResultLayout.setOnClickListener(this);
 
     }
@@ -55,6 +59,9 @@ public class InsurancePriceListHolder extends BaseViewHolder<InsurancePriceModel
         mResultOldPriceText.setText(d.priceOld);
         mResultNewPriceText.setText(d.priceNew);
         mResultDiscoutText.setText(d.priceDiscout);
+        mResultDiscoutText.setText(String.format(mResultDiscoutText.getContext()
+                        .getString(R.string.insurance_price_discount_string_format),
+                d.priceDiscout));
     }
 
     @Override
@@ -64,6 +71,15 @@ public class InsurancePriceListHolder extends BaseViewHolder<InsurancePriceModel
         }
         switch (v.getId()) {
             case R.id.item_insurance_price_result:
+                // 进行跳转
+                Intent intent = new Intent(mResultLayout.getContext(),
+                        InsurancePriceDetailActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("companyId", item.companyId);
+                mResultLayout.getContext().startActivity(intent);
+                break;
+            default:
+                break;
         }
     }
 }

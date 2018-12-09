@@ -252,6 +252,51 @@ public class BtwVolley {
 
         return mExRequestBuilder.excute();
     }
+
+    public ExRequest excute(int timeout) {
+        if (mResponseHandler == null) {
+            throw new NullPointerException("need btw listener");
+        }
+
+
+//        mExRequestBuilder.setParam("version", mVersion);
+//        mExRequestBuilder.setParam("device","android");
+//        mExRequestBuilder.setHeader("appid",mAppid);
+//        mExRequestBuilder.setHeader("secret", mSecret);
+//        mExRequestBuilder.setHeader("Content-Type", "application/json; charset=utf-8");
+//        mExRequestBuilder.setHeader("Accept", "application/vnd.caihongka.v1.0.0+json");
+        mExRequestBuilder.setHeader("Client", String.valueOf(API.API_CLIENT_ID));
+        mExRequestBuilder.setHeader("Version", YHApplication.instance().getVersionName());
+        mExRequestBuilder.setHeader("DeviceId", PhoneSignUtil.getDeviceId(mContext));
+        mExRequestBuilder.setTimeout(timeout);
+        mExRequestBuilder.response(new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (!isUIComponentAlive()) {
+                    return;
+                }
+                handleResponse(response);
+            }
+        }, String.class);
+
+        mExRequestBuilder.error(new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if (!isUIComponentAlive()) {
+                    return;
+                }
+                deliverNetworkError(error);
+                mResponseHandler.onFinish();
+            }
+        });
+
+        if (isUIComponentAlive()) {
+            mResponseHandler.onStart();
+        }
+
+        return mExRequestBuilder.excute();
+    }
+
     public ExRequest excute(final Class raw) {
         if (mResponseHandler == null) {
             throw  new NullPointerException("need btw listener");

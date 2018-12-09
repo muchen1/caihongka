@@ -1,6 +1,7 @@
 package com.rainbowcard.client.ui.viewholder;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rainbowcard.client.R;
@@ -10,7 +11,7 @@ public class InsurancePriceDetailHeaderHolder extends BaseViewHolder<InsurancePr
 
     private TextView mHeaderTextView;
     private TextView mEditBt;
-    private TextView mEditIcon;
+    private ImageView mEditIcon;
 
     public InsurancePriceDetailHeaderHolder(View itemView) {
         super(itemView);
@@ -34,7 +35,8 @@ public class InsurancePriceDetailHeaderHolder extends BaseViewHolder<InsurancePr
 
     @Override
     public void onBind(int position, InsurancePriceDetailModel.HeaderEntity d) {
-        mHeaderTextView.setText(d.commonText);
+        mHeaderTextView.setText(String.format(mHeaderTextView.getContext().getString(R.string
+                .insurance_price_detail_header_string_format), d.commonText, d.insuranceDate));
     }
 
     @Override

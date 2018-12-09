@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/item_insurance_price_discount"
             android:layout_marginLeft="@dimen/dp_m_y_10"
-            android:textSize="@dimen/sp_20"
+            android:textSize="@dimen/sp_18"
             android:textColor="@color/app_orange"
             android:text="¥3681.07"
             />
@@ -78,7 +78,7 @@
             android:layout_toRightOf="@id/item_insurance_price_discount"
             android:layout_alignRight="@id/item_insurance_price_new"
             android:layout_below="@id/item_insurance_price_new"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sp_16"
             android:text="¥3977.06"
             />
 

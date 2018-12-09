@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_m_y_30"
-    android:background="@color/app_gray_masking">
+    android:background="#e9e9e9">
     
     <View
         android:layout_width="@dimen/dp_m_y_10"
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="@dimen/dp_m_y_5"
-        android:text="交强车船(起保日期为2018-11-11)"
+        android:text=""
         />
     <ImageView
         android:id="@+id/item_inprice_detail_groupheader_editicon"

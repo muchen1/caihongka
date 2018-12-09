@@ -20,11 +20,11 @@ public class InsurancePriceDetailModel {
 
     @Expose
     @SerializedName("price_new")
-    public int priceNew;
+    public String priceNew;
 
     @Expose
     @SerializedName("price_old")
-    public int priceOld;
+    public String priceOld;
 
     @Expose
     @SerializedName("price_datas")
@@ -32,7 +32,7 @@ public class InsurancePriceDetailModel {
 
 
 
-    public abstract class BaseEntity {
+    public static abstract class BaseEntity {
 
         // 表示样式，1表示header，2表示child样式,3表示bottom
         @Expose
@@ -45,7 +45,7 @@ public class InsurancePriceDetailModel {
         public String commonText;
     }
 
-    public class HeaderEntity extends BaseEntity {
+    public static class HeaderEntity extends BaseEntity {
 
         // 表示保险起始日期
         @Expose
@@ -54,7 +54,7 @@ public class InsurancePriceDetailModel {
 
     }
 
-    public class ChildEntity extends BaseEntity {
+    public static class ChildEntity extends BaseEntity {
 
         // 表示对应险种价格
         // 表示保险起始日期

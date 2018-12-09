@@ -78,7 +78,10 @@ public class InsurancePriceDetailAdapter extends RecyclerView.Adapter<BaseViewHo
 
     @Override
     public int getItemCount() {
-        return TYPE_COUNT;
+        if (mDatas != null) {
+            return mDatas.size();
+        }
+        return 0;
     }
 
     @Override

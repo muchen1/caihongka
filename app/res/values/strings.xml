@@ -253,6 +253,9 @@
 
     <string name="insurance_choice_text">险种选择</string>
     <string name="insurance_price_title_text">报价</string>
+    <string name="insurance_price_detail_title_text">报价详情</string>
     <string name="insurance_price_choice_num_format">已选险种（%1$d）</string>
+    <string name="insurance_price_discount_string_format">%1$s折</string>
+    <string name="insurance_price_detail_header_string_format">%1$s(起保日期为%2$s)</string>
 
 </resources>

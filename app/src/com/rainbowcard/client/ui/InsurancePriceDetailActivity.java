@@ -11,8 +11,13 @@ import android.widget.TextView;
 
 import com.rainbowcard.client.R;
 import com.rainbowcard.client.base.MyBaseActivity;
+import com.rainbowcard.client.model.InsuranceModelServerProxy;
+import com.rainbowcard.client.model.InsurancePriceDetailModel;
+import com.rainbowcard.client.model.InsurancePriceModel;
+import com.rainbowcard.client.ui.adapter.InsurancePriceDetailAdapter;
 import com.rainbowcard.client.utils.UIUtils;
 import com.rainbowcard.client.widget.HeadControlPanel;
+import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -41,6 +46,13 @@ public class InsurancePriceDetailActivity extends MyBaseActivity implements View
     @InjectView(R.id.inprice_list)
     RecyclerView mInpriceList;
 
+    private int mCompanyId;
+
+    private InsurancePriceDetailModel mPriceDetailModel;
+
+    private InsurancePriceDetailAdapter mPriceDetailAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +66,24 @@ public class InsurancePriceDetailActivity extends MyBaseActivity implements View
     }
 
     private void initView() {
+
+        mHeaderTitle.setVisibility(View.VISIBLE);
+        mHeaderTitle.setText(R.string.insurance_price_detail_title_text);
+        mHeaderTitle.setTextColor(getResources().getColor(R.color.vpi__background_holo_dark));
+        mHeadControlPanel.setMyBackgroundColor(getResources().getColor(R.color.white));
+        mBackBtn.setVisibility(View.VISIBLE);
+        mBackBtn.setOnClickListener(this);
+
+        Picasso.with(this)
+                .load(mPriceDetailModel.companyIcon)
+                .fit()
+                .centerCrop()
+                .placeholder(R.drawable.detail_default)
+                .error(R.drawable.detail_default).into(mInsuranceCompanyIcon);
+
+        mBottomPriceNew.setText(mPriceDetailModel.priceNew);
+        mBottomPriceOld.setText(mPriceDetailModel.priceOld);
+
         mInpriceHeaderArrow.setOnClickListener(this);
         mInpriceHeaderEdit.setOnClickListener(this);
         mBottomNext.setOnClickListener(this);
@@ -62,11 +92,21 @@ public class InsurancePriceDetailActivity extends MyBaseActivity implements View
     }
 
     private void initData() {
-
+        mPriceDetailAdapter = new InsurancePriceDetailAdapter(this, mPriceDetailModel.priceDatas);
+        mInpriceList.setAdapter(mPriceDetailAdapter);
     }
 
     private void parseIntent(Intent intent) {
-
+        if (intent != null) {
+            mCompanyId = intent.getIntExtra("companyId", -1);
+        }
+        if (mCompanyId == -1) {
+            finish();
+        }
+        mPriceDetailModel = InsuranceModelServerProxy.getInstance().getInsurancePriceDetailModel(mCompanyId);
+        if (mPriceDetailModel == null) {
+            finish();
+        }
     }
 
     @Override
@@ -79,6 +119,9 @@ public class InsurancePriceDetailActivity extends MyBaseActivity implements View
             // 点击下一步
             case R.id.inprice_bottom_price_next:
                 break;
+            case R.id.nav_back:
+                // 点击back
+                finish();
             default:
                 break;
         }
