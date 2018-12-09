@@ -11,12 +11,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.rainbowcard.client.R;
 import com.rainbowcard.client.base.API;
@@ -37,6 +39,7 @@ import com.rainbowcard.client.utils.UIUtils;
 import com.rainbowcard.client.utils.Util;
 import com.rainbowcard.client.widget.CommonInsuranceConfirmDialog;
 import com.rainbowcard.client.widget.HeadControlPanel;
+import com.rainbowcard.client.widget.TextChoiceDialog;
 import com.rainbowcard.client.widget.adlibrary.AdConstant;
 import com.rainbowcard.client.widget.adlibrary.AnimDialogUtils;
 
@@ -54,7 +57,8 @@ import butterknife.InjectView;
 /**
  * 普通车险 页面
  */
-public class CommonInsuranceActivity extends MyBaseActivity implements View.OnClickListener, CommonInsuranceConfirmDialog.onConfirmClickListener {
+public class CommonInsuranceActivity extends MyBaseActivity implements View.OnClickListener,
+        CommonInsuranceConfirmDialog.onConfirmClickListener, TextChoiceDialog.OnTextChoiceListener {
 
     @InjectView(R.id.head_layout)
     HeadControlPanel mHeadControlPanel;
@@ -71,10 +75,21 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
     @InjectView(R.id.ci_bt_next)
     TextView mNextButton;
     @InjectView(R.id.ac_spiner_car_city)
-    Spinner mCityNumSpinner;
+    TextView mCityNumSpinnerText;
+
+    @InjectView(R.id.ac_spiner_car_city_container)
+    LinearLayout mCityNumSpinnerTextContainer;
+    @InjectView(R.id.insurance_common_insuracedcity_container)
+    LinearLayout mInsuracedCityContainer;
+    @InjectView(R.id.insurance_common_insuracedcity)
+    TextView mInsurancedCity;
 
     // spinner的数据
-    private List mCityNumSpinnerData;
+    private String[] mProviceStringList;
+
+    private SparseArray<String> mCityInsuranceList;
+
+    private String[] mCityInsuranceArray;
 
     private String mCarNum;
 
@@ -99,61 +114,12 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
         mFooterTextview.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
         mProtocolTextview.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
         mNextButton.setOnClickListener(this);
+        mCityNumSpinnerTextContainer.setOnClickListener(this);
+        mInsuracedCityContainer.setOnClickListener(this);
     }
 
     private void initData() {
-        mCityNumSpinnerData = new ArrayList();
-        mCityNumSpinnerData.add("京");
-        mCityNumSpinnerData.add("津");
-        mCityNumSpinnerData.add("沪");
-        mCityNumSpinnerData.add("渝");
-        mCityNumSpinnerData.add("蒙");
-        mCityNumSpinnerData.add("新");
-        mCityNumSpinnerData.add("藏");
-        mCityNumSpinnerData.add("宁");
-        mCityNumSpinnerData.add("桂");
-        mCityNumSpinnerData.add("黑");
-        mCityNumSpinnerData.add("吉");
-        mCityNumSpinnerData.add("辽");
-        mCityNumSpinnerData.add("晋");
-        mCityNumSpinnerData.add("冀");
-        mCityNumSpinnerData.add("青");
-        mCityNumSpinnerData.add("鲁");
-        mCityNumSpinnerData.add("豫");
-        mCityNumSpinnerData.add("苏");
-        mCityNumSpinnerData.add("皖");
-        mCityNumSpinnerData.add("浙");
-        mCityNumSpinnerData.add("闽");
-        mCityNumSpinnerData.add("赣");
-        mCityNumSpinnerData.add("湘");
-        mCityNumSpinnerData.add("鄂");
-        mCityNumSpinnerData.add("粤");
-        mCityNumSpinnerData.add("琼");
-        mCityNumSpinnerData.add("甘");
-        mCityNumSpinnerData.add("贵");
-        mCityNumSpinnerData.add("云");
-        mCityNumSpinnerData.add("川");
-
-//
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this,
-                R.layout.simple_item_spinner, mCityNumSpinnerData);
-//
-        spinnerAdapter.setDropDownViewResource(R.layout.simple_item_spinner);
-//
-//        //绑定 Adapter到控件
-        mCityNumSpinner.setAdapter(spinnerAdapter);
-        mCityNumSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(CommonInsuranceActivity.this, "nihao--" + position, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
+        getCityListFromServer();
     }
 
     @Override
@@ -172,18 +138,36 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                 }
                 searchUserinfoByCarnum(carNum);
                 break;
+            case R.id.ac_spiner_car_city_container:
+                // 点击选择车牌号的省份
+                new TextChoiceDialog(CommonInsuranceActivity.this,
+                        new TextChoiceDialog.OnTextChoiceListener() {
+                            @Override
+                            public void onTextChoice(String text) {
+                                mCityNumSpinnerText.setText(text);
+                            }
+                        }, mProviceStringList).show();
+                break;
+            case R.id.insurance_common_insuracedcity_container:
+                // 点击保险地点的区域
+                new TextChoiceDialog(CommonInsuranceActivity.this,
+                        CommonInsuranceActivity.this, mCityInsuranceArray).show();
+                break;
             default:
                 break;
         }
     }
 
     String url = "http://118.24.202.95:5000/bx/api/getCarInfo";
+    String getCityUrl = "http://118.24.202.95:5000/bx/api/getCityList";
+    String getProvinceUrl = "http://118.24.202.95:5000/bx/api/getProvince";
+
     private void searchUserinfoByCarnum(String carnum) {
         String token = String.format(getString(R.string.token),
                 MyConfig.getSharePreStr(CommonInsuranceActivity.this,
                         Constants.USERINFO, Constants.UID));
 
-        String province = ((TextView) (mCityNumSpinner.getSelectedView())).getText().toString().trim();
+        String province = mCityNumSpinnerText.getText().toString().trim();
         String carNumString = province + carnum.toUpperCase();
         StringBuilder stringBuilder = new StringBuilder("LicenseNo=");
         stringBuilder.append(carNumString).append("&").append("shopId=").append("1").append("&")
@@ -204,7 +188,7 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
                 .setResponseHandler(new BtwVolley.ResponseHandler<String>() {
                     @Override
                     public void onStart() {
-                        getUIUtils().loading(R.id.tv_msg);
+                        getUIUtils().loading(false);
                     }
 
                     @Override
@@ -320,11 +304,167 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
 
     }
 
+
+    /**
+     * 获取保险城市的请求
+     */
+    private void getCityListFromServer() {
+        String token = String.format(getString(R.string.token),
+                MyConfig.getSharePreStr(CommonInsuranceActivity.this,
+                        Constants.USERINFO, Constants.UID));
+
+        withBtwVolley().load(getCityUrl)
+                .method(Request.Method.GET)
+                .setHeader("Authorization", token)
+                .setHeader("Accept", API.VERSION)
+                .setUIComponent(this)
+                .setRetrys(0)
+                .setResponseHandler(new BtwVolley.ResponseHandler<String>() {
+                    @Override
+                    public void onStart() {
+                        getUIUtils().loading(false);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        // 开始请求省份列表，由于请求时间很短，就不进行并行请求了，而采取串行的形式
+                        getProvinceListFromServer();
+                    }
+
+                    @Override
+                    public void onResponse(String resp) {
+                        Log.e("daipeng", "onBtwError==" + resp);
+                        // 解析列表
+
+                        try {
+
+                            JSONObject jsonObject = new JSONObject(resp);
+                            JSONObject listObject = jsonObject.optJSONObject("data");
+                            if (listObject == null) {
+                                return;
+                            }
+                            JSONArray names = listObject.names();
+                            mCityInsuranceArray = new String[names.length()];
+                            mCityInsuranceList = new SparseArray<>();
+                            for (int i = 0; i < names.length(); i++) {
+                                mCityInsuranceList.append(listObject.getInt(names.getString(i)), names.getString(i));
+                                mCityInsuranceArray[i] = names.getString(i);
+                            }
+
+                        } catch (Exception e) {
+                            Log.e("daipeng", "e=" + e.getMessage());
+                        }
+
+                    }
+
+                    @Override
+                    public void onBtwError(BtwRespError<String> error) {
+                        Log.e("daipeng", "onBtwError==" + error.errorMessage);
+                        Log.e("daipeng", "onBtwError==" + error.errorCode);
+                        Log.e("daipeng", "onBtwError==" + error.result);
+                        Toast.makeText(CommonInsuranceActivity.this, "服务异常，请稍后重试", Toast.LENGTH_SHORT);
+                        finish();
+                    }
+
+                    @Override
+                    public void onNetworkError(VolleyUtils.NetworkError error) {
+                        Log.e("daipeng", "onNetworkError==" + error.message);
+                        Toast.makeText(CommonInsuranceActivity.this, "请检查网络配置", Toast.LENGTH_SHORT);
+                        finish();
+
+
+                    }
+
+                    @Override
+                    public void onRefreToken() {
+                        Log.e("daipeng", "refershtoken==");
+                        // token失效，重新登录
+                        refreshToken();
+                    }
+                }).excute();
+    }
+
+
+    /**
+     * 获取车牌号省简称城市的请求
+     */
+    private void getProvinceListFromServer() {
+        String token = String.format(getString(R.string.token),
+                MyConfig.getSharePreStr(CommonInsuranceActivity.this,
+                        Constants.USERINFO, Constants.UID));
+
+        withBtwVolley().load(getProvinceUrl)
+                .method(Request.Method.GET)
+                .setHeader("Authorization", token)
+                .setHeader("Accept", API.VERSION)
+                .setUIComponent(this)
+                .setRetrys(0)
+                .setResponseHandler(new BtwVolley.ResponseHandler<String>() {
+                    @Override
+                    public void onStart() {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        getUIUtils().dismissLoading();
+                    }
+
+                    @Override
+                    public void onResponse(String resp) {
+                        Log.e("daipeng", "onBtwError==" + resp);
+                        // 解析省份简称列表
+                        try {
+                            JSONObject jsonObject = new JSONObject(resp);
+                            JSONArray provinceArray = jsonObject.getJSONObject("data")
+                                    .getJSONArray("Province");
+                            mProviceStringList = new String[provinceArray.length()];
+                            for (int i = 0; i < provinceArray.length(); i++) {
+                                mProviceStringList[i] = provinceArray.getString(i);
+                            }
+
+                        } catch (Exception e) {
+
+                        }
+                    }
+
+                    @Override
+                    public void onBtwError(BtwRespError<String> error) {
+                        Log.e("daipeng", "onBtwError==" + error.errorMessage);
+                        Log.e("daipeng", "onBtwError==" + error.errorCode);
+                        Log.e("daipeng", "onBtwError==" + error.result);
+                        Toast.makeText(CommonInsuranceActivity.this, "服务异常，请稍后重试", Toast.LENGTH_SHORT);
+                        finish();
+                    }
+
+                    @Override
+                    public void onNetworkError(VolleyUtils.NetworkError error) {
+                        Log.e("daipeng", "onNetworkError==" + error.message);
+                        Toast.makeText(CommonInsuranceActivity.this, "请检查网络配置", Toast.LENGTH_SHORT);
+                        finish();
+
+
+                    }
+
+                    @Override
+                    public void onRefreToken() {
+                        Log.e("daipeng", "refershtoken==");
+                        // token失效，重新登录
+                        refreshToken();
+                    }
+                }).excute();
+    }
+
     @Override
     public void onConfirmBtClick() {
         // 点击确认弹窗跳转到报价页面
         Intent intent = new Intent(CommonInsuranceActivity.this, InsuranceChoiceActivity.class);
         intent.putExtra("carNum", mCarNum);
         startActivity(intent);
+    }
+
+    @Override
+    public void onTextChoice(String text) {
+        mInsurancedCity.setText(text);
     }
 }
