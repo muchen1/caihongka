@@ -75,7 +75,7 @@
                         android:layout_height="@dimen/dp_m_y_17"
                         android:layout_marginLeft="@dimen/dp_m_y_10"
                         android:layout_marginRight="@dimen/dp_m_y_5"
-                        android:src="@drawable/more"/>
+                        android:src="@drawable/icon_common_insurance_cph"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -142,15 +142,14 @@
                         android:layout_height="17dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="5dp"
-                        android:src="@drawable/more"/>
+                        android:src="@drawable/icon_common_insurance_tbdq"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/insurance_common_form_city"
                         android:textSize="17sp"
                         />
-                    <TextView
-                        android:id="@+id/insurance_common_insuracedcity"
+                    <TextView android:id="@+id/insurance_common_insuracedcity"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -168,12 +167,6 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
                 android:gravity="center">
-
-                <android.support.v7.widget.AppCompatCheckBox
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:checked="true"
-                    style="@style/CustomCheckboxTheme2"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -206,13 +199,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/act_common_insurance_text_footer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:text="@string/insurance_common_newcar"/>
 
 </LinearLayout>

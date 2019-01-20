@@ -66,8 +66,6 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
     RelativeLayout backBtn;
     @InjectView(R.id.midle_title)
     TextView mHeaderTitle;
-    @InjectView(R.id.act_common_insurance_text_footer)
-    TextView mFooterTextview;
     @InjectView(R.id.common_insurance_carnum_edittext)
     EditText mCarnumEdittext;
     @InjectView(R.id.ci_text_protocol)
@@ -111,7 +109,6 @@ public class CommonInsuranceActivity extends MyBaseActivity implements View.OnCl
         mHeadControlPanel.setMyBackgroundColor(getResources().getColor(R.color.white));
         backBtn.setVisibility(View.VISIBLE);
         backBtn.setOnClickListener(this);
-        mFooterTextview.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
         mProtocolTextview.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
         mNextButton.setOnClickListener(this);
         mCityNumSpinnerTextContainer.setOnClickListener(this);

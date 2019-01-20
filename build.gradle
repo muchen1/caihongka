@@ -6,6 +6,10 @@ buildscript {
         mavenLocal()
         maven { url 'http://repo.corp/artifactory/repo' }
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.2'
@@ -18,5 +22,9 @@ allprojects {
         mavenLocal()
         maven { url 'http://repo.corp/artifactory/repo' }
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
